@@ -9,7 +9,6 @@ filetype plugin indent on
 set termguicolors
 colorscheme gruvbox
 set background=dark
-highlight CursorLineNr guibg=NONE guifg=black
 set synmaxcol=128
 
 " NERD Tree
@@ -18,16 +17,26 @@ let NERDTreeWinSize=20
 let NERDTreeQuitOnOpen=1
 let NERDTreeAutoDeleteBuffer=1
 
+" CTRL-P
+let g:ctrlp_map = '<LEADER>p'
+let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_by_filename = 1
+let g:ctrlp_clear_cache_on_exit = 1
+let g:ctrlp_mruf_relative = 1
+let g:ctrlp_mruf_save_on_update = 1
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+
 " Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_go_checkers = ['gofmt', 'govet']
 let g:syntastic_c_remove_include_errors = 1
+let g:syntastic_enable_highlighting = 0
 
 " Airline"
 
@@ -41,15 +50,18 @@ let g:airline_section_z = '%#__accent_bold#%3v :%3l%#__restore__#/%L'
 " Personal Stuff
 
 set cmdheight=2
-set switchbuf="usetab"
-set signcolumn="yes"
+set switchbuf=usetab
+set signcolumn=auto
 set noshowmode
+set wildmenu
+set wildmode="list:longest"
 
 set hidden
 " set autowrite
 set nowrap
 set backspace=indent,eol,start
 set nrformats-=octal
+set nostartofline
 
 set title
 set scrolloff=5
@@ -60,9 +72,9 @@ set virtualedit=all
 
 set nobackup
 set noswapfile
-" set mouse=a
+set mouse=a
 
-set relativenumber
+set number
 set nohlsearch
 set gdefault
 
