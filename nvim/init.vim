@@ -11,6 +11,14 @@ colorscheme gruvbox
 set background=dark
 set synmaxcol=128
 
+" netrw
+
+let g:netrw_banner=0
+let g:netrw_list_hide='.git'
+let g:netrw_sizestyle='H'
+let g:netrw_usetab=1
+let g:netrw_special_syntax='true'
+
 " NERD Tree
 let NERDTreeMinimalUI=1
 let NERDTreeWinSize=20
@@ -24,7 +32,11 @@ let g:ctrlp_by_filename = 1
 let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_mruf_relative = 1
 let g:ctrlp_mruf_save_on_update = 1
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+  \ }
 
 " Syntastic
 set statusline+=%#warningmsg#
@@ -54,7 +66,7 @@ set switchbuf=usetab
 set signcolumn=auto
 set noshowmode
 set wildmenu
-set wildmode="list:longest"
+set wildmode=longest:full,full
 
 set hidden
 " set autowrite
@@ -99,6 +111,7 @@ set splitright
 let mapleader=" "
 nmap <silent> <LEADER>e :NERDTreeToggle<CR>
 
+
 tnoremap <ESC> <C-\><C-N>
 tnoremap <A-h> <C-\><C-N><C-w>h
 tnoremap <A-j> <C-\><C-N><C-w>j
@@ -132,8 +145,9 @@ au FileType go nmap <leader>i <Plug>(go-imports)
 au FileType go nmap <leader>f <Plug>(go-info)
 au FileType go nmap <leader>D <Plug>(go-def)
 au FileType go nmap <leader>d <Plug>(go-def-split)
+au FileType go nmap <leader>o <Plug>(go-doc)
 au FileType go nmap <leader>s <Plug>(go-describe)
-au FileType go nmap <leader>r <Plug>(go-run-split)
+au FileType go nmap <leader>g <Plug>(go-run-split)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>T <Plug>(go-test-func)
@@ -146,4 +160,11 @@ let g:go_term_height=20
 let g:go_template_use_pkg=1
 let g:go_list_type="quickfix"
 let g:go_list_type_command=""
+
+" nmap <LEADER>r :ls<CR>:b<SPACE>*
+" nmap <LEADER>e :e **/*
+" nmap <LEADER>u :Lexplore
+inoremap (<CR> (<CR>)<ESC>O
+inoremap {<CR> (<CR>)<ESC>O
+" nmap - :Explore<CR>
 
