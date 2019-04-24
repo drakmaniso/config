@@ -8,7 +8,7 @@ filetype plugin indent on
 " let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 colorscheme gruvbox
-set background=dark
+set background=light
 set synmaxcol=128
 
 " netrw
@@ -32,6 +32,7 @@ let g:ctrlp_by_filename = 1
 let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_mruf_relative = 1
 let g:ctrlp_mruf_save_on_update = 1
+let g:ctrlp_mruf_exclude = '\.git\/.*'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
@@ -61,7 +62,7 @@ let g:airline_section_z = '%#__accent_bold#%3v :%3l%#__restore__#/%L'
 
 " Personal Stuff
 
-set cmdheight=2
+set cmdheight=1
 set switchbuf=usetab
 set signcolumn=auto
 set noshowmode
@@ -90,9 +91,10 @@ set number
 set nohlsearch
 set gdefault
 
-set softtabstop=-4
+set softtabstop=4
 set shiftwidth=4
 set expandtab
+au BufNewFile,BufRead *.js setlocal ts=2 sw=2 sts=2
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 
 set splitbelow
@@ -164,7 +166,10 @@ let g:go_list_type_command=""
 " nmap <LEADER>r :ls<CR>:b<SPACE>*
 " nmap <LEADER>e :e **/*
 " nmap <LEADER>u :Lexplore
-inoremap (<CR> (<CR>)<ESC>O
-inoremap {<CR> (<CR>)<ESC>O
+"inoremap (<CR> (<CR>)<ESC>O
+"inoremap {<CR> {<CR>}<ESC>O
 " nmap - :Explore<CR>
 
+"autocmd FileType javascript set formatprg=standard\ --fix\ --stdin
+"autocmd BufWritePre *.js exe "normal! gggqG\<C-o>\<C-o>"
+autocmd FileType javascript nmap <leader>q gggqG<C-o><C-o>
