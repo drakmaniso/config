@@ -21,7 +21,7 @@ general {
 #order += "wireless _first_"
 order += "load"
 order += "cpu_temperature 0"
-order += "ethernet _first_"
+#order += "ethernet _first_"
 #order += "battery all"
 order += "tztime local"
 
@@ -54,15 +54,16 @@ tztime local {
 
 load {
         format = "%1min"
-		max_threshold = "0,80"
-        format_above_threshold = "%1min %5min %15min"
+		max_threshold = "1.20"
+        #format_above_threshold = "%1min %5min %15min"
+        format_above_threshold = "%1min"
 		separator = false
 		separator_block_width = 32
 }
 
 cpu_temperature 0 {
        format = "%degrees°"
-       path = "/sys/devices/virtual/thermal/thermal_zone2/temp"
+       path = "/sys/devices/virtual/thermal/thermal_zone0/temp"
 }
 
 

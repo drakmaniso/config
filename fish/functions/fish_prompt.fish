@@ -3,7 +3,8 @@ function fish_prompt --description 'Prints left prompt'
 	set -l last_status  $status
     #set -l glyph        "❯"
     #set -l glyph        "\u276f"
-    set -l glyph        "\ue0b0"
+    #set -l glyph        "\ue0b0"
+    set -l glyph        ""
     set -l glyph_color  (set_color normal; set_color magenta)
     set -l pwd          (prompt_pwd)
     set -l pwd_color    (set_color -b magenta; set_color black)
