@@ -54,7 +54,7 @@ tztime local {
 
 load {
         format = "%1min"
-		max_threshold = "1.20"
+		max_threshold = "1"
         #format_above_threshold = "%1min %5min %15min"
         format_above_threshold = "%1min"
 		separator = false

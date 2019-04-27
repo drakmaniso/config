@@ -33,14 +33,14 @@ font pango:Roboto Bold 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec sakura
+bindsym $mod+t exec sakura
 
 # kill focused window
 bindsym $mod+Control+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+p exec rofi -show drun -font "Roboto Bold 14" -no-sidebar-mode -separator-style none -hide-scrollbar -no-cycle -scroll-method 1
-bindsym $mod+Control+p exec rofi -show run
+bindsym $mod+r exec rofi -show drun -font "Roboto Bold 14" -no-sidebar-mode -separator-style none -hide-scrollbar -no-cycle -scroll-method 1
+bindsym $mod+e exec rofi -show run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -76,20 +76,20 @@ bindsym $mod+o layout toggle split
 bindsym $mod+space fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+t layout tabbed
-bindsym $mod+Control+t layout stacking
+bindsym $mod+y layout tabbed
+bindsym $mod+Control+y layout stacking
 
 # toggle tiling / floating
-bindsym $mod+Control+Tab floating toggle
+bindsym $mod+Control+Return floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+Tab focus mode_toggle
+bindsym $mod+Return focus mode_toggle
 
 # focus the parent container
-bindsym $mod+n focus parent
+bindsym $mod+p focus parent
 
 # focus the child container
-bindsym $mod+m focus child
+bindsym $mod+semicolon focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -126,32 +126,32 @@ bindsym $mod+Control+c move container to workspace $ws7
 bindsym $mod+Control+v move container to workspace $ws8
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Control+r reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Mod1+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Control+Mod1+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 4 px or 4 ppt
-        bindsym j resize grow height 4 px or 4 ppt
-        bindsym k resize shrink height 4 px or 4 ppt
-        bindsym l resize grow width 4 px or 4 ppt
-
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-}
-
-bindsym $mod+r mode "resize"
+#mode "resize" {
+#        # These bindings trigger as soon as you enter the resize mode
+#
+#        # Pressing left will shrink the window’s width.
+#        # Pressing right will grow the window’s width.
+#        # Pressing up will shrink the window’s height.
+#        # Pressing down will grow the window’s height.
+#        bindsym h resize shrink width 4 px or 4 ppt
+#        bindsym j resize grow height 4 px or 4 ppt
+#        bindsym k resize shrink height 4 px or 4 ppt
+#        bindsym l resize grow width 4 px or 4 ppt
+#
+#        # back to normal: Enter or Escape or $mod+r
+#        bindsym Return mode "default"
+#        bindsym Escape mode "default"
+#        bindsym $mod+r mode "default"
+#}
+#
+#bindsym $mod+r mode "resize"
 
 client.focused          #458488 #458488 #1d2021 #458488 #458488
 client.focused_inactive #1d2021 #1d2021 #458488 #1d2021 #1d2021
@@ -174,9 +174,13 @@ bar {
 				statusline #a89984
 				focused_statusline #a89984
 				separator #282828
-				focused_workspace #1d2021 #1d2021 #b16286
-				active_workspace  #1d2021 #1d2021 #928374
-				inactive_workspace #1d2021 #1d2021 #928374
+				#focused_workspace #1d2021 #1d2021 #b16286
+				#inactive_workspace  #1d2021 #1d2021 #458488
+				#active_workspace #1d2021 #1d2021 #928374
+				#urgent_workspace #1d2021 #1d2021 #cc241d
+				focused_workspace #458488 #458488 #1d2021
+				inactive_workspace  #1d2021 #1d2021 #928374 
+				active_workspace  #1d2021 #1d2021 #928374 
 				urgent_workspace #1d2021 #1d2021 #cc241d
 		}
 		workspace_buttons yes
