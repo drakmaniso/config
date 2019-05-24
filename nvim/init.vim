@@ -7,8 +7,14 @@ syntax on
 filetype plugin indent on
 " let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
+augroup MyColors
+    autocmd!
+    autocmd ColorScheme * if &background=='dark' | highlight Normal guibg=NONE | highlight Normal ctermbg=NONE
+augroup END
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_light='hard'
 colorscheme gruvbox
-set background=light
+set background=dark
 set synmaxcol=128
 
 " netrw
