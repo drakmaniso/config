@@ -66,6 +66,16 @@ let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 let g:airline_skip_empty_sections = 1
 let g:airline_section_z = '%#__accent_bold#%3v :%3l%#__restore__#/%L'
 
+" Neoformat
+
+let g:neoformat_try_formatprg = 1
+augroup NeoformatAutoFormat
+    autocmd!
+    autocmd FileType javascript setlocal formatprg=prettier
+    autocmd BufWritePre *.js Neoformat
+augroup END
+
+
 
 " Personal Stuff
 
