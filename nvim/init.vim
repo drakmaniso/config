@@ -13,9 +13,10 @@ augroup MyColors
 augroup END
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_contrast_light='hard'
+let g:gruvbox_bold=0
 colorscheme gruvbox
 set background=dark
-set synmaxcol=128
+set synmaxcol=250
 
 " netrw
 
@@ -93,15 +94,16 @@ set nobackup
 set noswapfile
 set mouse=a
 
-set number
+set nonumber
 set nohlsearch
 set gdefault
 
 set softtabstop=4
 set shiftwidth=4
 set expandtab
-au BufNewFile,BufRead *.js setlocal ts=2 sw=2 sts=2
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
+au BufNewFile,BufRead *.html setlocal ts=2 sw=2 sts=2
+au BufNewFile,BufRead *.js setlocal ts=2 sw=2 sts=2
 
 set splitbelow
 set splitright
