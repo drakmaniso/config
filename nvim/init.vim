@@ -68,13 +68,15 @@ let g:airline_section_z = '%#__accent_bold#%3v :%3l%#__restore__#/%L'
 
 " Neoformat
 
-let g:neoformat_try_formatprg = 1
-augroup NeoformatAutoFormat
-    autocmd!
-    autocmd FileType javascript setlocal formatprg=prettier
-    autocmd BufWritePre *.js Neoformat
-augroup END
+"let g:neoformat_try_formatprg = 1
+"augroup NeoformatAutoFormat
+"autocmd!
+"autocmd FileType javascript setlocal formatprg=prettier
+"autocmd BufWritePre *.js Neoformat
+"augroup END
 
+let g:prettier#autoformat = 1
+autocmd BufWritePre *.js,*.css,*.html Prettier
 
 
 " Personal Stuff
