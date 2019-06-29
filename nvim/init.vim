@@ -76,7 +76,7 @@ let g:airline_section_z = '%#__accent_bold#%3v :%3l%#__restore__#/%L'
 "augroup END
 
 let g:prettier#autoformat = 1
-autocmd BufWritePre *.js,*.css,*.html Prettier
+autocmd BufWritePre *.js Prettier
 
 
 " Personal Stuff
@@ -156,12 +156,16 @@ nnoremap <C-j> <C-e>
 nnoremap <C-k> <C-y>
 
 nmap <leader>w :wa<CR>
+set wildcharm=<C-Z>
 
-nmap <leader>/ :BufExplorer<CR>
-nmap <leader>? :BufExplorerHorizontalSplit<CR>
+nmap <TAB> :BufMRUNext<CR>
+nmap <S-TAB> :BufMRUPrev<CR>
+
+nmap <leader>/ :BufExplorer<CR>j
 let g:bufExplorerDefaultHelp=0
 let g:bufExplorerSplitOutPathName=0
 let g:bufExplorerShowRelativePath=1
+let g:bufExplorerSortBy='mru'
 
 au FileType go nmap <leader>i <Plug>(go-imports)
 au FileType go nmap <leader>f <Plug>(go-info)
