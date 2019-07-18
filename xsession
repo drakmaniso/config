@@ -5,9 +5,9 @@
 #xrdb -load /etc/Xresource
 #xrdb -load ~/.Xresource
 
-unset LC_ALL
-export LANG=en_US.UTF-8
-export LC_MESSAGES=C
+#unset LC_ALL
+#export LANG=en_US.UTF-8
+#export LC_MESSAGES=C
 # export LC_TIME=en_DK.UTF-8
 
 # Disable DPMS turning off the screen
