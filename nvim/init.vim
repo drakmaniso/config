@@ -45,6 +45,42 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
   \ }
+let g:ctrlp_prompt_mappings = {
+    \ 'PrtBS()':              ['<bs>', '<c-]>'],
+    \ 'PrtDelete()':          ['<del>'],
+    \ 'PrtDeleteWord()':      ['<c-w>'],
+    \ 'PrtClear()':           ['<c-u>'],
+    \ 'PrtSelectMove("j")':   ['j', '<c-j>', '<down>'],
+    \ 'PrtSelectMove("k")':   ['k', '<c-k>', '<up>'],
+    \ 'PrtSelectMove("t")':   ['<Home>', '<kHome>'],
+    \ 'PrtSelectMove("b")':   ['<End>', '<kEnd>'],
+    \ 'PrtSelectMove("u")':   ['<PageUp>', '<kPageUp>'],
+    \ 'PrtSelectMove("d")':   ['<PageDown>', '<kPageDown>'],
+    \ 'PrtHistory(-1)':       ['<c-n>'],
+    \ 'PrtHistory(1)':        ['<c-p>'],
+    \ 'AcceptSelection("e")': ['<cr>', '<2-LeftMouse>'],
+    \ 'AcceptSelection("h")': ['<c-x>', '<c-cr>', '<c-s>'],
+    \ 'AcceptSelection("t")': ['<c-t>'],
+    \ 'AcceptSelection("v")': ['<c-v>', '<RightMouse>'],
+    \ 'ToggleFocus()':        ['<s-tab>'],
+    \ 'ToggleRegex()':        ['<c-r>'],
+    \ 'ToggleByFname()':      ['<c-d>'],
+    \ 'ToggleType(1)':        ['l', '<c-f>', '<c-up>'],
+    \ 'ToggleType(-1)':       ['h', '<c-b>', '<c-down>'],
+    \ 'PrtExpandDir()':       ['<tab>'],
+    \ 'PrtInsert("c")':       ['<MiddleMouse>', '<insert>'],
+    \ 'PrtInsert()':          ['<c-\>'],
+    \ 'PrtCurStart()':        ['<c-a>'],
+    \ 'PrtCurEnd()':          ['<c-e>'],
+    \ 'PrtCurLeft()':         ['<c-h>', '<left>', '<c-^>'],
+    \ 'PrtCurRight()':        ['<c-l>', '<right>'],
+    \ 'PrtClearCache()':      ['<F5>'],
+    \ 'PrtDeleteEnt()':       ['<F7>'],
+    \ 'CreateNewFile()':      ['<c-y>'],
+    \ 'MarkToOpen()':         ['<c-z>'],
+    \ 'OpenMulti()':          ['<c-o>'],
+    \ 'PrtExit()':            ['q', '<esc>', '<c-c>', '<c-g>'],
+    \ }
 
 " Syntastic
 set statusline+=%#warningmsg#
@@ -66,15 +102,6 @@ let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 let g:airline_skip_empty_sections = 1
 let g:airline_section_z = '%#__accent_bold#%3v :%3l%#__restore__#/%L'
 
-" Neoformat
-
-"let g:neoformat_try_formatprg = 1
-"augroup NeoformatAutoFormat
-"autocmd!
-"autocmd FileType javascript setlocal formatprg=prettier
-"autocmd BufWritePre *.js Neoformat
-"augroup END
-
 let g:prettier#autoformat = 1
 autocmd BufWritePre *.js Prettier
 
@@ -82,8 +109,8 @@ autocmd BufWritePre *.js Prettier
 " Personal Stuff
 
 set cmdheight=1
-set switchbuf=usetab
-set signcolumn=auto
+set switchbuf=useopen,usetab
+set signcolumn=yes
 set noshowmode
 set wildmenu
 set wildmode=longest:full,full
@@ -96,8 +123,8 @@ set nrformats-=octal
 set nostartofline
 
 set title
-set scrolloff=5
-set sidescrolloff=5
+" set scrolloff=5
+" set sidescrolloff=5
 set display+=lastline
 
 set virtualedit=all
@@ -105,16 +132,22 @@ set virtualedit=all
 set nobackup
 set noswapfile
 set mouse=a
+set mousehide
 
 set nonumber
 set nohlsearch
 set gdefault
+
+set inccommand="split"
+set splitright
+set nosplitbelow
 
 set softtabstop=4
 set shiftwidth=4
 set expandtab
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 au BufNewFile,BufRead *.html setlocal ts=2 sw=2 sts=2
+au BufNewFile,BufRead *.css setlocal ts=2 sw=2 sts=2
 au BufNewFile,BufRead *.js setlocal ts=2 sw=2 sts=2
 
 set splitbelow
@@ -126,6 +159,10 @@ set splitright
 " map k <Down>
 " noremap h i
 
+noremap <PageDown> <C-D><C-D>
+noremap <PageUp> <C-U><C-U>
+noremap <S-J> <C-E>j
+noremap <S-K> <C-U>k
 
 " set cursorline
 " hi CursorLine cterm=NONE ctermbg=236 ctermfg=NONE guibg=Grey20
@@ -156,7 +193,6 @@ nnoremap <C-j> <C-e>
 nnoremap <C-k> <C-y>
 
 nmap <leader>w :wa<CR>
-set wildcharm=<C-Z>
 
 nmap <TAB> :BufMRUNext<CR>
 nmap <S-TAB> :BufMRUPrev<CR>
