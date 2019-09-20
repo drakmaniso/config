@@ -38,6 +38,8 @@ xsetroot -solid "#1d2021"
 # Enable core dumps in case something goes wrong
 #ulimit -c unlimited
 
+exec /usr/bin/awesome
+
 # Start i3 and log to ~/.i3/logfile
 echo "Starting at $(date)" > ~/.i3/logfile
 exec /usr/bin/i3 -V  >> ~/.i3/logfile
