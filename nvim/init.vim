@@ -88,11 +88,16 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_go_checkers = ['gofmt', 'govet']
 let g:syntastic_c_remove_include_errors = 1
-let g:syntastic_enable_highlighting = 0
+let g:syntastic_enable_highlighting = 1
+let g:syntastic_loc_list_height = 3
+let g:syntastic_mode_map = {
+    \ "mode": "passive",
+    \ "active_filetypes": [],
+    \ "passive_filetypes": ["go"] }
 
 " Airline"
 
@@ -217,11 +222,16 @@ au FileType go nmap <leader>l <Plug>(go-lint)
 au FileType go nmap <leader>v <Plug>(go-vet)
 let g:go_term_enabled=1
 let g:go_term_mode="split"
-let g:go_metalinter_autosave=0
 let g:go_term_height=20
 let g:go_template_use_pkg=1
 let g:go_list_type="quickfix"
 let g:go_list_type_command=""
+let g:go_doc_keywordprg_enabled = 1
+let g:go_metalinter_autosave = 0
+" let g:go_metalinter_autosave_enabled = []
+" let g:go_metalinter_enabled = []
+" let g:go_metalinter_command = "go vet"
+let g:go_highlight_functions = 1
 
 " nmap <LEADER>r :ls<CR>:b<SPACE>*
 " nmap <LEADER>e :e **/*
