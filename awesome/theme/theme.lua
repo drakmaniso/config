@@ -35,6 +35,17 @@ theme.titlebar_bg_focus  = "#3F3F3F"
 theme.titlebar_bg_normal = "#3F3F3F"
 -- }}}
 
+theme.taglist_bg_normal = "#3F3F3F"
+theme.taglist_fg_normal = "#DCDCCC"
+theme.taglist_bg_empty = "#3F3F3F"
+theme.taglist_fg_empty = "#878777"
+theme.taglist_fg_urgent = "#DD7272"
+
+theme.tasklist_bg_normal = "#3F3F3F"
+theme.tasklist_fg_normal = "#878777"
+theme.tasklist_bg_focus = "#3F3F3F"
+theme.tasklist_fg_focus = "#EDEDDD"
+
 -- There are other variable sets
 -- overriding the default one when
 -- defined, the sets are:
