@@ -166,8 +166,12 @@ set splitright
 
 noremap <PageDown> <C-D><C-D>
 noremap <PageUp> <C-U><C-U>
+noremap <C-Left> b
+noremap <C-Right> e
+inoremap <C-Left> <C-\><C-N>bi
+inoremap <C-Right> <C-\><C-N>ea
 noremap <S-J> <C-E>j
-noremap <S-K> <C-U>k
+noremap <S-K> <C-E>k
 
 " set cursorline
 " hi CursorLine cterm=NONE ctermbg=236 ctermfg=NONE guibg=Grey20
