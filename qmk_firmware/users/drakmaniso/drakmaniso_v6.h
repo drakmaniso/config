@@ -13,6 +13,10 @@ enum custom_layers {
 #define NUM_PAD  MO(_NUM_PAD)
 #define ADJUST   MO(_ADJUST)
 
+#define S_TAB    LSFT(KC_TAB)
+#define C_LEFT   LCTL(KC_LEFT)
+#define C_RGHT   LCTL(KC_RGHT)
+
 /*
 Since our quirky block definitions are basically a list of comma separated
 arguments, we need a wrapper in order for these definitions to be
@@ -39,35 +43,35 @@ NOTE: These are all the same length.  If you do a search/replace
 
 #define _____________________QWERTY_L1______________________ KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_TAB
 #define _____________________QWERTY_L2______________________ KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_ESC
-#define _____________________QWERTY_L3______________________ KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_EQL
-#define _____________________QWERTY_L4______________________ KC_LCTL, KC_LALT, KC_SPC,  NUM_PAD, KC_LSFT, SYMBOLS
+#define _____________________QWERTY_L3______________________ KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    ADJUST
+#define _____________________QWERTY_L4______________________ KC_LCTL, KC_LALT, XXXXXXX, NUM_PAD, KC_LSFT, SYMBOLS
 
 #define _____________________QWERTY_R1______________________ KC_BSPC, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P
 #define _____________________QWERTY_R2______________________ KC_ENT,  KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN
-#define _____________________QWERTY_R3______________________ KC_QUOT, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH
-#define _____________________QWERTY_R4______________________ KC_SPC,  NUMBERS, KC_RGUI, ADJUST,  KC_RALT, KC_RCTL
+#define _____________________QWERTY_R3______________________ ADJUST,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH
+#define _____________________QWERTY_R4______________________ KC_SPC,  NUMBERS, KC_RGUI, XXXXXXX, KC_RALT, KC_RCTL
 
               
-#define _____________________NUMBERS_L1_____________________ KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_TAB
-#define _____________________NUMBERS_L2_____________________ KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_ESC
-#define _____________________NUMBERS_L3_____________________ KC_TILD, KC_PIPE, KC_LCBR, KC_RCBR, KC_MINS, KC_PLUS
-#define _____________________NUMBERS_L4_____________________ KC_LCTL, KC_LALT, ADJUST,  XXXXXXX, KC_LSFT, SYMBOLS
+#define _____________________NUMBERS_L1_____________________ KC_UNDS, KC_MINS, KC_LBRC, KC_RBRC, KC_PLUS, KC_DEL
+#define _____________________NUMBERS_L2_____________________ KC_EQL,  KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, KC_INS
+#define _____________________NUMBERS_L3_____________________ KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    ADJUST
+#define _____________________NUMBERS_L4_____________________ KC_LCTL, KC_LALT, XXXXXXX, XXXXXXX, KC_LSFT, XXXXXXX
 
-#define _____________________NUMBERS_R1_____________________ KC_BSPC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LBRC, KC_RBRC
-#define _____________________NUMBERS_R2_____________________ KC_ENT,  KC_6,    KC_7,    KC_8,    KC_9,    KC_0
-#define _____________________NUMBERS_R3_____________________ KC_GRV,  KC_UNDS, KC_LPRN, KC_RPRN, KC_DOT,  KC_BSLS
-#define _____________________NUMBERS_R4_____________________ KC_SPC,  NUMBERS, KC_RGUI, ADJUST,  KC_RALT, KC_RCTL
+#define _____________________NUMBERS_R1_____________________ KC_BSPC, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_DQUO
+#define _____________________NUMBERS_R2_____________________ KC_ENT,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_QUOT
+#define _____________________NUMBERS_R3_____________________ ADJUST,  KC_6,    KC_7,    KC_8,    KC_9,    KC_0   
+#define _____________________NUMBERS_R4_____________________ KC_SPC,  NUMBERS, KC_RGUI, XXXXXXX, KC_RALT, KC_RCTL
 
 
-#define _____________________SYMBOLS_L1_____________________ XXXXXXX, KC_WH_U, KC_MS_U, KC_WH_D, XXXXXXX, KC_TAB
-#define _____________________SYMBOLS_L2_____________________ KC_F11,  KC_MS_L, KC_MS_D, KC_MS_R, KC_F12,  KC_ESC
-#define _____________________SYMBOLS_L3_____________________ KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   XXXXXXX
-#define _____________________SYMBOLS_L4_____________________ KC_LCTL, KC_LALT, ADJUST,  XXXXXXX, KC_LSFT, SYMBOLS
+#define _____________________SYMBOLS_L1_____________________ KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6
+#define _____________________SYMBOLS_L2_____________________ KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12 
+#define _____________________SYMBOLS_L3_____________________ KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, ADJUST
+#define _____________________SYMBOLS_L4_____________________ KC_LCTL, KC_LALT, XXXXXXX, XXXXXXX, KC_LSFT, SYMBOLS
                                           
-#define _____________________SYMBOLS_R1_____________________ KC_BSPC, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_INS
-#define _____________________SYMBOLS_R2_____________________ KC_ENT,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_DEL
-#define _____________________SYMBOLS_R3_____________________ KC_BTN3, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10
-#define _____________________SYMBOLS_R4_____________________ KC_BTN1, KC_RSFT, KC_BTN2, ADJUST,  KC_RALT, KC_RCTL
+#define _____________________SYMBOLS_R1_____________________ XXXXXXX, KC_BTN4, KC_WH_D, KC_WH_U, KC_BTN5, KC_TILD
+#define _____________________SYMBOLS_R2_____________________ KC_BTN3, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_GRV
+#define _____________________SYMBOLS_R3_____________________ ADJUST,  KC_CIRC, KC_AMPR, KC_ASTR, KC_PIPE, KC_BSLS
+#define _____________________SYMBOLS_R4_____________________ KC_BTN1, KC_RSFT, KC_BTN2, XXXXXXX, KC_RALT, KC_RCTL
 
 
 #define _____________________NUM_PAD_L1_____________________ KC_PMNS, KC_KP_7, KC_KP_8, KC_KP_9, KC_PPLS, KC_NLCK
