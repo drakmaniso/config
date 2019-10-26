@@ -37,26 +37,26 @@ NOTE: These are all the same length.  If you do a search/replace
   lengths consistent.
 */
 
-#define _____________________QWERTY_L1______________________ KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T   
-#define _____________________QWERTY_L2______________________ KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G    
-#define _____________________QWERTY_L3______________________ KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B    
-#define _____________________QWERTY_L4______________________ ADJUST,  KC_LCTL, KC_LALT, NUM_PAD, NUMBERS, KC_SPC
+#define _____________________QWERTY_L1______________________ KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_ESC
+#define _____________________QWERTY_L2______________________ KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_TAB
+#define _____________________QWERTY_L3______________________ KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_EQL
+#define _____________________QWERTY_L4______________________ KC_LCTL, KC_LALT, KC_SPC,  NUM_PAD, KC_LSFT, SYMBOLS
 
-#define _____________________QWERTY_R1______________________ KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC 
-#define _____________________QWERTY_R2______________________ KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT  
-#define _____________________QWERTY_R3______________________ KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RGUI 
-#define _____________________QWERTY_R4______________________ XXXXXXX, KC_RSFT, SYMBOLS, KC_RALT, KC_RCTL, ADJUST
+#define _____________________QWERTY_R1______________________ KC_BSPC, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P
+#define _____________________QWERTY_R2______________________ KC_ENT,  KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN
+#define _____________________QWERTY_R3______________________ KC_QUOT, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH
+#define _____________________QWERTY_R4______________________ KC_SPC,  NUMBERS, KC_RGUI, ADJUST,  KC_RALT, KC_RCTL
 
               
-#define _____________________NUMBERS_L1_____________________ KC_ESC,  KC_INS,  KC_HOME, KC_PGUP, KC_PGDN, KC_END 
-#define _____________________NUMBERS_L2_____________________ KC_TAB,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5    
-#define _____________________NUMBERS_L3_____________________ KC_LSFT, KC_LBRC, KC_RBRC, KC_GRV,  KC_QUOT, XXXXXXX 
-#define _____________________NUMBERS_L4_____________________ ADJUST,  KC_LCTL, KC_LALT, NUM_PAD, NUMBERS, KC_SPC 
+#define _____________________NUMBERS_L1_____________________ KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_ESC
+#define _____________________NUMBERS_L2_____________________ KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_TAB
+#define _____________________NUMBERS_L3_____________________ KC_TILD, KC_PIPE, KC_LCBR, KC_RCBR, KC_MINS, KC_PLUS
+#define _____________________NUMBERS_L4_____________________ KC_LCTL, KC_LALT, ADJUST,  XXXXXXX, KC_LSFT, SYMBOLS
 
-#define _____________________NUMBERS_R1_____________________ KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_DEL,  KC_BSPC 
-#define _____________________NUMBERS_R2_____________________ KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_ENT  
-#define _____________________NUMBERS_R3_____________________ XXXXXXX, KC_MINS, KC_EQL,  KC_DOT,  KC_BSLS, KC_RGUI 
-#define _____________________NUMBERS_R4_____________________ XXXXXXX, KC_RSFT, SYMBOLS, KC_RALT, KC_RCTL, ADJUST 
+#define _____________________NUMBERS_R1_____________________ KC_BSPC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN
+#define _____________________NUMBERS_R2_____________________ KC_ENT,  KC_6,    KC_7,    KC_8,    KC_9,    KC_0
+#define _____________________NUMBERS_R3_____________________ KC_GRV,  KC_UNDS, KC_LBRC, KC_RBRC, KC_DOT,  KC_BSLS
+#define _____________________NUMBERS_R4_____________________ KC_SPC,  NUMBERS, KC_RGUI, ADJUST,  KC_RALT, KC_RCTL
 
 
 #define _____________________SYMBOLS_L1_____________________ XXXXXXX, KC_WH_U, KC_MS_U, KC_WH_D, XXXXXXX, KC_ESC
