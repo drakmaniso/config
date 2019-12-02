@@ -8,8 +8,8 @@ filetype plugin indent on
 " let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 augroup MyColors
-    autocmd!
-    autocmd ColorScheme * if &background=='dark' | highlight Normal guibg=NONE | highlight Normal ctermbg=NONE
+	autocmd!
+	autocmd ColorScheme * if &background=='dark' | highlight Normal guibg=NONE | highlight Normal ctermbg=NONE | highlight ExtraWhiteSpace ctermbg=red guibg=red
 augroup END
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_contrast_light='hard'
@@ -17,6 +17,9 @@ let g:gruvbox_bold=0
 colorscheme gruvbox
 set background=dark
 set synmaxcol=250
+
+match ExtraWhiteSpace /^\ \+/
+
 
 " netrw
 
@@ -32,72 +35,6 @@ let NERDTreeWinSize=20
 let NERDTreeQuitOnOpen=1
 let NERDTreeAutoDeleteBuffer=1
 
-" CTRL-P
-let g:ctrlp_map = '<LEADER>p'
-let g:ctrlp_cmd = 'CtrlPMRU'
-let g:ctrlp_by_filename = 1
-let g:ctrlp_clear_cache_on_exit = 1
-let g:ctrlp_mruf_relative = 1
-let g:ctrlp_mruf_save_on_update = 1
-let g:ctrlp_mruf_exclude = '\.git\/.*'
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
-  \ }
-let g:ctrlp_prompt_mappings = {
-    \ 'PrtBS()':              ['<bs>', '<c-]>'],
-    \ 'PrtDelete()':          ['<del>'],
-    \ 'PrtDeleteWord()':      ['<c-w>'],
-    \ 'PrtClear()':           ['<c-u>'],
-    \ 'PrtSelectMove("j")':   ['j', '<c-j>', '<down>'],
-    \ 'PrtSelectMove("k")':   ['k', '<c-k>', '<up>'],
-    \ 'PrtSelectMove("t")':   ['<Home>', '<kHome>'],
-    \ 'PrtSelectMove("b")':   ['<End>', '<kEnd>'],
-    \ 'PrtSelectMove("u")':   ['<PageUp>', '<kPageUp>'],
-    \ 'PrtSelectMove("d")':   ['<PageDown>', '<kPageDown>'],
-    \ 'PrtHistory(-1)':       ['<c-n>'],
-    \ 'PrtHistory(1)':        ['<c-p>'],
-    \ 'AcceptSelection("e")': ['<cr>', '<2-LeftMouse>'],
-    \ 'AcceptSelection("h")': ['<c-x>', '<c-cr>', '<c-s>'],
-    \ 'AcceptSelection("t")': ['<c-t>'],
-    \ 'AcceptSelection("v")': ['<c-v>', '<RightMouse>'],
-    \ 'ToggleFocus()':        ['<s-tab>'],
-    \ 'ToggleRegex()':        ['<c-r>'],
-    \ 'ToggleByFname()':      ['<c-d>'],
-    \ 'ToggleType(1)':        ['l', '<c-f>', '<c-up>'],
-    \ 'ToggleType(-1)':       ['h', '<c-b>', '<c-down>'],
-    \ 'PrtExpandDir()':       ['<tab>'],
-    \ 'PrtInsert("c")':       ['<MiddleMouse>', '<insert>'],
-    \ 'PrtInsert()':          ['<c-\>'],
-    \ 'PrtCurStart()':        ['<c-a>'],
-    \ 'PrtCurEnd()':          ['<c-e>'],
-    \ 'PrtCurLeft()':         ['<c-h>', '<left>', '<c-^>'],
-    \ 'PrtCurRight()':        ['<c-l>', '<right>'],
-    \ 'PrtClearCache()':      ['<F5>'],
-    \ 'PrtDeleteEnt()':       ['<F7>'],
-    \ 'CreateNewFile()':      ['<c-y>'],
-    \ 'MarkToOpen()':         ['<c-z>'],
-    \ 'OpenMulti()':          ['<c-o>'],
-    \ 'PrtExit()':            ['q', '<esc>', '<c-c>', '<c-g>'],
-    \ }
-
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_go_checkers = ['gofmt', 'govet']
-let g:syntastic_c_remove_include_errors = 1
-let g:syntastic_enable_highlighting = 1
-let g:syntastic_loc_list_height = 3
-let g:syntastic_mode_map = {
-    \ "mode": "passive",
-    \ "active_filetypes": [],
-    \ "passive_filetypes": ["go"] }
 
 " Airline"
 
@@ -106,9 +43,13 @@ let g:airline_powerline_fonts=1
 let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 let g:airline_skip_empty_sections = 1
 let g:airline_section_z = '%#__accent_bold#%3v :%3l%#__restore__#/%L'
+let g:airline#extensions#whitespace#enabled = 1
+let g:airline#extensions#whitespace#checks = [ 'indent', 'trailing', 'mixed-indent-file' ]
 
 let g:prettier#autoformat = 1
 autocmd BufWritePre *.js Prettier
+
+let g:elm_make_output_file = "app.js"
 
 
 " Personal Stuff
@@ -121,18 +62,18 @@ set wildmenu
 set wildmode=longest:full,full
 
 set hidden
-" set autowrite
+set autowrite
 set nowrap
 set backspace=indent,eol,start
 set nrformats-=octal
 set nostartofline
 
 set title
-" set scrolloff=5
-" set sidescrolloff=5
+set scrolloff=1
+set sidescrolloff=1
 set display+=lastline
 
-set virtualedit=all
+set virtualedit=block
 
 set nobackup
 set noswapfile
@@ -144,16 +85,26 @@ set nohlsearch
 set gdefault
 
 set inccommand="split"
-set splitright
-set nosplitbelow
+" set splitright
+" set nosplitbelow
 
-set softtabstop=4
-set shiftwidth=4
-set expandtab
+set list
+" set listchars=tab:·\ ,trail:·
+set listchars=tab:\ \ ,trail:·
+
+set autoindent
+set nosmartindent
+set nocindent
+set tabstop=4
+set noexpandtab
+set nosmarttab
+set softtabstop=0
+set shiftwidth=0
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
-au BufNewFile,BufRead *.html setlocal ts=2 sw=2 sts=2
-au BufNewFile,BufRead *.css setlocal ts=2 sw=2 sts=2
-au BufNewFile,BufRead *.js setlocal ts=2 sw=2 sts=2
+au BufNewFile,BufRead *.hs setlocal et ts=4 sw=4 sts=4
+au BufNewFile,BufRead *.html setlocal et ts=2 sw=2 sts=2
+au BufNewFile,BufRead *.css setlocal et ts=2 sw=2 sts=2
+au BufNewFile,BufRead *.js setlocal et ts=2 sw=2 sts=2
 
 set splitbelow
 set splitright
@@ -166,12 +117,9 @@ set splitright
 
 noremap <PageDown> <C-D><C-D>
 noremap <PageUp> <C-U><C-U>
-noremap <C-Left> b
-noremap <C-Right> e
-inoremap <C-Left> <C-\><C-N>bi
-inoremap <C-Right> <C-\><C-N>ea
-noremap <S-J> <C-E>j
-noremap <S-K> <C-E>k
+
+cnoremap <Left> <Space><BS><Left>
+cnoremap <Right> <Space><BS><Right>
 
 " set cursorline
 " hi CursorLine cterm=NONE ctermbg=236 ctermfg=NONE guibg=Grey20
@@ -201,16 +149,11 @@ nmap <leader>c <C-w>c
 nnoremap <C-j> <C-e>
 nnoremap <C-k> <C-y>
 
+nnoremap <TAB> :b#<CR>
+set wildcharm=<C-Z>
+nmap <S-TAB> :b<SPACE><C-Z>
+
 nmap <leader>w :wa<CR>
-
-nmap <TAB> :BufMRUNext<CR>
-nmap <S-TAB> :BufMRUPrev<CR>
-
-nmap <leader>/ :BufExplorer<CR>j
-let g:bufExplorerDefaultHelp=0
-let g:bufExplorerSplitOutPathName=0
-let g:bufExplorerShowRelativePath=1
-let g:bufExplorerSortBy='mru'
 
 au FileType go nmap <leader>i <Plug>(go-imports)
 au FileType go nmap <leader>f <Plug>(go-info)
