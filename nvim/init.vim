@@ -1,7 +1,6 @@
 set nocompatible
 
-" Pathogen
-execute pathogen#infect()
+set encoding=utf-8
 
 syntax on
 filetype plugin indent on
@@ -9,54 +8,19 @@ filetype plugin indent on
 set termguicolors
 augroup MyColors
 	autocmd!
-	autocmd ColorScheme * if &background=='dark' | highlight Normal guibg=NONE | highlight Normal ctermbg=NONE | highlight ExtraWhiteSpace ctermbg=red guibg=red
+	autocmd ColorScheme * highlight ExtraWhiteSpace ctermbg=red guibg=red | highlight Cursor guifg=white guibg=black
 augroup END
-let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_contrast_light='hard'
-let g:gruvbox_bold=0
-colorscheme gruvbox
 set background=dark
 set synmaxcol=250
+colorscheme gruvbox8
 
 match ExtraWhiteSpace /^\ \+/
-
-
-" netrw
-
-let g:netrw_banner=0
-let g:netrw_list_hide='.git'
-let g:netrw_sizestyle='H'
-let g:netrw_usetab=1
-let g:netrw_special_syntax='true'
-
-" NERD Tree
-let NERDTreeMinimalUI=1
-let NERDTreeWinSize=20
-let NERDTreeQuitOnOpen=1
-let NERDTreeAutoDeleteBuffer=1
-
-
-" Airline"
-
-let g:airline_theme = 'gruvbox'
-let g:airline_powerline_fonts=1
-let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
-let g:airline_skip_empty_sections = 1
-let g:airline_section_z = '%#__accent_bold#%3v :%3l%#__restore__#/%L'
-let g:airline#extensions#whitespace#enabled = 1
-let g:airline#extensions#whitespace#checks = [ 'indent', 'trailing', 'mixed-indent-file' ]
-
-let g:prettier#autoformat = 1
-autocmd BufWritePre *.js Prettier
-
-let g:elm_make_output_file = "app.js"
-
 
 " Personal Stuff
 
 set cmdheight=1
 set switchbuf=useopen,usetab
-set signcolumn=yes
+set signcolumn=auto
 set noshowmode
 set wildmenu
 set wildmode=longest:full,full
@@ -85,12 +49,12 @@ set nohlsearch
 set gdefault
 
 set inccommand="split"
-" set splitright
-" set nosplitbelow
 
 set list
-" set listchars=tab:·\ ,trail:·
-set listchars=tab:\ \ ,trail:·
+set listchars=tab:·\ ,trail:·
+"set listchars=tab:\ \ ,trail:·
+"set listchars=tab:┆\ ,trail:·
+"let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 set autoindent
 set nosmartindent
@@ -100,20 +64,10 @@ set noexpandtab
 set nosmarttab
 set softtabstop=0
 set shiftwidth=0
-au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
-au BufNewFile,BufRead *.hs setlocal et ts=4 sw=4 sts=4
-au BufNewFile,BufRead *.html setlocal et ts=2 sw=2 sts=2
-au BufNewFile,BufRead *.css setlocal et ts=2 sw=2 sts=2
-au BufNewFile,BufRead *.js setlocal et ts=2 sw=2 sts=2
 
 set splitbelow
 set splitright
-
-" ijkl movement
-" map i <Up>
-" map j <Left>
-" map k <Down>
-" noremap h i
+set helpheight=5
 
 noremap <PageDown> <C-D><C-D>
 noremap <PageUp> <C-U><C-U>
@@ -121,12 +75,7 @@ noremap <PageUp> <C-U><C-U>
 cnoremap <Left> <Space><BS><Left>
 cnoremap <Right> <Space><BS><Right>
 
-" set cursorline
-" hi CursorLine cterm=NONE ctermbg=236 ctermfg=NONE guibg=Grey20
-
 let mapleader=" "
-nmap <silent> <LEADER>e :NERDTreeToggle<CR>
-
 
 tnoremap <ESC> <C-\><C-N>
 tnoremap <A-h> <C-\><C-N><C-w>h
@@ -155,6 +104,74 @@ nmap <S-TAB> :b<SPACE><C-Z>
 
 nmap <leader>w :wa<CR>
 
+" nmap <LEADER>r :ls<CR>:b<SPACE>*
+" nmap <LEADER>e :e **/*
+" nmap <LEADER>u :Lexplore
+"inoremap (<CR> (<CR>)<ESC>O
+"inoremap {<CR> {<CR>}<ESC>O
+" nmap - :Explore<CR>
+
+
+" netrw
+
+let g:netrw_banner=0
+let g:netrw_list_hide='.git'
+let g:netrw_sizestyle='H'
+let g:netrw_usetab=1
+let g:netrw_special_syntax='true'
+
+" NERD Tree
+"let loaded_nerd_tree=1
+let NERDTreeMinimalUI=1
+let NERDTreeWinSize=20
+let NERDTreeQuitOnOpen=1
+let NERDTreeAutoDeleteBuffer=1
+let NERDTreeIgnore=['\~','\.exe$','\.o$','\.obj$','\.hi$']
+let NERDTreeRespectWildIgnore=1
+nmap <silent> <LEADER>e :NERDTreeToggle<CR>
+
+
+" Lightline "
+
+let g:lightline = {
+	\ 'colorscheme': 'gruvbox',
+	\ 'component': {
+	\   'lineinfo': '%3l:%-2v',
+	\ },
+	\ 'component_function': {
+	\   'readonly': 'LightlineReadonly',
+	\   'fugitive': 'LightlineFugitive'
+	\ },
+	\ 'separator': { 'left': '', 'right': '' },
+	\ 'subseparator': { 'left': '', 'right': '' }
+	\ }
+function! LightlineReadonly()
+	return &readonly ? '' : ''
+endfunction
+function! LightlineFugitive()
+	if exists('*fugitive#head')
+		let branch = fugitive#head()
+		return branch !=# '' ? ''.branch : ''
+	endif
+	return ''
+endfunction
+
+
+" Airline
+
+let g:airline_disabled = 1
+let g:airline_theme = 'gruvbox8'
+let g:airline_powerline_fonts=1
+let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
+let g:airline_skip_empty_sections = 1
+let g:airline_section_z = '%#__accent_bold#%3v :%3l%#__restore__#/%L'
+let g:airline#extensions#whitespace#enabled = 1
+let g:airline#extensions#whitespace#checks = [ 'indent', 'trailing', 'mixed-indent-file' ]
+
+
+" Go
+
+au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 au FileType go nmap <leader>i <Plug>(go-imports)
 au FileType go nmap <leader>f <Plug>(go-info)
 au FileType go nmap <leader>D <Plug>(go-def)
@@ -180,13 +197,25 @@ let g:go_metalinter_autosave = 0
 " let g:go_metalinter_command = "go vet"
 let g:go_highlight_functions = 1
 
-" nmap <LEADER>r :ls<CR>:b<SPACE>*
-" nmap <LEADER>e :e **/*
-" nmap <LEADER>u :Lexplore
-"inoremap (<CR> (<CR>)<ESC>O
-"inoremap {<CR> {<CR>}<ESC>O
-" nmap - :Explore<CR>
 
+" Elm
+
+let g:elm_make_output_file = "app.js"
+
+
+" Haskell
+
+au BufNewFile,BufRead *.hs setlocal et ts=4 sw=4 sts=4
+
+
+" HTML / CSS / Javascript
+
+au BufNewFile,BufRead *.html setlocal et ts=2 sw=2 sts=2
+au BufNewFile,BufRead *.css setlocal et ts=2 sw=2 sts=2
+au BufNewFile,BufRead *.js setlocal et ts=2 sw=2 sts=2
+let g:prettier#autoformat = 1
+autocmd BufWritePre *.js Prettier
 "autocmd FileType javascript set formatprg=standard\ --fix\ --stdin
 "autocmd BufWritePre *.js exe "normal! gggqG\<C-o>\<C-o>"
 autocmd FileType javascript nmap <leader>q gggqG<C-o><C-o>
+
