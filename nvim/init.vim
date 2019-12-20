@@ -37,7 +37,7 @@ set scrolloff=1
 set sidescrolloff=1
 set display+=lastline
 
-set virtualedit=block
+set virtualedit=block,onemore
 
 set nobackup
 set noswapfile
@@ -52,6 +52,8 @@ set inccommand="split"
 
 set list
 set listchars=tab:·\ ,trail:·
+set listchars=tab:│\ ,trail:·
+set listchars=tab:\ \ ,trail:·
 "set listchars=tab:\ \ ,trail:·
 "set listchars=tab:┆\ ,trail:·
 "let g:indentLine_char_list = ['|', '¦', '┆', '┊']
@@ -69,13 +71,50 @@ set splitbelow
 set splitright
 set helpheight=5
 
+noremap i k
+noremap j h
+noremap k j
+noremap u b
+noremap o e
+noremap p ^
+noremap ; $
+noremap y <C-U>
+noremap h <C-D>
+
+noremap <C-W>i <C-W>k
+noremap <C-W>j <C-W>h
+noremap <C-W>k <C-W>j
+noremap w <C-W>
+noremap wi <C-W>k
+noremap wj <C-W>h
+noremap wk <C-W>j
+noremap wl <C-W>l
+
+noremap <SPACE> i
+noremap z u
+noremap <CR> o
+noremap <S-CR> <S-O>
+noremap $ ;
+noremap c y
+noremap C Y
+noremap v p
+noremap V P
+noremap x d
+noremap X D
+noremap e c
+noremap E C
+noremap d v
+noremap D V
+noremap <C-D> <C-V>
+
+
 noremap <PageDown> <C-D><C-D>
 noremap <PageUp> <C-U><C-U>
 
 cnoremap <Left> <Space><BS><Left>
 cnoremap <Right> <Space><BS><Right>
 
-let mapleader=" "
+" let mapleader=" "
 
 tnoremap <ESC> <C-\><C-N>
 tnoremap <A-h> <C-\><C-N><C-w>h
@@ -86,14 +125,6 @@ inoremap <A-h> <C-\><C-N><C-w>h
 inoremap <A-j> <C-\><C-N><C-w>j
 inoremap <A-k> <C-\><C-N><C-w>k
 inoremap <A-l> <C-\><C-N><C-w>l
-nnoremap <A-h> <C-w>h
-nnoremap <A-j> <C-w>j
-nnoremap <A-k> <C-w>k
-nnoremap <A-l> <C-w>l
-nnoremap <A-o> <C-w>o
-nmap <leader>o <C-w>o
-nnoremap <A-c> <C-w>c
-nmap <leader>c <C-w>c
 
 nnoremap <C-j> <C-e>
 nnoremap <C-k> <C-y>
@@ -167,6 +198,10 @@ let g:airline_skip_empty_sections = 1
 let g:airline_section_z = '%#__accent_bold#%3v :%3l%#__restore__#/%L'
 let g:airline#extensions#whitespace#enabled = 1
 let g:airline#extensions#whitespace#checks = [ 'indent', 'trailing', 'mixed-indent-file' ]
+
+
+"
+let g:fugitive_no_maps = 1
 
 
 " Go
