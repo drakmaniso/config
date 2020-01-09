@@ -1,10 +1,105 @@
+" Experimental modernization
+
+noremap i k
+noremap I <BS>vk<SPACE>
+vnoremap i vk
+vnoremap I k
+noremap <C-W>i <C-W>k
+noremap wi <C-W>k
+
+noremap j <BS>
+noremap J <BS>v
+vnoremap j v
+vnoremap J <BS>
+noremap <C-W>j <C-W>h
+noremap wj <C-W>h
+
+noremap k j
+noremap K vj<BS>
+vnoremap k vjl
+vnoremap K j
+noremap <C-W>k <C-W>j
+noremap wk <C-W>j
+
+noremap l <SPACE>
+noremap L v
+vnoremap l v<SPACE>
+vnoremap L <SPACE>
+noremap <C-W>l <C-W>l
+noremap wl <C-W>l
+
+noremap u b
+noremap U <BS>vb
+vnoremap u vhb
+vnoremap U b
+noremap o el
+noremap O ve
+vnoremap o vel
+vnoremap O e
+
+noremap m ^
+noremap M hv^
+vnoremap m v^
+vnoremap M ^
+noremap . $l
+noremap > v$<BS>
+vnoremap . v$l
+vnoremap > $<BS>
+
+noremap y <C-U>
+vnoremap y v<C-U>
+noremap h <C-D>
+vnoremap h v<C-D>
+
+vnoremap <C-j> <
+vnoremap <C-l> >
+"noremap m :
+
+nnoremap <BS> dh
+vnoremap <BS> d
+nnoremap <C-H> dh
+vnoremap <C-H> d
+
+noremap w <C-W>
+
+noremap <SPACE> i
+vnoremap <SPACE> c
+noremap z u
+noremap <CR> o
+noremap <S-CR> <S-O>
+noremap $ ;
+noremap c y
+noremap C Y
+noremap v p
+noremap V P
+noremap x d
+noremap X D
+noremap e c
+noremap E C
+noremap d v
+noremap D V
+noremap <C-D> <C-V>
+
+inoremap <ESC> <ESC>l
+vnoremap <ESC> <ESC>l
+
+noremap <PageDown> <C-D><C-D>
+noremap <PageUp> <C-U><C-U>
+
+cnoremap <Left> <Space><BS><Left>
+cnoremap <Right> <Space><BS><Right>
+
+set virtualedit=block,onemore
+set guicursor=v-c-sm:hor20,n:ver25,i-ci-ve:ver25,r-cr-o:hor20
+
+" Personal Stuff
+
 set nocompatible
 
 set encoding=utf-8
 
 syntax on
 filetype plugin indent on
-" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 augroup MyColors
 	autocmd!
@@ -37,7 +132,6 @@ set scrolloff=1
 set sidescrolloff=1
 set display+=lastline
 
-set virtualedit=block,onemore
 
 set nobackup
 set noswapfile
@@ -48,7 +142,7 @@ set nonumber
 set nohlsearch
 set gdefault
 
-set inccommand="split"
+"set inccommand="split"
 
 set list
 set listchars=tab:·\ ,trail:·
@@ -71,48 +165,6 @@ set splitbelow
 set splitright
 set helpheight=5
 
-noremap i k
-noremap j h
-noremap k j
-noremap u b
-noremap o e
-noremap p ^
-noremap ; $
-noremap y <C-U>
-noremap h <C-D>
-
-noremap <C-W>i <C-W>k
-noremap <C-W>j <C-W>h
-noremap <C-W>k <C-W>j
-noremap w <C-W>
-noremap wi <C-W>k
-noremap wj <C-W>h
-noremap wk <C-W>j
-noremap wl <C-W>l
-
-noremap <SPACE> i
-noremap z u
-noremap <CR> o
-noremap <S-CR> <S-O>
-noremap $ ;
-noremap c y
-noremap C Y
-noremap v p
-noremap V P
-noremap x d
-noremap X D
-noremap e c
-noremap E C
-noremap d v
-noremap D V
-noremap <C-D> <C-V>
-
-
-noremap <PageDown> <C-D><C-D>
-noremap <PageUp> <C-U><C-U>
-
-cnoremap <Left> <Space><BS><Left>
-cnoremap <Right> <Space><BS><Right>
 
 " let mapleader=" "
 
@@ -166,6 +218,9 @@ nmap <silent> <LEADER>e :NERDTreeToggle<CR>
 
 let g:lightline = {
 	\ 'colorscheme': 'gruvbox',
+	\ 'active': {
+	\ 'left': [ [ 'readonly', 'filename', 'mofified' ] ],
+	\ 'right': [ [ 'lineinfo' ] ] },
 	\ 'component': {
 	\   'lineinfo': '%3l:%-2v',
 	\ },
@@ -186,7 +241,6 @@ function! LightlineFugitive()
 	endif
 	return ''
 endfunction
-
 
 " Airline
 
