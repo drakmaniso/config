@@ -90,7 +90,7 @@ cnoremap <Left> <Space><BS><Left>
 cnoremap <Right> <Space><BS><Right>
 
 set virtualedit=block,onemore
-set guicursor=v-c-sm:hor20,n:ver25,i-ci-ve:ver25,r-cr-o:hor20
+set guicursor=v-c-sm:block,n:block,i-ci-ve:ver25,r-cr-o:hor20
 
 " Personal Stuff
 

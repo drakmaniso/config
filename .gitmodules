@@ -1,0 +1,21 @@
+[submodule "nvim/pack/plugins/start/elm-vim"]
+	path = nvim/pack/plugins/start/elm-vim
+	url = https://github.com/ElmCast/elm-vim
+[submodule "nvim/pack/plugins/start/lightline.vim"]
+	path = nvim/pack/plugins/start/lightline.vim
+	url = https://github.com/itchyny/lightline.vim
+[submodule "nvim/pack/plugins/start/lightline-gruvbox.vim"]
+	path = nvim/pack/plugins/start/lightline-gruvbox.vim
+	url = https://github.com/shinchu/lightline-gruvbox.vim
+[submodule "nvim/pack/plugins/start/vim-gruvbox8"]
+	path = nvim/pack/plugins/start/vim-gruvbox8
+	url = https://github.com/lifepillar/vim-gruvbox8
+[submodule "nvim/pack/plugins/start/vim-commentary"]
+	path = nvim/pack/plugins/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule "nvim/pack/plugins/start/vim-vinegar"]
+	path = nvim/pack/plugins/start/vim-vinegar
+	url = https://github.com/tpope/vim-vinegar
+[submodule "nvim/pack/plugins/start/vim-flog"]
+	path = nvim/pack/plugins/start/vim-flog
+	url = https://github.com/rbong/vim-flog
