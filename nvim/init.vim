@@ -1,49 +1,49 @@
 " Experimental modernization
 
 noremap i k
-noremap I <BS>vk<SPACE>
-vnoremap i vk
+" noremap I <BS>vk<SPACE>
+noremap I bve
 vnoremap I k
 noremap <C-W>i <C-W>k
 noremap wi <C-W>k
 
 noremap j <BS>
 noremap J <BS>v
-vnoremap j v
 vnoremap J <BS>
 noremap <C-W>j <C-W>h
 noremap wj <C-W>h
 
 noremap k j
-noremap K vj<BS>
-vnoremap k vjl
+" noremap K vj<BS>
+noremap K V
 vnoremap K j
 noremap <C-W>k <C-W>j
 noremap wk <C-W>j
 
 noremap l <SPACE>
 noremap L v
-vnoremap l v<SPACE>
 vnoremap L <SPACE>
 noremap <C-W>l <C-W>l
 noremap wl <C-W>l
 
 noremap u b
 noremap U <BS>vb
-vnoremap u vhb
 vnoremap U b
+
 noremap o el
 noremap O ve
-vnoremap o vel
 vnoremap O e
 
-noremap m ^
-noremap M hv^
-vnoremap m v^
-vnoremap M ^
+noremap m 0
+noremap M hv0
+vnoremap M 0
+
+noremap , ^
+noremap < hv^
+vnoremap < ^
+
 noremap . $l
 noremap > v$<BS>
-vnoremap . v$l
 vnoremap > $<BS>
 
 noremap y <C-U>
@@ -53,7 +53,6 @@ vnoremap h v<C-D>
 
 vnoremap <C-j> <
 vnoremap <C-l> >
-"noremap m :
 
 nnoremap <BS> dh
 vnoremap <BS> d
@@ -64,21 +63,20 @@ noremap w <C-W>
 
 noremap <SPACE> i
 vnoremap <SPACE> c
-noremap z u
 noremap <CR> o
 noremap <S-CR> <S-O>
-noremap $ ;
+
+noremap z u
+noremap Z <C-R>
 noremap c y
 noremap C Y
-noremap v p
-noremap V P
+noremap v P
+noremap V p
 noremap x d
 noremap X D
-noremap e c
-noremap E C
-noremap d v
-noremap D V
-noremap <C-D> <C-V>
+
+vnoremap p o
+vnoremap P O
 
 inoremap <ESC> <ESC>l
 vnoremap <ESC> <ESC>l
@@ -90,7 +88,7 @@ cnoremap <Left> <Space><BS><Left>
 cnoremap <Right> <Space><BS><Right>
 
 set virtualedit=block,onemore
-set guicursor=v-c-sm:block,n:block,i-ci-ve:ver25,r-cr-o:hor20
+set guicursor=v-c-sm:block,n:ver25,i-ci-ve:hor20,r-cr-o:hor20
 
 " Personal Stuff
 

@@ -22,9 +22,6 @@
 [submodule "nvim/pack/plugins/start/nerdtree"]
 	path = nvim/pack/plugins/start/nerdtree
 	url = https://github.com/preservim/nerdtree
-[submodule "nvim/pack/plugins/start/vim-surround"]
-	path = nvim/pack/plugins/start/vim-surround
-	url = https://github.com/tpope/vim-surround
 [submodule "nvim/pack/plugins/start/vim-fugitive"]
 	path = nvim/pack/plugins/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
