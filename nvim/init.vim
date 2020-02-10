@@ -2,57 +2,33 @@
 
 noremap i k
 " noremap I <BS>vk<SPACE>
-noremap I bve
-vnoremap I k
+noremap I {
 noremap <C-W>i <C-W>k
-noremap wi <C-W>k
 
 noremap j <BS>
-noremap J <BS>v
-vnoremap J <BS>
+noremap J B
 noremap <C-W>j <C-W>h
-noremap wj <C-W>h
 
 noremap k j
 " noremap K vj<BS>
-noremap K V
-vnoremap K j
+noremap K }
 noremap <C-W>k <C-W>j
-noremap wk <C-W>j
 
 noremap l <SPACE>
-noremap L v
-vnoremap L <SPACE>
+noremap L e
 noremap <C-W>l <C-W>l
-noremap wl <C-W>l
 
-noremap u b
-noremap U <BS>vb
-vnoremap U b
+noremap u ^
+noremap U 0
 
-noremap o el
-noremap O ve
-vnoremap O e
-
-noremap m 0
-noremap M hv0
-vnoremap M 0
-
-noremap , ^
-noremap < hv^
-vnoremap < ^
-
-noremap . $l
-noremap > v$<BS>
-vnoremap > $<BS>
+noremap o $l
+noremap O $l
 
 noremap y <C-U>
-vnoremap y v<C-U>
-noremap h <C-D>
-vnoremap h v<C-D>
+noremap Y H
 
-vnoremap <C-j> <
-vnoremap <C-l> >
+noremap h <C-D>
+noremap H L
 
 nnoremap <BS> dh
 vnoremap <BS> d
@@ -64,19 +40,23 @@ noremap w <C-W>
 noremap <SPACE> i
 vnoremap <SPACE> c
 noremap <CR> o
-noremap <S-CR> <S-O>
+
+noremap s v
+noremap S <C-V>
+noremap d viw
+noremap D V
 
 noremap z u
 noremap Z <C-R>
 noremap c y
 noremap C Y
-noremap v P
-noremap V p
+noremap v p
+noremap V P
 noremap x d
 noremap X D
 
-vnoremap p o
-vnoremap P O
+" vnoremap p o
+" vnoremap P O
 
 inoremap <ESC> <ESC>l
 vnoremap <ESC> <ESC>l
@@ -88,7 +68,7 @@ cnoremap <Left> <Space><BS><Left>
 cnoremap <Right> <Space><BS><Right>
 
 set virtualedit=block,onemore
-set guicursor=v-c-sm:block,n:ver25,i-ci-ve:hor20,r-cr-o:hor20
+"set guicursor=v-c-sm:block,n:ver25,i-ci-ve:hor20,r-cr-o:hor20
 
 " Personal Stuff
 
@@ -108,6 +88,28 @@ set synmaxcol=250
 colorscheme gruvbox8
 
 match ExtraWhiteSpace /^\ \+/
+
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+hi ExtraWhiteSpace none
+hi Constant none
+hi String none
+hi Character none
+hi Number none
+hi Boolean none
+hi Float none
+
+hi Identifier none
+" hi Function none
+
+hi Include none
+
+hi Operator none
+hi Delimiter none
+
+hi! link Typedef Keyword
 
 " Personal Stuff
 
@@ -176,8 +178,8 @@ inoremap <A-j> <C-\><C-N><C-w>j
 inoremap <A-k> <C-\><C-N><C-w>k
 inoremap <A-l> <C-\><C-N><C-w>l
 
-nnoremap <C-j> <C-e>
-nnoremap <C-k> <C-y>
+" nnoremap <C-j> <C-e>
+" nnoremap <C-k> <C-y>
 
 nnoremap <TAB> :b#<CR>
 set wildcharm=<C-Z>
