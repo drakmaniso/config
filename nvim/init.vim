@@ -1,49 +1,76 @@
 " Experimental modernization
 
 noremap i k
-" noremap I <BS>vk<SPACE>
-noremap I {
-noremap <C-W>i <C-W>k
+noremap I V
+vnoremap I k
+noremap <c-w>i <c-w>k
 
-noremap j <BS>
-noremap J B
+noremap j h
+noremap J hv
+vnoremap J h
 noremap <C-W>j <C-W>h
 
 noremap k j
-" noremap K vj<BS>
-noremap K }
+noremap K vjh
+vnoremap K j
 noremap <C-W>k <C-W>j
 
-noremap l <SPACE>
-noremap L e
+noremap l l
+noremap L v
+vnoremap L l
 noremap <C-W>l <C-W>l
 
-noremap u ^
-noremap U 0
+noremap u b
+noremap U hvb
+noremap <C-LEFT> b
 
-noremap o $l
-noremap O $l
+noremap o el
+vnoremap o e
+noremap O ve
+vnoremap O e
+noremap <C-RIGHT> e
+vnoremap <C-RIGHT> e
+
+noremap p ^
+noremap P hv^
+noremap ; $l
+vnoremap ; $h
+noremap : v$h
+vnoremap : $h
 
 noremap y <C-U>
 noremap Y H
+noremap <PageUp> <C-U>
 
 noremap h <C-D>
 noremap H L
+noremap <PageDown> <C-D>
+
+noremap m f
+noremap M F
 
 nnoremap <BS> dh
 vnoremap <BS> d
 nnoremap <C-H> dh
 vnoremap <C-H> d
 
-noremap w <C-W>
-
 noremap <SPACE> i
 vnoremap <SPACE> c
+noremap <S-SPACE> a
 noremap <CR> o
+noremap <S-CR> O
+noremap <C-CR> J
+vnoremap <CR> A
+vnoremap <S-CR> I
 
-noremap s v
-noremap S <C-V>
-noremap d viw
+noremap e s
+noremap E S
+vnoremap e c
+vnoremap E C
+
+noremap s V
+noremap d v
+noremap <C-D> <C-V>
 noremap D V
 
 noremap z u
@@ -55,22 +82,21 @@ noremap V P
 noremap x d
 noremap X D
 
-" vnoremap p o
-" vnoremap P O
+noremap a :
 
 inoremap <ESC> <ESC>l
 vnoremap <ESC> <ESC>l
 
-noremap <PageDown> <C-D><C-D>
-noremap <PageUp> <C-U><C-U>
-
 cnoremap <Left> <Space><BS><Left>
 cnoremap <Right> <Space><BS><Right>
 
+set whichwrap=b,s,h,l,<,>,[,]
 set virtualedit=block,onemore
-"set guicursor=v-c-sm:block,n:ver25,i-ci-ve:hor20,r-cr-o:hor20
+set guicursor=v-c-sm:block,n:ver25,i-ci-ve:hor20,r-cr-o:hor20
 
 " Personal Stuff
+
+" au BufRead,BufNewFile *.grace set filetype=grace
 
 set nocompatible
 
@@ -94,22 +120,30 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 hi ExtraWhiteSpace none
-hi Constant none
-hi String none
-hi Character none
-hi Number none
-hi Boolean none
-hi Float none
+hi def link String Constant
+hi def link Character Constant
+hi def link Number Constant
+hi def link Boolean Constant
+hi def link Float Constant
+
+hi def link Conditional Keyword
+hi def link Repeat Keyword
+hi def link Label Keyword
+hi Operator none
+hi def link Exception Keyword
 
 hi Identifier none
 " hi Function none
 
 hi Include none
 
-hi Operator none
 hi Delimiter none
 
 hi! link Typedef Keyword
+hi Keyword guifg=#b8bb26 guibg=NONE guisp=NONE gui=bold cterm=bold
+hi Statement guifg=#fabd2f guibg=NONE guisp=NONE gui=bold cterm=bold
+hi Constant guifg=#458588 guibg=NONE guisp=NONE gui=bold cterm=bold
+hi Comment guifg=#d3869b guibg=NONE guisp=NONE gui=bold cterm=bold
 
 " Personal Stuff
 
@@ -211,7 +245,22 @@ let NERDTreeQuitOnOpen=1
 let NERDTreeAutoDeleteBuffer=1
 let NERDTreeIgnore=['\~','\.exe$','\.o$','\.obj$','\.hi$']
 let NERDTreeRespectWildIgnore=1
+let NERDTreeCustomOpenArgs={'file': {'reuse': '', 'where': 'p'}}
 nmap <silent> <LEADER>e :NERDTreeToggle<CR>
+let g:loaded_nerdtree_custom_maps = 1
+" autocmd VimEnter * call NERDTreeAddKeyMap({
+"	\ 'key': 'i',
+"	\ 'callback': "NERDTreeMenuUp" })
+"autocmd VimEnter * call NERDTreeAddKeyMap({
+"	\ 'key': 'k',
+"	\ 'callback': "NERDTreeMenuDown" })
+let g:NERDTreeMapOpenSplit = "s"
+let g:NERDTreeMapOpenVSplit = "v"
+let g:NERDTreeMapJumpLastChild = "I"
+let g:NERDTreeMapJumpFirstChild = "K"
+let g:NERDTreeMapJumpNextSibling = "<C-I>"
+let g:NERDTreeMapJumpPrevSibling = "<C-K>"
+let g:NERDTreeMapToggleHidden = "H"
 
 
 " Lightline "
