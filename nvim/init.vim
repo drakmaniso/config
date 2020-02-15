@@ -22,6 +22,7 @@ noremap <C-W>l <C-W>l
 
 noremap u b
 noremap U hvb
+vnoremap U b
 noremap <C-LEFT> b
 
 noremap o el
@@ -68,10 +69,7 @@ noremap E S
 vnoremap e c
 vnoremap E C
 
-noremap s V
-noremap d v
-noremap <C-D> <C-V>
-noremap D V
+noremap <C-I> <C-V>
 
 noremap z u
 noremap Z <C-R>
