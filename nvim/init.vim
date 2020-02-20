@@ -4,21 +4,31 @@ noremap i k
 noremap I V
 vnoremap I k
 noremap <c-w>i <c-w>k
+noremap <c-w>I <c-w>K
+noremap wi <c-w>k
+noremap wI <c-w>K
 
 noremap j h
 noremap J hv
 vnoremap J h
 noremap <C-W>j <C-W>h
+noremap <C-W>J <C-W>H
+noremap wj <C-W>h
+noremap wJ <C-W>H
 
 noremap k j
 noremap K vjh
 vnoremap K j
 noremap <C-W>k <C-W>j
+noremap <C-W>K <C-W>J
+noremap wk <C-W>j
+noremap wK <C-W>J
 
 noremap l l
 noremap L v
 vnoremap L l
-noremap <C-W>l <C-W>l
+noremap wl <C-W>l
+noremap wL <C-W>L
 
 noremap u b
 noremap U hvb
@@ -81,6 +91,8 @@ noremap x d
 noremap X D
 
 noremap a :
+
+noremap w <C-W>
 
 inoremap <ESC> <ESC>l
 vnoremap <ESC> <ESC>l
@@ -193,7 +205,7 @@ set nosmarttab
 set softtabstop=0
 set shiftwidth=0
 
-set splitbelow
+set nosplitbelow
 set splitright
 set helpheight=5
 
@@ -336,6 +348,7 @@ let g:go_highlight_functions = 1
 
 " Elm
 
+au FileType elm set makeprg=elm\ make\ src/Main.elm\ --output=www/app.js
 let g:elm_make_output_file = "app.js"
 
 
