@@ -125,14 +125,14 @@ colorscheme gruvbox8
 
 match ExtraWhiteSpace /^\ \+/
 
-map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+map <F10> aecho "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 hi ExtraWhiteSpace none
 hi def link String Constant
 hi def link Character Constant
-hi def link Number Constant
+hi def link Number none
 hi def link Boolean Constant
 hi def link Float Constant
 
@@ -149,10 +149,23 @@ hi Include none
 
 hi Delimiter none
 
+hi def link cStatement Keyword
+hi def link cStructure Keyword
+hi def link cConditional Keyword
+hi def link cRepeat Keyword
+hi def link cString Constant
+hi def link cCharacter Constant
+hi def link cFormat Constant
+hi def link cSpecial Constant
+hi def link cNumber Constant
+hi def link cConstant none
+hi def link cType none
+hi def link cppType none
+
 hi! link Typedef Keyword
 hi Keyword guifg=#b8bb26 guibg=NONE guisp=NONE gui=bold cterm=bold
 hi Statement guifg=#fabd2f guibg=NONE guisp=NONE gui=bold cterm=bold
-hi Constant guifg=#458588 guibg=NONE guisp=NONE gui=bold cterm=bold
+hi Constant guifg=#83a598 guibg=NONE guisp=NONE gui=bold cterm=bold
 hi Comment guifg=#d3869b guibg=NONE guisp=NONE gui=bold cterm=bold
 
 " Personal Stuff
