@@ -65,9 +65,9 @@ NOTE: These are all the same length.  If you do a search/replace
 #define _____________________FUNCPAD_L3_____________________ KC_KP_0, KC_KP_1, KC_KP_2, KC_KP_3, KC_PPLS, KC_NLCK
 #define _____________________FUNCPAD_L4_____________________ KC_LCTL, KC_LALT, KC_LGUI, FUNCPAD, KC_LSFT, KC_SPC
 
-#define _____________________FUNCPAD_R1_____________________ ADJUST,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_PSCR
-#define _____________________FUNCPAD_R2_____________________ XXXXXXX, KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_SLCK
-#define _____________________FUNCPAD_R3_____________________ FUNCPAD, KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_BRK
+#define _____________________FUNCPAD_R1_____________________ ADJUST,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5
+#define _____________________FUNCPAD_R2_____________________ XXXXXXX, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10
+#define _____________________FUNCPAD_R3_____________________ FUNCPAD, KC_F11,  KC_F12,  KC_PSCR, KC_SLCK, KC_BRK
 #define _____________________FUNCPAD_R4_____________________ KC_PENT, KC_RSFT, KC_TAB,  KC_RGUI, KC_RALT, KC_RCTL
 
 
