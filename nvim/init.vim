@@ -130,24 +130,25 @@ map <F10> aecho "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 hi ExtraWhiteSpace none
-hi def link String Constant
-hi def link Character Constant
-hi def link Number none
-hi def link Boolean Constant
-hi def link Float Constant
-
-hi def link Conditional Keyword
-hi def link Repeat Keyword
-hi def link Label Keyword
-hi Operator none
-hi def link Exception Keyword
-
-hi Identifier none
-" hi Function none
-
-hi Include none
-
-hi Delimiter none
+hi! def link String Constant
+hi! def link Character Constant
+hi! def link Number Constant
+"hi! def link Number none
+hi! def link Boolean Constant
+hi! def link Float Constant
+hi! def link Conditional Keyword
+hi! def link Repeat Keyword
+hi! def link Label Keyword
+hi! def link Statement Keyword
+hi! link Typedef Keyword
+hi! Operator none
+"hi! link Operator Keyword
+hi! def link Exception Keyword
+hi! Identifier none
+hi! Function none
+hi! Include none
+hi! Delimiter none
+hi! Special none
 
 hi def link cStatement Keyword
 hi def link cStructure Keyword
@@ -162,11 +163,19 @@ hi def link cConstant none
 hi def link cType none
 hi def link cppType none
 
-hi! link Typedef Keyword
-hi Keyword guifg=#b8bb26 guibg=NONE guisp=NONE gui=bold cterm=bold
-hi Statement guifg=#fabd2f guibg=NONE guisp=NONE gui=bold cterm=bold
-hi Constant guifg=#83a598 guibg=NONE guisp=NONE gui=bold cterm=bold
-hi Comment guifg=#d3869b guibg=NONE guisp=NONE gui=bold cterm=bold
+hi! def link htmlTag Keyword
+hi! def link htmlEndTag Keyword
+
+hi Keyword guifg=#fabd2f guibg=NONE guisp=NONE gui=NONE cterm=NONE
+"hi Keyword guifg=#b8bb26 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+"hi Keyword guifg=#ebdbb2 guibg=NONE guisp=NONE gui=bold cterm=bold
+"hi Statement guifg=#fabd2f guibg=NONE guisp=NONE gui=NONE cterm=NONE
+hi Constant guifg=#8ec07c guibg=NONE guisp=NONE gui=NONE cterm=NONE
+"hi Constant guifg=#b8bb26 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+"hi Constant guifg=#83a598 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+hi Comment guifg=#d3869b guibg=NONE guisp=NONE gui=italic cterm=italic
+hi Todo guifg=#fb4934 guibg=NONE guisp=NONE gui=bold,italic cterm=bold,italic
+hi Title guifg=NONE guibg=NONE guisp=NONE gui=bold cterm=bold
 
 " Personal Stuff
 
@@ -214,7 +223,7 @@ set nosmartindent
 set nocindent
 set tabstop=4
 set noexpandtab
-set nosmarttab
+set smarttab
 set softtabstop=0
 set shiftwidth=0
 
