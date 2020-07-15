@@ -1,108 +1,199 @@
 " Experimental modernization
 
-noremap i k
-noremap I V
-vnoremap I k
-noremap <c-w>i <c-w>k
-noremap <c-w>I <c-w>K
-noremap wi <c-w>k
-noremap wI <c-w>K
+if 1
 
-noremap j h
-noremap J hv
-vnoremap J h
-noremap <C-W>j <C-W>h
-noremap <C-W>J <C-W>H
-noremap wj <C-W>h
-noremap wJ <C-W>H
+	noremap i k
+	" noremap I V
+	" vnoremap I k
+	noremap <c-w>i <c-w>k
+	noremap <c-w>I <c-w>K
 
-noremap k j
-noremap K vjh
-vnoremap K j
-noremap <C-W>k <C-W>j
-noremap <C-W>K <C-W>J
-noremap wk <C-W>j
-noremap wK <C-W>J
+	noremap j h
+	" noremap J hv
+	" vnoremap J h
+	noremap <C-W>j <C-W>h
+	noremap <C-W>J <C-W>H
 
-noremap l l
-noremap L v
-vnoremap L l
-noremap wl <C-W>l
-noremap wL <C-W>L
+	noremap k j
+	" noremap K V
+	" vnoremap K j
+	noremap <C-W>k <C-W>j
+	noremap <C-W>K <C-W>J
 
-noremap u b
-noremap U hvb
-vnoremap U b
-noremap <C-LEFT> b
+	noremap l l
+	" noremap L v
+	" vnoremap L l
+	noremap <C-W>l <C-W>l
+	noremap <C-W>L <C-W>L
 
-noremap o el
-vnoremap o e
-noremap O ve
-vnoremap O e
-noremap <C-RIGHT> e
-vnoremap <C-RIGHT> e
+	noremap <C-K> o
+	noremap <C-J> I
+	noremap <C-L> A
 
-noremap p ^
-noremap P hv^
-noremap ; $l
-vnoremap ; $h
-noremap : v$h
-vnoremap : $h
+	noremap u b
+	" noremap U hvlb
+	" vnoremap U b
 
-noremap y <C-U>
-noremap Y H
-noremap <PageUp> <C-U>
+	noremap o hel
+	vnoremap o e
+	" noremap O vhe
+	" vnoremap O e
 
-noremap h <C-D>
-noremap H L
-noremap <PageDown> <C-D>
+	noremap h ^
+	" noremap H hv^
+	noremap y 0
+	" noremap Y v0
+	" vnoremap Y 0
+	noremap p $l
+	vnoremap p $h
+	" noremap P v$h
+	" vnoremap P $h
+	
+	noremap I <C-U>
+	noremap K <C-D>
+	noremap J zh
+	noremap L zl
+	noremap U <C-W>W
+	noremap O <C-W>w
 
-noremap m f
-noremap M F
+	noremap r <ESC>
+	noremap rr V
+	vnoremap rr V
+	noremap <C-R> <C-V>
+	noremap rj hv
+	noremap rl v
+	noremap ri hvkl
+	noremap rk vjh
+	noremap ru hvlb
+	noremap ro vhe
+	noremap rh v^
+	noremap ry v0
+	noremap rp v$h
+	noremap rJ v^
+	noremap rU v0
+	noremap rL v$h
+	noremap rO v$
 
-nnoremap <BS> dh
-vnoremap <BS> d
-nnoremap <C-H> dh
-vnoremap <C-H> d
+	noremap s f
+	noremap S F
 
-noremap <SPACE> i
-vnoremap <SPACE> c
-noremap <S-SPACE> a
-noremap <CR> o
-noremap <S-CR> O
-noremap <C-CR> J
-vnoremap <CR> A
-vnoremap <S-CR> I
+	noremap e <C-U>
+	noremap d <C-D>
+	noremap <PageUp> <C-U>
+	noremap <PageDown> <C-D>
 
-noremap e s
-noremap E S
-vnoremap e c
-vnoremap E C
+	nnoremap <BS> dh
+	vnoremap <BS> "_d
+	nnoremap <C-H> dh
+	vnoremap <C-H> "_d
 
-noremap <C-I> <C-V>
+	noremap <SPACE> i
+	vnoremap <SPACE> c
+	noremap <CR> :
 
-noremap z u
-noremap Z <C-R>
-noremap c y
-noremap C Y
-noremap v p
-noremap V P
-noremap x d
-noremap X D
+	noremap z u
+	noremap Z <C-R>
+	noremap c y
+	noremap C Y
+	noremap v p
+	noremap V P
+	vnoremap v "_dP
+	vnoremap V "_dP
+	noremap x d
+	noremap X D
 
-noremap a :
+	cnoremap <Left> <Space><BS><Left>
+	cnoremap <Right> <Space><BS><Right>
+	
+	set guicursor=v-c-sm:block,n:ver25,i-ci-ve:block,r-cr-o:hor20
 
-noremap w <C-W>
+else
 
-inoremap <ESC> <ESC>l
-vnoremap <ESC> <ESC>l
+	noremap i k
+	noremap I {
+	noremap <C-I> <C-U>
+	noremap <c-w>i <c-w>k
+	noremap <c-w>I <c-w>K
+	noremap wi <c-w>k
+	noremap wI <c-w>K
 
-cnoremap <Left> <Space><BS><Left>
-cnoremap <Right> <Space><BS><Right>
+	noremap j h
+	noremap J ^
+	noremap <C-W>j <C-W>h
+	noremap <C-W>J <C-W>H
+	noremap wj <C-W>h
+	noremap wJ <C-W>H
+
+	noremap k j
+	noremap K }
+	noremap <C-K> <C-D>
+	noremap <C-W>k <C-W>j
+	noremap <C-W>K <C-W>J
+	noremap wk <C-W>j
+	noremap wK <C-W>J
+
+	noremap l l
+	noremap L $
+	noremap wl <C-W>l
+	noremap wL <C-W>L
+
+	noremap u b
+	noremap U 0
+
+	noremap o el
+	vnoremap o e
+	noremap O $l
+
+	noremap y <C-U>
+	noremap h <C-D>
+	noremap <PageUp> <C-U>
+	noremap <PageDown> <C-D>
+
+	noremap e v
+	noremap E V
+	vnoremap e V
+	noremap <C-E> <C-V>
+
+	noremap <SPACE> i
+	vnoremap <SPACE> c
+
+	nnoremap <BS> dh
+	vnoremap <BS> "_d
+	nnoremap <C-H> dh
+	vnoremap <C-H> "_d
+
+	noremap <CR> :
+
+	noremap z u
+	noremap Z <C-R>
+	noremap c y
+	noremap C Y
+	noremap v p
+	noremap V P
+	vnoremap v "_dP
+	vnoremap V "_dP
+	noremap x d
+	noremap X D
+
+	noremap w <C-W>
+
+	noremap q lbvhe
+
+	cnoremap <Left> <Space><BS><Left>
+	cnoremap <Right> <Space><BS><Right>
+	
+	" set guicursor=v-c-sm:block,n:ver25,i-ci-ve:hor20,r-cr-o:hor20
+
+endif
 
 set whichwrap=b,s,h,l,<,>,[,]
 set virtualedit=block,onemore
-set guicursor=v-c-sm:block,n:ver25,i-ci-ve:hor20,r-cr-o:hor20
+
+let &t_SH = "\<Esc>[1 q"
+let &t_SI = "\<Esc>[3 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[5 q"
+
 
 " Personal Stuff
 
@@ -116,68 +207,105 @@ syntax on
 filetype plugin indent on
 set termguicolors
 augroup MyColors
-	autocmd!
-	autocmd ColorScheme * highlight ExtraWhiteSpace ctermbg=red guibg=red | highlight Cursor guifg=white guibg=black
+    autocmd!
+    "autocmd ColorScheme * hi ExtraWhiteSpace ctermfg=red guifg=red | highlight Cursor guifg=white guibg=black
+    "autocmd ColorScheme * hi ExtraWhiteSpace none
+    autocmd ColorScheme * hi! link String Constant
+    autocmd ColorScheme * hi! link Character Constant
+    autocmd ColorScheme * hi! link Number Constant
+    autocmd ColorScheme * hi! link Boolean Constant
+    autocmd ColorScheme * hi! link Float Constant
+    autocmd ColorScheme * hi! link Conditional Keyword
+    autocmd ColorScheme * hi! link Repeat Keyword
+    autocmd ColorScheme * hi! link Label Keyword
+    "autocmd ColorScheme * hi! link Statement Keyword
+    autocmd ColorScheme * hi! link Typedef Keyword
+    autocmd ColorScheme * hi! Operator none
+    "autocmd ColorScheme * hi! link Operator Normal
+    autocmd ColorScheme * hi! link Exception Keyword
+    autocmd ColorScheme * hi! Identifier none
+    "autocmd ColorScheme * hi! Function none
+    autocmd ColorScheme * hi! Type none
+    autocmd ColorScheme * hi! Include none
+	autocmd ColorScheme * hi! link PreProc Statement
+    "autocmd ColorScheme * hi! Delimiter none
+    autocmd ColorScheme * hi! Special none
+    autocmd ColorScheme * hi! link cStatement Keyword
+    autocmd ColorScheme * hi! link cStructure Keyword
+    autocmd ColorScheme * hi! link cConditional Keyword
+    autocmd ColorScheme * hi! link cRepeat Keyword
+    autocmd ColorScheme * hi! link cString Constant
+    autocmd ColorScheme * hi! link cCharacter Constant
+    autocmd ColorScheme * hi! link cFormat Constant
+    autocmd ColorScheme * hi! link cSpecial Constant
+    autocmd ColorScheme * hi! link cNumber Constant
+    autocmd ColorScheme * hi! link cConstant none
+    autocmd ColorScheme * hi! link cType none
+    autocmd ColorScheme * hi! link cppType none
+    autocmd ColorScheme * hi! link htmlTag Keyword
+    autocmd ColorScheme * hi! link htmlEndTag Keyword
+    autocmd ColorScheme * hi! link javaScriptParens Delimiter
+    autocmd ColorScheme * hi! link javaScriptBraces Delimiter
+    autocmd ColorScheme * hi! link elmAlias Keyword
 augroup END
-set background=dark
 set synmaxcol=250
-colorscheme gruvbox8
+"colorscheme gruvbox8
+set background=light
+colorscheme mygroove
 
-match ExtraWhiteSpace /^\ \+/
+"match ExtraWhiteSpace /^\ \+/
 
-map <F10> aecho "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+map <F10> <CR>echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
-hi ExtraWhiteSpace none
-hi! def link String Constant
-hi! def link Character Constant
-hi! def link Number Constant
-"hi! def link Number none
-hi! def link Boolean Constant
-hi! def link Float Constant
-hi! def link Conditional Keyword
-hi! def link Repeat Keyword
-hi! def link Label Keyword
-hi! def link Statement Keyword
-hi! link Typedef Keyword
-hi! Operator none
-"hi! link Operator Keyword
-hi! def link Exception Keyword
-hi! Identifier none
-hi! Function none
-hi! Include none
-hi! Delimiter none
-hi! Special none
+"set background=dark
+"hi Normal guifg=#fbf1c7 guibg=#1d2021 guisp=NONE gui=NONE cterm=NONE
+"hi Keyword guifg=#fabd2f guibg=NONE guisp=NONE gui=NONE cterm=NONE
+"hi Function guifg=#fe8019 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+"hi Constant guifg=#8ec07c guibg=NONE guisp=NONE gui=NONE cterm=NONE
+"hi Delimiter guifg=#bdae93 guisp=NONE gui=NONE cterm=NONE
+"hi Operator guifg=#bdae93 guisp=NONE gui=NONE cterm=NONE
+"hi Comment guifg=#d3869b guibg=NONE guisp=NONE gui=italic cterm=italic
+"hi Todo guifg=#fb4934 guibg=NONE guisp=NONE gui=bold,italic cterm=bold,italic
+"hi Title guifg=NONE guibg=NONE guisp=NONE gui=bold cterm=bold
 
-hi def link cStatement Keyword
-hi def link cStructure Keyword
-hi def link cConditional Keyword
-hi def link cRepeat Keyword
-hi def link cString Constant
-hi def link cCharacter Constant
-hi def link cFormat Constant
-hi def link cSpecial Constant
-hi def link cNumber Constant
-hi def link cConstant none
-hi def link cType none
-hi def link cppType none
+"set background=light
+"hi Normal guifg=#3c3836 guibg=#fbf1c7 guisp=NONE gui=NONE cterm=NONE
+"hi Keyword guifg=#076678 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+"hi Function guifg=#79740e guibg=NONE guisp=NONE gui=NONE cterm=NONE
+"hi Statement guifg=#79740e guibg=NONE guisp=NONE gui=NONE cterm=NONE
+"hi Constant guifg=#427b58 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+"hi Delimiter guifg=#b57614 guisp=NONE gui=NONE cterm=NONE
+"hi Operator guifg=#b57614 guisp=NONE gui=NONE cterm=NONE
+"hi Comment guifg=#8f3f71 guibg=NONE guisp=NONE gui=italic cterm=italic
+"hi Todo guifg=#fb4934 guibg=NONE guisp=NONE gui=bold,italic cterm=bold,italic
+"hi Title guifg=NONE guibg=NONE guisp=NONE gui=bold cterm=bold
 
-hi! def link htmlTag Keyword
-hi! def link htmlEndTag Keyword
-
-hi Keyword guifg=#fabd2f guibg=NONE guisp=NONE gui=NONE cterm=NONE
-"hi Keyword guifg=#b8bb26 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-"hi Keyword guifg=#ebdbb2 guibg=NONE guisp=NONE gui=bold cterm=bold
-"hi Statement guifg=#fabd2f guibg=NONE guisp=NONE gui=NONE cterm=NONE
-hi Constant guifg=#8ec07c guibg=NONE guisp=NONE gui=NONE cterm=NONE
-"hi Constant guifg=#b8bb26 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-"hi Constant guifg=#83a598 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-hi Comment guifg=#d3869b guibg=NONE guisp=NONE gui=italic cterm=italic
-hi Todo guifg=#fb4934 guibg=NONE guisp=NONE gui=bold,italic cterm=bold,italic
-hi Title guifg=NONE guibg=NONE guisp=NONE gui=bold cterm=bold
+"set background=light
+"hi Normal ctermfg=15 ctermbg=0 guisp=NONE gui=NONE cterm=NONE
+"hi Keyword ctermfg=12 ctermbg=NONE guisp=NONE gui=NONE cterm=NONE
+"hi Function  ctermfg=10 ctermbg=NONE guisp=NONE gui=NONE cterm=NONE
+"hi Constant ctermfg=14 ctermbg=NONE guisp=NONE gui=NONE cterm=NONE
+"hi Delimiter ctermfg=8 guisp=NONE gui=NONE cterm=NONE
+"hi Operator ctermfg=8 guisp=NONE gui=NONE cterm=NONE
+"hi Comment ctermfg=13 ctermbg=NONE guisp=NONE gui=italic cterm=italic
+"hi Todo ctermfg=1 ctermbg=NONE guisp=NONE gui=bold,italic cterm=bold,italic
+"hi Title ctermfg=NONE ctermbg=NONE guisp=NONE gui=bold cterm=bold
 
 " Personal Stuff
+
+set nocursorline
+"hi CursorLine guibg=#1d2021
+"au InsertEnter * hi CursorLine guibg=#000000
+"au InsertLeave * hi CursorLine guibg=#1d2021
+
+set laststatus=2
+set statusline=%f%(\ [%M%R%q]%)%=%4c,%4l
+" set statusline+=%#NormalColor#%{(mode()=='n')?'\ \ NORMAL\ ':''}
+" set statusline+=%#InsertColor#%{(mode()=='i')?'\ \ INSERT\ ':''}
+" set statusline+=%#ReplaceColor#%{(mode()=='R')?'\ \ REPLACE\ ':''}
+" set statusline+=%#VisualColor#%{(mode()=='v')?'\ \ VISUAL\ ':''}
 
 set cmdheight=1
 set switchbuf=useopen,usetab
@@ -258,7 +386,7 @@ nmap <leader>w :wa<CR>
 " nmap <LEADER>u :Lexplore
 "inoremap (<CR> (<CR>)<ESC>O
 "inoremap {<CR> {<CR>}<ESC>O
-" nmap - :Explore<CR>
+" nmap silent e <CR>Explore<CR>
 
 
 " netrw
@@ -270,15 +398,14 @@ let g:netrw_usetab=1
 let g:netrw_special_syntax='true'
 
 " NERD Tree
-"let loaded_nerd_tree=1
+" let loaded_nerd_tree=1
 let NERDTreeMinimalUI=1
 let NERDTreeWinSize=20
-let NERDTreeQuitOnOpen=1
+"let NERDTreeQuitOnOpen=1
 let NERDTreeAutoDeleteBuffer=1
 let NERDTreeIgnore=['\~','\.exe$','\.o$','\.obj$','\.hi$']
 let NERDTreeRespectWildIgnore=1
 let NERDTreeCustomOpenArgs={'file': {'reuse': '', 'where': 'p'}}
-nmap <silent> <LEADER>e :NERDTreeToggle<CR>
 let g:loaded_nerdtree_custom_maps = 1
 " autocmd VimEnter * call NERDTreeAddKeyMap({
 "	\ 'key': 'i',
@@ -293,12 +420,17 @@ let g:NERDTreeMapJumpFirstChild = "K"
 let g:NERDTreeMapJumpNextSibling = "<C-I>"
 let g:NERDTreeMapJumpPrevSibling = "<C-K>"
 let g:NERDTreeMapToggleHidden = "H"
+let g:NERDTreeMapActivateNode = "e"
+let g:NERDTreeMapOpenRecursively = ""
+let g:NERDTreeMapUpdirKeepOpen = ""
 
+nmap <silent> t <CR>NERDTreeFocus<CR>
+au VimEnter * NERDTreeToggleVCS
 
 " Lightline "
 
 let g:lightline = {
-	\ 'colorscheme': 'gruvbox',
+	\ 'colorscheme': 'mygroove',
 	\ 'active': {
 	\ 'left': [ [ 'readonly', 'filename', 'mofified' ] ],
 	\ 'right': [ [ 'lineinfo' ] ] },
@@ -370,8 +502,8 @@ let g:go_highlight_functions = 1
 
 " Elm
 
-au FileType elm set makeprg=elm\ make\ src/Main.elm\ --output=www/app.js
-let g:elm_make_output_file = "app.js"
+au FileType elm set makeprg=elm\ make\ src/Main.elm\ --output=elm.js
+let g:elm_make_output_file = "elm.js"
 
 
 " Haskell
@@ -385,7 +517,7 @@ au BufNewFile,BufRead *.html setlocal et ts=2 sw=2 sts=2
 au BufNewFile,BufRead *.css setlocal et ts=2 sw=2 sts=2
 au BufNewFile,BufRead *.js setlocal et ts=2 sw=2 sts=2
 let g:prettier#autoformat = 1
-autocmd BufWritePre *.js Prettier
+"autocmd BufWritePre *.js Prettier
 "autocmd FileType javascript set formatprg=standard\ --fix\ --stdin
 "autocmd BufWritePre *.js exe "normal! gggqG\<C-o>\<C-o>"
 autocmd FileType javascript nmap <leader>q gggqG<C-o><C-o>
