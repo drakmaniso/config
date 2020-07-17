@@ -19,9 +19,6 @@
 [submodule "nvim/pack/plugins/start/vim-flog"]
 	path = nvim/pack/plugins/start/vim-flog
 	url = https://github.com/rbong/vim-flog
-[submodule "nvim/pack/plugins/start/nerdtree"]
-	path = nvim/pack/plugins/start/nerdtree
-	url = https://github.com/preservim/nerdtree
 [submodule "nvim/pack/plugins/start/vim-fugitive"]
 	path = nvim/pack/plugins/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
