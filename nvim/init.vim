@@ -89,7 +89,7 @@ if 1
 
 	noremap <SPACE> i
 	vnoremap <SPACE> c
-	noremap <CR> :
+	"noremap <CR> :
 
 	noremap z u
 	noremap Z <C-R>
@@ -255,7 +255,7 @@ colorscheme mygroove
 
 "match ExtraWhiteSpace /^\ \+/
 
-map <F10> <CR>echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
@@ -292,6 +292,11 @@ map <F10> <CR>echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> tr
 "hi Comment ctermfg=13 ctermbg=NONE guisp=NONE gui=italic cterm=italic
 "hi Todo ctermfg=1 ctermbg=NONE guisp=NONE gui=bold,italic cterm=bold,italic
 "hi Title ctermfg=NONE ctermbg=NONE guisp=NONE gui=bold cterm=bold
+
+" CtrlP
+
+let g:ctrlp_by_filename = 1
+
 
 " Personal Stuff
 
@@ -393,14 +398,19 @@ nmap <leader>w :wa<CR>
 
 let g:netrw_banner=0
 let g:netrw_list_hide='.git'
-let g:netrw_sizestyle='H'
-let g:netrw_usetab=1
+let g:netrw_liststyle= 3
+"let g:netrw_usetab=1
 let g:netrw_special_syntax='true'
+"let g:netrw_browse_split=4
+"let g:netrw_winsize=-32
+
+nmap t :edit .<CR>
 
 " NERD Tree
 " let loaded_nerd_tree=1
+"let NERDTreeHijackNetrw=1
 let NERDTreeMinimalUI=1
-let NERDTreeWinSize=20
+let NERDTreeWinSize=32
 "let NERDTreeQuitOnOpen=1
 let NERDTreeAutoDeleteBuffer=1
 let NERDTreeIgnore=['\~','\.exe$','\.o$','\.obj$','\.hi$']
@@ -424,8 +434,8 @@ let g:NERDTreeMapActivateNode = "e"
 let g:NERDTreeMapOpenRecursively = ""
 let g:NERDTreeMapUpdirKeepOpen = ""
 
-nmap <silent> t <CR>NERDTreeFocus<CR>
-au VimEnter * NERDTreeToggleVCS
+" nmap <silent> t :NERDTreeFocus<CR>
+" au VimEnter * NERDTreeToggleVCS
 
 " Lightline "
 
