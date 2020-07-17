@@ -57,6 +57,7 @@ if 1
 	noremap O <C-W>w
 
 	noremap r <ESC>
+	noremap r<SPACE> r
 	noremap rr V
 	vnoremap rr V
 	noremap <C-R> <C-V>
@@ -104,6 +105,27 @@ if 1
 
 	cnoremap <Left> <Space><BS><Left>
 	cnoremap <Right> <Space><BS><Right>
+
+	function SmoothScroll(up)
+		if a:up
+			let scrollaction="\<C-y>"
+		else
+			let scrollaction="\<C-e>"
+		endif
+		exec "normal " . scrollaction
+		redraw
+		let counter=1
+		while counter<&scroll
+			let counter+=1
+			sleep 8m
+			redraw
+			exec "normal " . scrollaction
+		endwhile
+	endfunction
+	nnoremap e :call SmoothScroll(1)<Enter>
+	nnoremap d :call SmoothScroll(0)<Enter>
+	inoremap <C-e> <Esc>:call SmoothScroll(1)<Enter>i
+	inoremap <C-d> <Esc>:call SmoothScroll(0)<Enter>i
 	
 	set guicursor=v-c-sm:block,n:ver25,i-ci-ve:block,r-cr-o:hor20
 
@@ -206,50 +228,8 @@ set encoding=utf-8
 syntax on
 filetype plugin indent on
 set termguicolors
-augroup MyColors
-    autocmd!
-    "autocmd ColorScheme * hi ExtraWhiteSpace ctermfg=red guifg=red | highlight Cursor guifg=white guibg=black
-    "autocmd ColorScheme * hi ExtraWhiteSpace none
-    autocmd ColorScheme * hi! link String Constant
-    autocmd ColorScheme * hi! link Character Constant
-    autocmd ColorScheme * hi! link Number Constant
-    autocmd ColorScheme * hi! link Boolean Constant
-    autocmd ColorScheme * hi! link Float Constant
-    autocmd ColorScheme * hi! link Conditional Keyword
-    autocmd ColorScheme * hi! link Repeat Keyword
-    autocmd ColorScheme * hi! link Label Keyword
-    "autocmd ColorScheme * hi! link Statement Keyword
-    autocmd ColorScheme * hi! link Typedef Keyword
-    autocmd ColorScheme * hi! Operator none
-    "autocmd ColorScheme * hi! link Operator Normal
-    autocmd ColorScheme * hi! link Exception Keyword
-    autocmd ColorScheme * hi! Identifier none
-    "autocmd ColorScheme * hi! Function none
-    autocmd ColorScheme * hi! Type none
-    autocmd ColorScheme * hi! Include none
-	autocmd ColorScheme * hi! link PreProc Statement
-    "autocmd ColorScheme * hi! Delimiter none
-    autocmd ColorScheme * hi! Special none
-    autocmd ColorScheme * hi! link cStatement Keyword
-    autocmd ColorScheme * hi! link cStructure Keyword
-    autocmd ColorScheme * hi! link cConditional Keyword
-    autocmd ColorScheme * hi! link cRepeat Keyword
-    autocmd ColorScheme * hi! link cString Constant
-    autocmd ColorScheme * hi! link cCharacter Constant
-    autocmd ColorScheme * hi! link cFormat Constant
-    autocmd ColorScheme * hi! link cSpecial Constant
-    autocmd ColorScheme * hi! link cNumber Constant
-    autocmd ColorScheme * hi! link cConstant none
-    autocmd ColorScheme * hi! link cType none
-    autocmd ColorScheme * hi! link cppType none
-    autocmd ColorScheme * hi! link htmlTag Keyword
-    autocmd ColorScheme * hi! link htmlEndTag Keyword
-    autocmd ColorScheme * hi! link javaScriptParens Delimiter
-    autocmd ColorScheme * hi! link javaScriptBraces Delimiter
-    autocmd ColorScheme * hi! link elmAlias Keyword
-augroup END
+
 set synmaxcol=250
-"colorscheme gruvbox8
 set background=light
 colorscheme mygroove
 
@@ -258,44 +238,6 @@ colorscheme mygroove
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-
-"set background=dark
-"hi Normal guifg=#fbf1c7 guibg=#1d2021 guisp=NONE gui=NONE cterm=NONE
-"hi Keyword guifg=#fabd2f guibg=NONE guisp=NONE gui=NONE cterm=NONE
-"hi Function guifg=#fe8019 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-"hi Constant guifg=#8ec07c guibg=NONE guisp=NONE gui=NONE cterm=NONE
-"hi Delimiter guifg=#bdae93 guisp=NONE gui=NONE cterm=NONE
-"hi Operator guifg=#bdae93 guisp=NONE gui=NONE cterm=NONE
-"hi Comment guifg=#d3869b guibg=NONE guisp=NONE gui=italic cterm=italic
-"hi Todo guifg=#fb4934 guibg=NONE guisp=NONE gui=bold,italic cterm=bold,italic
-"hi Title guifg=NONE guibg=NONE guisp=NONE gui=bold cterm=bold
-
-"set background=light
-"hi Normal guifg=#3c3836 guibg=#fbf1c7 guisp=NONE gui=NONE cterm=NONE
-"hi Keyword guifg=#076678 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-"hi Function guifg=#79740e guibg=NONE guisp=NONE gui=NONE cterm=NONE
-"hi Statement guifg=#79740e guibg=NONE guisp=NONE gui=NONE cterm=NONE
-"hi Constant guifg=#427b58 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-"hi Delimiter guifg=#b57614 guisp=NONE gui=NONE cterm=NONE
-"hi Operator guifg=#b57614 guisp=NONE gui=NONE cterm=NONE
-"hi Comment guifg=#8f3f71 guibg=NONE guisp=NONE gui=italic cterm=italic
-"hi Todo guifg=#fb4934 guibg=NONE guisp=NONE gui=bold,italic cterm=bold,italic
-"hi Title guifg=NONE guibg=NONE guisp=NONE gui=bold cterm=bold
-
-"set background=light
-"hi Normal ctermfg=15 ctermbg=0 guisp=NONE gui=NONE cterm=NONE
-"hi Keyword ctermfg=12 ctermbg=NONE guisp=NONE gui=NONE cterm=NONE
-"hi Function  ctermfg=10 ctermbg=NONE guisp=NONE gui=NONE cterm=NONE
-"hi Constant ctermfg=14 ctermbg=NONE guisp=NONE gui=NONE cterm=NONE
-"hi Delimiter ctermfg=8 guisp=NONE gui=NONE cterm=NONE
-"hi Operator ctermfg=8 guisp=NONE gui=NONE cterm=NONE
-"hi Comment ctermfg=13 ctermbg=NONE guisp=NONE gui=italic cterm=italic
-"hi Todo ctermfg=1 ctermbg=NONE guisp=NONE gui=bold,italic cterm=bold,italic
-"hi Title ctermfg=NONE ctermbg=NONE guisp=NONE gui=bold cterm=bold
-
-" CtrlP
-
-let g:ctrlp_by_filename = 1
 
 
 " Personal Stuff
@@ -380,18 +322,18 @@ inoremap <A-l> <C-\><C-N><C-w>l
 " nnoremap <C-j> <C-e>
 " nnoremap <C-k> <C-y>
 
-nnoremap <TAB> :b#<CR>
+"nnoremap <TAB> :b#<CR>
 set wildcharm=<C-Z>
-nmap <S-TAB> :b<SPACE><C-Z>
 
 nmap <leader>w :wa<CR>
 
-" nmap <LEADER>r :ls<CR>:b<SPACE>*
-" nmap <LEADER>e :e **/*
-" nmap <LEADER>u :Lexplore
-"inoremap (<CR> (<CR>)<ESC>O
-"inoremap {<CR> {<CR>}<ESC>O
-" nmap silent e <CR>Explore<CR>
+
+" CtrlP
+
+let g:ctrlp_by_filename = 1
+let g:ctrlp_map = 't'
+nmap b :CtrlPBuffer<CR>
+let g:ctrlp_reuse_window = 'netrw\|help'
 
 
 " netrw
@@ -403,15 +345,16 @@ let g:netrw_liststyle= 3
 let g:netrw_special_syntax='true'
 "let g:netrw_browse_split=4
 "let g:netrw_winsize=-32
+nmap T :edit .<CR>
 
-nmap t :edit .<CR>
 
 " NERD Tree
+
 " let loaded_nerd_tree=1
-"let NERDTreeHijackNetrw=1
+" let NERDTreeHijackNetrw=1
 let NERDTreeMinimalUI=1
 let NERDTreeWinSize=32
-"let NERDTreeQuitOnOpen=1
+" let NERDTreeQuitOnOpen=1
 let NERDTreeAutoDeleteBuffer=1
 let NERDTreeIgnore=['\~','\.exe$','\.o$','\.obj$','\.hi$']
 let NERDTreeRespectWildIgnore=1
@@ -420,7 +363,7 @@ let g:loaded_nerdtree_custom_maps = 1
 " autocmd VimEnter * call NERDTreeAddKeyMap({
 "	\ 'key': 'i',
 "	\ 'callback': "NERDTreeMenuUp" })
-"autocmd VimEnter * call NERDTreeAddKeyMap({
+" autocmd VimEnter * call NERDTreeAddKeyMap({
 "	\ 'key': 'k',
 "	\ 'callback': "NERDTreeMenuDown" })
 let g:NERDTreeMapOpenSplit = "s"
@@ -433,52 +376,8 @@ let g:NERDTreeMapToggleHidden = "H"
 let g:NERDTreeMapActivateNode = "e"
 let g:NERDTreeMapOpenRecursively = ""
 let g:NERDTreeMapUpdirKeepOpen = ""
-
 " nmap <silent> t :NERDTreeFocus<CR>
 " au VimEnter * NERDTreeToggleVCS
-
-" Lightline "
-
-let g:lightline = {
-	\ 'colorscheme': 'mygroove',
-	\ 'active': {
-	\ 'left': [ [ 'readonly', 'filename', 'mofified' ] ],
-	\ 'right': [ [ 'lineinfo' ] ] },
-	\ 'component': {
-	\   'lineinfo': '%3l:%-2v',
-	\ },
-	\ 'component_function': {
-	\   'readonly': 'LightlineReadonly',
-	\   'fugitive': 'LightlineFugitive'
-	\ },
-	\ 'separator': { 'left': '', 'right': '' },
-	\ 'subseparator': { 'left': '', 'right': '' }
-	\ }
-function! LightlineReadonly()
-	return &readonly ? '' : ''
-endfunction
-function! LightlineFugitive()
-	if exists('*fugitive#head')
-		let branch = fugitive#head()
-		return branch !=# '' ? ''.branch : ''
-	endif
-	return ''
-endfunction
-
-" Airline
-
-let g:airline_disabled = 1
-let g:airline_theme = 'gruvbox8'
-let g:airline_powerline_fonts=1
-let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
-let g:airline_skip_empty_sections = 1
-let g:airline_section_z = '%#__accent_bold#%3v :%3l%#__restore__#/%L'
-let g:airline#extensions#whitespace#enabled = 1
-let g:airline#extensions#whitespace#checks = [ 'indent', 'trailing', 'mixed-indent-file' ]
-
-
-"
-let g:fugitive_no_maps = 1
 
 
 " Go

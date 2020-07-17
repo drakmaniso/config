@@ -9,7 +9,6 @@ let g:colors_name="mygroove"
 let s:t_Co = exists('&t_Co') && !empty(&t_Co) && &t_Co > 1 ? &t_Co : 2
 let s:italics = (&t_ZH != '' && &t_ZH != '[7m') || has('gui_running') || has('nvim')
 
-"let s:italics = s:italics && get(g:, 'gruvbox_italics', 1)
 hi! link CursorColumn CursorLine
 hi! link QuickFixLine Search
 hi! link StatusLineTerm StatusLine
@@ -19,6 +18,42 @@ hi! link Tag Special
 hi! link lCursor Cursor
 hi! link iCursor Cursor
 hi! link vCursor Cursor
+
+" hi ExtraWhiteSpace ctermfg=red guifg=red | highlight Cursor guifg=white guibg=black
+" hi ExtraWhiteSpace none
+hi! link String Constant
+hi! link Character Constant
+hi! link Number Constant
+hi! link Boolean Constant
+hi! link Float Constant
+hi! link Conditional Keyword
+hi! link Repeat Keyword
+hi! link Label Keyword
+hi! link Typedef Keyword
+hi! Operator none
+hi! link Exception Keyword
+hi! Identifier none
+hi! Type none
+hi! Include none
+hi! link PreProc Statement
+hi! Special none
+hi! link cStatement Keyword
+hi! link cStructure Keyword
+hi! link cConditional Keyword
+hi! link cRepeat Keyword
+hi! link cString Constant
+hi! link cCharacter Constant
+hi! link cFormat Constant
+hi! link cSpecial Constant
+hi! link cNumber Constant
+hi! link cConstant none
+hi! link cType none
+hi! link cppType none
+hi! link htmlTag Keyword
+hi! link htmlEndTag Keyword
+hi! link javaScriptParens Delimiter
+hi! link javaScriptBraces Delimiter
+hi! link elmAlias Keyword
 
 if (has('termguicolors') && &termguicolors) || has('gui_running')
 	if &background ==# 'dark'
@@ -45,6 +80,7 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
 			let g:terminal_color_15 = '#ebdbb2'
 		endif
 
+		hi Cursor guifg=NONE guibg=#ffffff
 		hi Normal guifg=#fbf1c7 guibg=#1d2021 guisp=NONE gui=NONE cterm=NONE
 		hi Visual guifg=NONE guibg=#fbe157 guisp=NONE gui=NONE
 		hi Keyword guifg=#fabd2f guibg=NONE guisp=NONE gui=NONE cterm=NONE
@@ -87,6 +123,8 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
 			let g:terminal_color_14 = '#427b58'
 			let g:terminal_color_15 = '#3c3836'
 		endif
+		
+		hi Cursor guifg=NONE guibg=#ffccdd
 
 		hi Normal guifg=#3c3836 guibg=#fbf1c7 guisp=NONE gui=NONE cterm=NONE
 		hi Visual guifg=NONE guibg=#fbe157 guisp=NONE gui=NONE
