@@ -3,12 +3,14 @@
 enum custom_layers {
   _QWERTY,
   _SYMBOLS,
-  _FUNCPAD,
+  _NUMPAD,
+  _FUNCS,
   _ADJUST
 };
 
 #define SYMBOLS  MO(_SYMBOLS)
-#define FUNCPAD  MO(_FUNCPAD)
+#define FUNCS    MO(_FUNCS)
+#define NUMPAD   MO(_NUMPAD)
 #define ADJUST   MO(_ADJUST)
 
 #define CT_LEFT LCTL(KC_LEFT)
@@ -38,50 +40,110 @@ NOTE: These are all the same length.  If you do a search/replace
   lengths consistent.
 */
 
-#define _____________________QWERTY_L1______________________ KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    ADJUST
-#define _____________________QWERTY_L2______________________ KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_TAB
-#define _____________________QWERTY_L3______________________ KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_INS
-#define _____________________QWERTY_L4______________________ KC_LCTL, KC_LALT, KC_LGUI, FUNCPAD, KC_LSFT, KC_SPC
+#define QWERTY_1     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    ADJUST,      ADJUST,  KC_Y,    KC_U,    KC_I,    KC_O,    KC_P
+#define QWERTY_2     KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_ESC,      KC_BSPC, KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN
+#define QWERTY_3     KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_TAB,      KC_DEL,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH
+#define QWERTY_4     KC_LCTL, KC_LALT, KC_LGUI, NUMPAD,  KC_LSFT, KC_SPC,      KC_ENT,  SYMBOLS, FUNCS,   KC_RGUI, KC_RALT, KC_RCTL
 
-#define _____________________QWERTY_R1______________________ ADJUST,  KC_Y,    KC_U,    KC_I,    KC_O,    KC_P
-#define _____________________QWERTY_R2______________________ KC_BSPC, KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN
-#define _____________________QWERTY_R3______________________ KC_DEL,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH
-#define _____________________QWERTY_R4______________________ KC_ENT,  SYMBOLS, KC_ESC,  KC_RGUI, KC_RALT, KC_RCTL
+#define SYMBOLS_1    KC_BSLS, KC_LBRC, KC_PGUP, KC_RBRC, KC_GRV,  ADJUST,      ADJUST,  KC_HOME, CT_LEFT, KC_UP,   CT_RGHT, KC_END
+#define SYMBOLS_2    KC_INS,  KC_LPRN, KC_PGDN, KC_RPRN, KC_QUOT, KC_ESC,      KC_BSPC, KC_MINS, KC_LEFT, KC_DOWN, KC_RGHT, KC_EQL
+#define SYMBOLS_3    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_TAB,      KC_DEL,  KC_6,    KC_7,    KC_8,    KC_9,    KC_0
+#define SYMBOLS_4    KC_LCTL, KC_LALT, KC_LGUI, XXXXXXX, KC_LSFT, KC_SPC,      KC_ENT,  SYMBOLS, XXXXXXX, KC_RGUI, KC_RALT, KC_RCTL
 
+#define NUMPAD_1     KC_PSLS, KC_KP_7, KC_KP_8, KC_KP_9, KC_PAST, ADJUST,      ADJUST,  KC_PSLS, KC_KP_7, KC_KP_8, KC_KP_9, KC_PAST 
+#define NUMPAD_2     KC_PDOT, KC_KP_4, KC_KP_5, KC_KP_6, KC_PMNS, KC_NLCK,     KC_BSPC, KC_PDOT, KC_KP_4, KC_KP_5, KC_KP_6, KC_PMNS 
+#define NUMPAD_3     KC_KP_0, KC_KP_1, KC_KP_2, KC_KP_3, KC_PPLS, KC_TAB,      KC_INS,  KC_KP_0, KC_KP_1, KC_KP_2, KC_KP_3, KC_PPLS 
+#define NUMPAD_4     KC_LCTL, KC_LALT, KC_LGUI, NUMPAD,  KC_LSFT, KC_SPC,      KC_PENT, KC_RSFT, XXXXXXX, KC_RGUI, KC_RALT, KC_RCTL 
 
-#define _____________________SYMBOLS_L1_____________________ KC_BSLS, XXXXXXX, KC_LPRN, KC_RPRN, KC_GRV,  ADJUST
-#define _____________________SYMBOLS_L2_____________________ KC_LBRC, KC_RBRC, KC_MINS, KC_EQL,  KC_QUOT, KC_TAB
-#define _____________________SYMBOLS_L3_____________________ KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_INS
-#define _____________________SYMBOLS_L4_____________________ KC_LCTL, KC_LALT, KC_LGUI, XXXXXXX, KC_LSFT, KC_SPC
+#define FUNCS_1      KC_BRK,  KC_BTN4, KC_WH_U, KC_BTN5, KC_BTN3, ADJUST,      ADJUST,  XXXXXXX, XXXXXXX, KC_MS_U, XXXXXXX, KC_PSCR 
+#define FUNCS_2      KC_F11,  KC_F12,  KC_WH_D, KC_BTN1, KC_BTN2, KC_NLCK,     KC_BSPC, XXXXXXX, KC_MS_L, KC_MS_D, KC_MS_R, KC_SLCK 
+#define FUNCS_3      KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_TAB,      KC_INS,  KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10  
+#define FUNCS_4      KC_LCTL, KC_LALT, KC_LGUI, XXXXXXX, KC_LSFT, KC_SPC,      KC_PENT, KC_RSFT, FUNCS,   KC_RGUI, KC_RALT, KC_RCTL 
 
-#define _____________________SYMBOLS_R1_____________________ ADJUST,  KC_PGUP, CT_LEFT, KC_UP,   CT_RGHT, KC_HOME
-#define _____________________SYMBOLS_R2_____________________ KC_BSPC, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, KC_END
-#define _____________________SYMBOLS_R3_____________________ KC_DEL,  KC_6,    KC_7,    KC_8,    KC_9,    KC_0
-#define _____________________SYMBOLS_R4_____________________ KC_ENT,  SYMBOLS, KC_ESC,  KC_RGUI, KC_RALT, KC_RCTL
-
-
-#define _____________________FUNCPAD_L1_____________________ KC_PSLS, KC_KP_7, KC_KP_8, KC_KP_9, KC_PAST, ADJUST
-#define _____________________FUNCPAD_L2_____________________ KC_PDOT, KC_KP_4, KC_KP_5, KC_KP_6, KC_PMNS, KC_TAB
-#define _____________________FUNCPAD_L3_____________________ KC_KP_0, KC_KP_1, KC_KP_2, KC_KP_3, KC_PPLS, KC_NLCK
-#define _____________________FUNCPAD_L4_____________________ KC_LCTL, KC_LALT, KC_LGUI, FUNCPAD, KC_LSFT, KC_SPC
-
-#define _____________________FUNCPAD_R1_____________________ ADJUST,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5
-#define _____________________FUNCPAD_R2_____________________ XXXXXXX, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10
-#define _____________________FUNCPAD_R3_____________________ FUNCPAD, KC_F11,  KC_F12,  KC_PSCR, KC_SLCK, KC_BRK
-#define _____________________FUNCPAD_R4_____________________ KC_PENT, KC_RSFT, KC_TAB,  KC_RGUI, KC_RALT, KC_RCTL
+#define ADJUST_1     RESET,   XXXXXXX, EEP_RST, RESET,   XXXXXXX, ADJUST,      ADJUST,  KC_WH_U, KC_BTN4, KC_MS_U, KC_BTN5, RESET   
+#define ADJUST_2     RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX, XXXXXXX,     XXXXXXX, KC_WH_D, KC_MS_L, KC_MS_D, KC_MS_R, XXXXXXX 
+#define ADJUST_3     RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, KC_VOLD, KC_MPLY, KC_VOLU, XXXXXXX 
+#define ADJUST_4     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     KC_BTN3, KC_BTN1, KC_BTN2, XXXXXXX, XXXXXXX, XXXXXXX 
 
 
-#define _____________________ADJUST_L1______________________ RESET,   XXXXXXX, EEP_RST, RESET,   XXXXXXX, XXXXXXX
-#define _____________________ADJUST_L2______________________ RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX, XXXXXXX
-#define _____________________ADJUST_L3______________________ RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, XXXXXXX, ADJUST
-#define _____________________ADJUST_L4______________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+// keymap.c
 
-#define _____________________ADJUST_R1______________________ XXXXXXX, KC_WH_U, KC_BTN4, KC_MS_U, KC_BTN5, RESET
-#define _____________________ADJUST_R2______________________ XXXXXXX, KC_WH_D, KC_MS_L, KC_MS_D, KC_MS_R, XXXXXXX
-#define _____________________ADJUST_R3______________________ XXXXXXX, XXXXXXX, KC_VOLD, KC_MPLY, KC_VOLU, XXXXXXX
-#define _____________________ADJUST_R4______________________ KC_BTN3, KC_BTN1, KC_BTN2, XXXXXXX, XXXXXXX, XXXXXXX
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+[_QWERTY] = LAYOUT_ortho_4x12_wrapper(
+   QWERTY_1, \
+   QWERTY_2, \
+   QWERTY_3, \
+   QWERTY_4  \
+),
 
+[_SYMBOLS] = LAYOUT_ortho_4x12_wrapper( \
+   SYMBOLS_1, \
+   SYMBOLS_2, \
+   SYMBOLS_3, \
+   SYMBOLS_4  \
+),
+
+[_FUNCS] = LAYOUT_ortho_4x12_wrapper( \
+   FUNCS_1, \
+   FUNCS_2, \
+   FUNCS_3, \
+   FUNCS_4  \
+),
+
+[_NUMPAD] = LAYOUT_ortho_4x12_wrapper( \
+   NUMPAD_1, \
+   NUMPAD_2, \
+   NUMPAD_3, \
+   NUMPAD_4  \
+),
+
+[_ADJUST] = LAYOUT_ortho_4x12_wrapper( \
+   ADJUST_1, \
+   ADJUST_2, \
+   ADJUST_3, \
+   ADJUST_4  \
+),
+
+};
+
+//uint32_t layer_state_set_user(uint32_t state) {
+//  return update_tri_layer_state(state, _SYMBOLS, _FUNCS, _ADJUST);
+//}
 
 /*
-#define ______________FUNCTIONS_R3_________________        ALGR(KC_GRV), ALGR(KC_DQUO), ALGR(KC_QUOT), ALGR(KC_6), OS_RALT
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+    //case QWERTY:
+      //if (record->event.pressed) {
+        //set_single_persistent_default_layer(_QWERTY);
+      //}
+      //return false;
+    case KC_LSFT:
+      if (record->event.pressed) {
+        if (get_mods() & MOD_BIT(KC_RSFT)) {
+		  register_code(KC_CAPSLOCK);
+		  unregister_code(KC_CAPSLOCK);
+		  return false;
+      	} else if (IS_HOST_LED_ON(USB_LED_CAPS_LOCK)) {
+		  register_code(KC_CAPSLOCK);
+		  unregister_code(KC_CAPSLOCK);
+	    }
+      }
+      return true;
+    case KC_RSFT:
+      if (record->event.pressed) {
+        if (get_mods() & MOD_BIT(KC_LSFT)) {
+		  register_code(KC_CAPSLOCK);
+		  unregister_code(KC_CAPSLOCK);
+		  return false;
+      	} else if (IS_HOST_LED_ON(USB_LED_CAPS_LOCK)) {
+		  register_code(KC_CAPSLOCK);
+		  unregister_code(KC_CAPSLOCK);
+	    }
+      }
+      return true;
+  }
+  return true;
+}
 */
+
