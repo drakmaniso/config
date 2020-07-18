@@ -128,8 +128,8 @@ inoremap <C-d> <Esc>:call SmoothScroll(0)<Enter>i
 noremap E gg
 noremap D G
 
-" set guicursor=v-c-sm:block,n:ver25,i-ci-ve:block,r-cr-o:hor20
-set guicursor=v-c-sm:block,n:ver50,i-ci-ve:ver25,r-cr-o:hor20
+" set guicursor=v-c-sm:block,n:ver25,i-ci-ve:hor20,r-cr-o:hor20
+set guicursor=v-c-sm:block,n:ver50,i-ci-ve:ver25-blinkwait700-blinkon400-blinkoff250,r-cr-o:hor20
 au InsertLeave * normal l
 
 
@@ -155,7 +155,7 @@ filetype plugin indent on
 set termguicolors
 
 set synmaxcol=250
-set background=light
+set background=dark
 colorscheme mygroove
 
 "match ExtraWhiteSpace /^\ \+/
@@ -167,10 +167,7 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 
 " Personal Stuff
 
-set nocursorline
-"hi CursorLine guibg=#1d2021
-"au InsertEnter * hi CursorLine guibg=#000000
-"au InsertLeave * hi CursorLine guibg=#1d2021
+set cursorline
 
 set laststatus=2
 set statusline=%f%(\ [%M%R%q]%)%=%4c,%4l

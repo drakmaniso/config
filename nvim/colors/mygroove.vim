@@ -58,7 +58,7 @@ hi! link elmAlias Keyword
 if (has('termguicolors') && &termguicolors) || has('gui_running')
 	if &background ==# 'dark'
 		" Dark Background
-		let g:terminal_ansi_colors = ['#282828', '#cc241d', '#98971a', '#d79921',
+		let g:terminal_ansi_colors = ['#1d2021', '#cc241d', '#98971a', '#d79921',
 					\ '#458588', '#b16286', '#689d6a', '#a89984', '#928374', '#fb4934',
 					\ '#b8bb26', '#fabd2f', '#83a598', '#d3869b', '#8ec07c', '#ebdbb2']
 		if has('nvim')
@@ -81,11 +81,14 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
 		endif
 
 		hi Cursor guifg=NONE guibg=#ffffff
-		hi Normal guifg=#fbf1c7 guibg=#1d2021 guisp=NONE gui=NONE cterm=NONE
-		hi Visual guifg=NONE guibg=#fbe157 guisp=NONE gui=NONE
+		hi Normal guifg=#ebdbb2 guibg=#1d2021 guisp=NONE gui=NONE cterm=NONE
+		hi CursorLine guibg=#1d2021
+		au InsertEnter * hi CursorLine guibg=#000000
+		au InsertLeave * hi CursorLine guibg=#1d2021
+		hi Visual guifg=NONE guibg=#504945 guisp=NONE gui=NONE
 		hi Keyword guifg=#fabd2f guibg=NONE guisp=NONE gui=NONE cterm=NONE
 		hi Function guifg=#fe8019 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-		hi Statement guifg=#076678 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+		hi Statement guifg=#83a598 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 		hi Constant guifg=#8ec07c guibg=NONE guisp=NONE gui=NONE cterm=NONE
 		hi Delimiter guifg=#bdae93 guisp=NONE gui=NONE cterm=NONE
 		hi Operator guifg=#bdae93 guisp=NONE gui=NONE cterm=NONE
@@ -95,9 +98,9 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
 
 		hi VertSplit guifg=#bdae93 guibg=NONE gui=NONE guisp=NONE cterm=NONE term=NONE
 
-		hi StatusLine guifg=#8ec07c guibg=#1d2021 gui=reverse,bold guisp=NONE cterm=reverse term=reverse
+		hi StatusLine guifg=#689d6a guibg=#1d2021 gui=reverse,bold guisp=NONE cterm=reverse term=reverse
 		hi StatusLineNC guifg=#928374 guibg=#1d2021 gui=reverse,bold guisp=NONE cterm=reverse term=reverse
-		au InsertEnter * hi StatusLine guifg=#af3a03 guibg=#1d2021 gui=reverse,bold guisp=NONE cterm=reverse term=reverse
+		au InsertEnter * hi StatusLine guifg=#fe8019 guibg=#1d2021 gui=reverse,bold guisp=NONE cterm=reverse term=reverse
 		au InsertLeave * hi StatusLine guifg=#689d6a guibg=#1d2021 gui=reverse,bold guisp=NONE cterm=reverse term=reverse
 
 	else
@@ -127,6 +130,9 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
 		hi Cursor guifg=NONE guibg=#ffccdd
 
 		hi Normal guifg=#3c3836 guibg=#fbf1c7 guisp=NONE gui=NONE cterm=NONE
+		hi CursorLine guibg=#fbf1c7
+		au InsertEnter * hi CursorLine guibg=#ebdbb2
+		au InsertLeave * hi CursorLine guibg=#fbf1c7
 		hi Visual guifg=NONE guibg=#fbe157 guisp=NONE gui=NONE
 		hi Keyword guifg=#076678 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 		hi Function guifg=NONE guibg=NONE guisp=NONE gui=bold cterm=bold
