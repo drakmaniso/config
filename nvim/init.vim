@@ -1,212 +1,137 @@
 " Experimental modernization
 
-if 1
+noremap i k
+noremap I O
+noremap <c-w>i <c-w>k
+noremap <c-w>I <c-w>K
 
-	noremap i k
-	" noremap I V
-	" vnoremap I k
-	noremap <c-w>i <c-w>k
-	noremap <c-w>I <c-w>K
+noremap j h
+noremap J I
+noremap <C-W>j <C-W>h
+noremap <C-W>J <C-W>H
 
-	noremap j h
-	" noremap J hv
-	" vnoremap J h
-	noremap <C-W>j <C-W>h
-	noremap <C-W>J <C-W>H
+noremap k j
+noremap K o
+noremap <C-W>k <C-W>j
+noremap <C-W>K <C-W>J
 
-	noremap k j
-	" noremap K V
-	" vnoremap K j
-	noremap <C-W>k <C-W>j
-	noremap <C-W>K <C-W>J
+noremap l l
+noremap L A
+noremap <C-W>l <C-W>l
+noremap <C-W>L <C-W>L
 
-	noremap l l
-	" noremap L v
-	" vnoremap L l
-	noremap <C-W>l <C-W>l
-	noremap <C-W>L <C-W>L
+noremap u b
+noremap U i
 
-	noremap <C-K> o
-	noremap <C-J> I
-	noremap <C-L> A
+noremap o hel
+vnoremap o e
+noremap O a
 
-	noremap u b
-	" noremap U hvlb
-	" vnoremap U b
+noremap h ^
+noremap y 0
+noremap p $l
+vnoremap p $h
 
-	noremap o hel
-	vnoremap o e
-	" noremap O vhe
-	" vnoremap O e
+noremap <A-j> zh
+noremap <A-l> zl
+noremap <A-i> <C-Y>
+noremap <A-k> <C-E>
+noremap <A-u> <C-W>W
+noremap <A-o> <C-W>w
 
-	noremap h ^
-	" noremap H hv^
-	noremap y 0
-	" noremap Y v0
-	" vnoremap Y 0
-	noremap p $l
-	vnoremap p $h
-	" noremap P v$h
-	" vnoremap P $h
-	
-	noremap I <C-U>
-	noremap K <C-D>
-	noremap J zh
-	noremap L zl
-	noremap U <C-W>W
-	noremap O <C-W>w
+" noremap r <ESC>
+" noremap r<SPACE> r
+" noremap rr V
+" vnoremap rr V
+" noremap <C-R> <C-V>
+" noremap rj hv
+" noremap rl v
+" noremap ri hvkl
+" noremap rk vjh
+" noremap ru hvlb
+" noremap ro vhe
+" noremap rh v^
+" noremap ry v0
+" noremap rp v$h
+" noremap rJ v^
+" noremap rU v0
+" noremap rL v$h
+" noremap rO v$
 
-	noremap r <ESC>
-	noremap r<SPACE> r
-	noremap rr V
-	vnoremap rr V
-	noremap <C-R> <C-V>
-	noremap rj hv
-	noremap rl v
-	noremap ri hvkl
-	noremap rk vjh
-	noremap ru hvlb
-	noremap ro vhe
-	noremap rh v^
-	noremap ry v0
-	noremap rp v$h
-	noremap rJ v^
-	noremap rU v0
-	noremap rL v$h
-	noremap rO v$
+noremap f <ESC>
+noremap F V
+noremap ff lbvhe
+noremap <C-F> <C-V>
+noremap fj hv
+noremap fl v
+noremap fi hvkl
+noremap fk vjh
+noremap fu hvlb
+noremap fo vhe
+noremap fh v^
+noremap fy v0
+noremap fp v$h
+noremap fJ v^
+noremap fU v0
+noremap fL v$h
+noremap fO v$
 
-	noremap s f
-	noremap S F
+noremap s f
+noremap S F
 
-	noremap e <C-U>
-	noremap d <C-D>
-	noremap <PageUp> <C-U>
-	noremap <PageDown> <C-D>
+nnoremap <BS> dh
+vnoremap <BS> "_d
+nnoremap <C-H> dh
+vnoremap <C-H> "_d
 
-	nnoremap <BS> dh
-	vnoremap <BS> "_d
-	nnoremap <C-H> dh
-	vnoremap <C-H> "_d
+noremap <SPACE> i
+vnoremap <SPACE> c
+"noremap <CR> :
 
-	noremap <SPACE> i
-	vnoremap <SPACE> c
-	"noremap <CR> :
+noremap z u
+noremap Z <C-R>
+noremap c y
+noremap C Y
+noremap v p
+noremap V P
+vnoremap v "_dP
+vnoremap V "_dP
+noremap x d
+noremap X D
 
-	noremap z u
-	noremap Z <C-R>
-	noremap c y
-	noremap C Y
-	noremap v p
-	noremap V P
-	vnoremap v "_dP
-	vnoremap V "_dP
-	noremap x d
-	noremap X D
+cnoremap <Left> <Space><BS><Left>
+cnoremap <Right> <Space><BS><Right>
 
-	cnoremap <Left> <Space><BS><Left>
-	cnoremap <Right> <Space><BS><Right>
-
-	function SmoothScroll(up)
-		if a:up
-			let scrollaction="\<C-y>"
-		else
-			let scrollaction="\<C-e>"
-		endif
-		exec "normal " . scrollaction
+function SmoothScroll(up)
+	if a:up
+		let scrollaction="\<C-y>"
+	else
+		let scrollaction="\<C-e>"
+	endif
+	exec "normal " . scrollaction
+	redraw
+	let counter=1
+	while counter<&scroll
+		let counter+=1
+		sleep 8m
 		redraw
-		let counter=1
-		while counter<&scroll
-			let counter+=1
-			sleep 8m
-			redraw
-			exec "normal " . scrollaction
-		endwhile
-	endfunction
-	nnoremap e :call SmoothScroll(1)<Enter>
-	nnoremap d :call SmoothScroll(0)<Enter>
-	inoremap <C-e> <Esc>:call SmoothScroll(1)<Enter>i
-	inoremap <C-d> <Esc>:call SmoothScroll(0)<Enter>i
-	
-	set guicursor=v-c-sm:block,n:ver25,i-ci-ve:block,r-cr-o:hor20
+		exec "normal " . scrollaction
+	endwhile
+endfunction
+noremap e <C-U>
+noremap d <C-D>
+nnoremap e :call SmoothScroll(1)<Enter>
+nnoremap d :call SmoothScroll(0)<Enter>
+inoremap <C-e> <Esc>:call SmoothScroll(1)<Enter>i
+inoremap <C-d> <Esc>:call SmoothScroll(0)<Enter>i
 
-else
+noremap E gg
+noremap D G
 
-	noremap i k
-	noremap I {
-	noremap <C-I> <C-U>
-	noremap <c-w>i <c-w>k
-	noremap <c-w>I <c-w>K
-	noremap wi <c-w>k
-	noremap wI <c-w>K
+" set guicursor=v-c-sm:block,n:ver25,i-ci-ve:block,r-cr-o:hor20
+set guicursor=v-c-sm:block,n:ver50,i-ci-ve:ver25,r-cr-o:hor20
+au InsertLeave * normal l
 
-	noremap j h
-	noremap J ^
-	noremap <C-W>j <C-W>h
-	noremap <C-W>J <C-W>H
-	noremap wj <C-W>h
-	noremap wJ <C-W>H
-
-	noremap k j
-	noremap K }
-	noremap <C-K> <C-D>
-	noremap <C-W>k <C-W>j
-	noremap <C-W>K <C-W>J
-	noremap wk <C-W>j
-	noremap wK <C-W>J
-
-	noremap l l
-	noremap L $
-	noremap wl <C-W>l
-	noremap wL <C-W>L
-
-	noremap u b
-	noremap U 0
-
-	noremap o el
-	vnoremap o e
-	noremap O $l
-
-	noremap y <C-U>
-	noremap h <C-D>
-	noremap <PageUp> <C-U>
-	noremap <PageDown> <C-D>
-
-	noremap e v
-	noremap E V
-	vnoremap e V
-	noremap <C-E> <C-V>
-
-	noremap <SPACE> i
-	vnoremap <SPACE> c
-
-	nnoremap <BS> dh
-	vnoremap <BS> "_d
-	nnoremap <C-H> dh
-	vnoremap <C-H> "_d
-
-	noremap <CR> :
-
-	noremap z u
-	noremap Z <C-R>
-	noremap c y
-	noremap C Y
-	noremap v p
-	noremap V P
-	vnoremap v "_dP
-	vnoremap V "_dP
-	noremap x d
-	noremap X D
-
-	noremap w <C-W>
-
-	noremap q lbvhe
-
-	cnoremap <Left> <Space><BS><Left>
-	cnoremap <Right> <Space><BS><Right>
-	
-	" set guicursor=v-c-sm:block,n:ver25,i-ci-ve:hor20,r-cr-o:hor20
-
-endif
 
 set whichwrap=b,s,h,l,<,>,[,]
 set virtualedit=block,onemore
@@ -319,10 +244,6 @@ inoremap <A-j> <C-\><C-N><C-w>j
 inoremap <A-k> <C-\><C-N><C-w>k
 inoremap <A-l> <C-\><C-N><C-w>l
 
-" nnoremap <C-j> <C-e>
-" nnoremap <C-k> <C-y>
-
-"nnoremap <TAB> :b#<CR>
 set wildcharm=<C-Z>
 
 nmap <leader>w :wa<CR>
