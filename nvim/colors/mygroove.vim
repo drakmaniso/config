@@ -86,6 +86,11 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
 		au InsertEnter * hi CursorLine guibg=#000000
 		au InsertLeave * hi CursorLine guibg=#1d2021
 		hi Visual guifg=NONE guibg=#504945 guisp=NONE gui=NONE
+		hi EndOfBuffer guifg=#928374 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+		hi NonText guifg=#928374 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+		hi Whitespace guifg=#928374 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+		hi MatchParen guifg=#fe8019 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+
 		hi Keyword guifg=#fabd2f guibg=NONE guisp=NONE gui=NONE cterm=NONE
 		hi Function guifg=#fe8019 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 		hi Statement guifg=#83a598 guibg=NONE guisp=NONE gui=NONE cterm=NONE
@@ -97,7 +102,6 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
 		hi Title guifg=NONE guibg=NONE guisp=NONE gui=bold cterm=bold
 
 		hi VertSplit guifg=#bdae93 guibg=NONE gui=NONE guisp=NONE cterm=NONE term=NONE
-
 		hi StatusLine guifg=#689d6a guibg=#1d2021 gui=reverse,bold guisp=NONE cterm=reverse term=reverse
 		hi StatusLineNC guifg=#928374 guibg=#1d2021 gui=reverse,bold guisp=NONE cterm=reverse term=reverse
 		au InsertEnter * hi StatusLine guifg=#fe8019 guibg=#1d2021 gui=reverse,bold guisp=NONE cterm=reverse term=reverse
@@ -134,6 +138,11 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
 		au InsertEnter * hi CursorLine guibg=#ebdbb2
 		au InsertLeave * hi CursorLine guibg=#fbf1c7
 		hi Visual guifg=NONE guibg=#fbe157 guisp=NONE gui=NONE
+		hi EndOfBuffer guifg=#928374 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+		hi NonText guifg=#928374 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+		hi Whitespace guifg=#928374 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+		hi MatchParen guifg=#af3a03 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+
 		hi Keyword guifg=#076678 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 		hi Function guifg=NONE guibg=NONE guisp=NONE gui=bold cterm=bold
 		hi Statement guifg=#076678 guibg=NONE guisp=NONE gui=NONE cterm=NONE
@@ -145,7 +154,6 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
 		hi Title guifg=NONE guibg=NONE guisp=NONE gui=bold cterm=bold
 
 		hi VertSplit guifg=#bdae93 guibg=NONE gui=NONE guisp=NONE cterm=NONE term=NONE
-
 		hi StatusLine guifg=#689d6a guibg=#fbf1c7 gui=reverse,bold guisp=NONE cterm=reverse term=reverse
 		hi StatusLineNC guifg=#bdae93 guibg=#fbf1c7 gui=reverse,bold guisp=NONE cterm=reverse term=reverse
 		au InsertEnter * hi StatusLine guifg=#af3a03 guibg=#fbf1c7 gui=reverse,bold guisp=NONE cterm=reverse term=reverse

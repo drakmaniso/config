@@ -120,6 +120,8 @@ function SmoothScroll(up)
 endfunction
 noremap e <C-U>
 noremap d <C-D>
+noremap <PageUp> <C-U>
+noremap <PageDown> <C-D>
 nnoremap e :call SmoothScroll(1)<Enter>
 nnoremap d :call SmoothScroll(0)<Enter>
 inoremap <C-e> <Esc>:call SmoothScroll(1)<Enter>i
@@ -127,6 +129,8 @@ inoremap <C-d> <Esc>:call SmoothScroll(0)<Enter>i
 
 noremap E gg
 noremap D G
+
+map w <C-W>
 
 " set guicursor=v-c-sm:block,n:ver25,i-ci-ve:hor20,r-cr-o:hor20
 set guicursor=v-c-sm:block,n:ver50,i-ci-ve:ver25-blinkwait700-blinkon400-blinkoff250,r-cr-o:hor20
