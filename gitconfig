@@ -1,0 +1,6 @@
+[user]
+	email = moussault.laurent@gmail.com
+	name = drakmaniso
+
+[diff]
+	tool = vimdiff
