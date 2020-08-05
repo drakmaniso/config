@@ -47,6 +47,8 @@ do
 end
 -- }}}
 
+awful.spawn.with_shell("~/.screenlayout/default.sh")
+
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 --beautiful.init(gears.filesystem.get_themes_dir() .. "zenburn/theme.lua")
@@ -158,7 +160,7 @@ local taglist_buttons = gears.table.join(
 local tasklist_buttons = gears.table.join(
                      awful.button({ }, 1, function (c)
                                               if c == client.focus then
-                                                  c.minimized = true
+                                                  --c.minimized = true
                                               else
                                                   c:emit_signal(
                                                       "request::activate",
@@ -258,7 +260,7 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
-    awful.key({ modkey, "Shift"   }, "/",      hotkeys_popup.show_help,
+    awful.key({ modkey, "Shift"   }, "h",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
               {description = "view previous", group = "tag"}),
@@ -307,27 +309,27 @@ globalkeys = gears.table.join(
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
-    awful.key({ modkey, "Shift"   }, "q", awesome.quit,
+    awful.key({ modkey, "Control" }, "q", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
 
-    awful.key({ modkey, "Control" }, "l",     function () awful.tag.incmwfact( 0.05)          end,
+    awful.key({ modkey, "Mod1"    }, "l",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
-    awful.key({ modkey, "Control" }, "j",     function () awful.tag.incmwfact(-0.05)          end,
+    awful.key({ modkey, "Mod1"    }, "j",     function () awful.tag.incmwfact(-0.05)          end,
               {description = "decrease master width factor", group = "layout"}),
-    awful.key({ modkey, "Control" }, "k",     function () awful.tag.incnmaster( 1, nil, true) end,
+    awful.key({ modkey, "Mod1"    }, "k",     function () awful.tag.incnmaster( 1, nil, true) end,
               {description = "increase the number of master clients", group = "layout"}),
-    awful.key({ modkey, "Control" }, "i",     function () awful.tag.incnmaster(-1, nil, true) end,
+    awful.key({ modkey, "Mod1"    }, "i",     function () awful.tag.incnmaster(-1, nil, true) end,
               {description = "decrease the number of master clients", group = "layout"}),
-    awful.key({ modkey, "Shift", "Control" }, "l",     function () awful.tag.incncol( 1, nil, true)    end,
+    awful.key({ modkey, "Shift", "Mod1"    }, "l",     function () awful.tag.incncol( 1, nil, true)    end,
               {description = "increase the number of columns", group = "layout"}),
-    awful.key({ modkey, "Shift", "Control" }, "j",     function () awful.tag.incncol(-1, nil, true)    end,
+    awful.key({ modkey, "Shift", "Mod1"    }, "j",     function () awful.tag.incncol(-1, nil, true)    end,
               {description = "decrease the number of columns", group = "layout"}),
     awful.key({ modkey,           }, "space", function () awful.layout.inc( 1)                end,
               {description = "select next", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
               {description = "select previous", group = "layout"}),
 
-    awful.key({ modkey, "Control" }, "n",
+    awful.key({ modkey, "Mod1"    }, "n",
               function ()
                   local c = awful.client.restore()
                   -- Focus restored client
@@ -365,11 +367,11 @@ clientkeys = gears.table.join(
             c:raise()
         end,
         {description = "toggle fullscreen", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end,
+    awful.key({ modkey, "Control" }, "c",      function (c) c:kill()                         end,
               {description = "close", group = "client"}),
-    awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
+    awful.key({ modkey, "Mod1"    }, "space",  awful.client.floating.toggle                     ,
               {description = "toggle floating", group = "client"}),
-    awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
+    awful.key({ modkey,           }, "Return", function (c) c:swap(awful.client.getmaster()) end,
               {description = "move to master", group = "client"}),
     awful.key({ modkey, "Shift"   }, "j",      function (c) c:move_to_screen()               end,
               {description = "move to screen", group = "client"}),
@@ -390,7 +392,7 @@ clientkeys = gears.table.join(
             c:raise()
         end ,
         {description = "(un)maximize", group = "client"}),
-    awful.key({ modkey, "Control" }, "f",
+    awful.key({ modkey, "Mod1"    }, "f",
         function (c)
             c.maximized_vertical = not c.maximized_vertical
             c:raise()
@@ -421,7 +423,7 @@ for i = 1, 4 do
                   end,
                   {description = "view tag #"..i, group = "tag"}),
         -- Toggle tag display.
-        awful.key({ modkey, "Control" }, mytagkeys[i], -- "#" .. i + 9,
+        awful.key({ modkey, "Mod1"    }, mytagkeys[i], -- "#" .. i + 9,
                   function ()
                       local screen = awful.screen.focused()
                       local tag = screen.tags[i]
@@ -442,7 +444,7 @@ for i = 1, 4 do
                   end,
                   {description = "move focused client to tag #"..i, group = "tag"}),
         -- Toggle tag on focused client.
-        awful.key({ modkey, "Control", "Shift" }, mytagkeys[i], -- "#" .. i + 9,
+        awful.key({ modkey, "Mod1"   , "Shift" }, mytagkeys[i], -- "#" .. i + 9,
                   function ()
                       if client.focus then
                           local tag = client.focus.screen.tags[i]
