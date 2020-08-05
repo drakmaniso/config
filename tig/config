@@ -65,10 +65,10 @@ bind generic    r               view-refs
 bind generic    s               view-status
 bind generic    S               view-status
 bind generic    c               view-stage
-bind generic    y               view-stash
+bind generic    H               view-stash
 bind generic    g               view-grep
 bind generic    p               view-pager
-bind generic    h               view-help
+bind generic    ?               view-help
 # View manipulation
 bind generic    <Enter>         enter
 bind generic    <LessThan>      back
@@ -89,9 +89,11 @@ bind generic    <Ctrl-C>        quit
 # Cursor navigation
 bind generic    i               move-up
 bind generic    k               move-down
+bind generic    h               move-page-down
 bind generic    <PageDown>      move-page-down
 bind generic    <Space>         move-page-down
 bind generic    <PageUp>        move-page-up
+bind generic    y               move-page-up
 bind generic    -               move-page-up
 bind generic    <Ctrl-D>        move-half-page-down
 bind generic    <Ctrl-U>        move-half-page-up
