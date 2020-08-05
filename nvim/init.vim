@@ -186,6 +186,7 @@ set signcolumn=auto
 set noshowmode
 set wildmenu
 set wildmode=longest:full,full
+set wildignore=.git,elm-stuff
 
 set hidden
 set autowrite
@@ -256,6 +257,13 @@ let g:ctrlp_by_filename = 1
 let g:ctrlp_map = 't'
 nmap b :CtrlPBuffer<CR>
 let g:ctrlp_reuse_window = 'netrw\|help'
+let g:ctrlp_match_window = 'bottom,order:btt,min:16,max:16'
+let g:ctrlp_status_func = {'main': 'CtrlP_StatusLine'}
+
+function! CtrlP_StatusLine(focus, byfname, regex, prev, item, next, marked)
+	let regex = a:regex ? ', regex' : ''
+	return getcwd().'%=('.a:item.', by '.a:byfname.' name'.regex.', '.a:marked.' marked)'
+endf
 
 
 " netrw
