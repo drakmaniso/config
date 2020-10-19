@@ -4,7 +4,7 @@ if exists("syntax_on")
 	syntax reset
 endif
 
-let g:colors_name="mygroove"
+let g:colors_name="minima"
 
 let s:t_Co = exists('&t_Co') && !empty(&t_Co) && &t_Co > 1 ? &t_Co : 2
 let s:italics = (&t_ZH != '' && &t_ZH != '[7m') || has('gui_running') || has('nvim')
@@ -58,27 +58,6 @@ hi! link elmAlias Keyword
 if (has('termguicolors') && &termguicolors) || has('gui_running')
 	if &background ==# 'dark'
 		" Dark Background
-		let g:terminal_ansi_colors = ['#1d2021', '#cc241d', '#98971a', '#d79921',
-					\ '#458588', '#b16286', '#689d6a', '#a89984', '#928374', '#fb4934',
-					\ '#b8bb26', '#fabd2f', '#83a598', '#d3869b', '#8ec07c', '#ebdbb2']
-		if has('nvim')
-			let g:terminal_color_0 = '#282828'
-			let g:terminal_color_1 = '#cc241d'
-			let g:terminal_color_2 = '#98971a'
-			let g:terminal_color_3 = '#d79921'
-			let g:terminal_color_4 = '#458588'
-			let g:terminal_color_5 = '#b16286'
-			let g:terminal_color_6 = '#689d6a'
-			let g:terminal_color_7 = '#a89984'
-			let g:terminal_color_8 = '#928374'
-			let g:terminal_color_9 = '#fb4934'
-			let g:terminal_color_10 = '#b8bb26'
-			let g:terminal_color_11 = '#fabd2f'
-			let g:terminal_color_12 = '#83a598'
-			let g:terminal_color_13 = '#d3869b'
-			let g:terminal_color_14 = '#8ec07c'
-			let g:terminal_color_15 = '#ebdbb2'
-		endif
 
 		hi Cursor guifg=NONE guibg=#ffffff
 		hi Normal guifg=#ebdbb2 guibg=#1d2021 guisp=NONE gui=NONE cterm=NONE
@@ -91,19 +70,18 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
 		hi Whitespace guifg=#928374 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 		hi MatchParen guifg=#fe8019 guibg=NONE guisp=NONE gui=NONE cterm=NONE
 
-		hi Keyword guifg=#fabd2f guibg=NONE guisp=NONE gui=NONE cterm=NONE
-		hi Function guifg=#fe8019 guibg=NONE guisp=NONE gui=NONE cterm=bold
-		hi odoFunction guifg=NONE guibg=NONE guisp=NONE gui=NONE cterm=NONE
-		hi odoModuleQualif guifg=#98971a guibg=NONE guisp=NONE gui=NONE cterm=NONE
-		hi Statement guifg=#458588 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-		hi Constant guifg=#83a598 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+		hi Keyword guifg=#83c280 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+		hi Function guifg=NONE guibg=NONE guisp=NONE gui=NONE cterm=bold
+		"hi Function guifg=#e5c55f guibg=NONE guisp=NONE gui=NONE cterm=bold
+		hi Statement guifg=NONE guibg=NONE guisp=NONE gui=NONE cterm=NONE
+		hi Constant guifg=#a3b7be guibg=NONE guisp=NONE gui=NONE cterm=NONE
 		"hi Delimiter guifg=#bdae93 guisp=NONE gui=NONE cterm=NONE
 		hi Operator guifg=NONE guisp=NONE gui=NONE cterm=NONE
-		hi Comment guifg=#d3869b guibg=NONE guisp=NONE gui=italic cterm=italic
+		hi Comment guifg=#fea0b0 guibg=NONE guisp=NONE gui=italic cterm=italic
 		hi Todo guifg=#fb4934 guibg=NONE guisp=NONE gui=bold,italic cterm=bold,italic
 		hi Title guifg=NONE guibg=NONE guisp=NONE gui=bold cterm=bold
-		hi Identifier guifg=#8ec07c guibg=NONE guisp=NONE gui=italic cterm=NONE
-		hi Type guifg=#b8bb26 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+		hi Identifier guifg=NONE guibg=NONE guisp=NONE gui=NONE cterm=NONE
+		hi Type guifg=NONE guibg=NONE guisp=NONE gui=NONE cterm=NONE
 
 		hi VertSplit guifg=#bdae93 guibg=NONE gui=NONE guisp=NONE cterm=NONE term=NONE
 		hi StatusLine guifg=#689d6a guibg=#1d2021 gui=reverse,bold guisp=NONE cterm=reverse term=reverse
@@ -113,27 +91,6 @@ if (has('termguicolors') && &termguicolors) || has('gui_running')
 
 	else
 		" Light Background
-		let g:terminal_ansi_colors = ['#fbf1c7', '#cc241d', '#98971a', '#d79921',
-					\ '#458588', '#b16286', '#689d6a', '#7c6f64', '#928374', '#9d0006',
-					\ '#79740e', '#b57614', '#076678', '#8f3f71', '#427b58', '#3c3836']
-		if has('nvim')
-			let g:terminal_color_0 = '#fbf1c7'
-			let g:terminal_color_1 = '#cc241d'
-			let g:terminal_color_2 = '#98971a'
-			let g:terminal_color_3 = '#d79921'
-			let g:terminal_color_4 = '#458588'
-			let g:terminal_color_5 = '#b16286'
-			let g:terminal_color_6 = '#689d6a'
-			let g:terminal_color_7 = '#7c6f64'
-			let g:terminal_color_8 = '#928374'
-			let g:terminal_color_9 = '#9d0006'
-			let g:terminal_color_10 = '#79740e'
-			let g:terminal_color_11 = '#b57614'
-			let g:terminal_color_12 = '#076678'
-			let g:terminal_color_13 = '#8f3f71'
-			let g:terminal_color_14 = '#427b58'
-			let g:terminal_color_15 = '#3c3836'
-		endif
 		
 		hi Cursor guifg=NONE guibg=#ffccdd
 

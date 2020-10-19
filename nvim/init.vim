@@ -1,34 +1,36 @@
 " Experimental modernization
 
 noremap i k
-noremap I O
+noremap I {
 noremap <c-w>i <c-w>k
 noremap <c-w>I <c-w>K
 
 noremap j h
-noremap J I
+noremap J b
 noremap <C-W>j <C-W>h
 noremap <C-W>J <C-W>H
 
 noremap k j
-noremap K o
+noremap K }
 noremap <C-W>k <C-W>j
 noremap <C-W>K <C-W>J
 
 noremap l l
-noremap L A
+noremap L hel
+vnoremap L e
 noremap <C-W>l <C-W>l
 noremap <C-W>L <C-W>L
 
 noremap u b
-noremap U i
+noremap U ^
 
 noremap o hel
 vnoremap o e
-noremap O a
+noremap O $l
+vnoremap O $h
 
-noremap h ^
-noremap y 0
+noremap y ^
+noremap Y 0
 noremap p $l
 vnoremap p $h
 
@@ -67,14 +69,15 @@ noremap fl v
 noremap fi hvkl
 noremap fk vjh
 noremap fu hvlb
+noremap fJ hvlb
 noremap fo vhe
+noremap fL vhe
 noremap fh v^
 noremap fy v0
 noremap fp v$h
-noremap fJ v^
 noremap fU v0
-noremap fL v$h
 noremap fO v$
+noremap fs vf
 
 noremap s f
 noremap S F
@@ -87,6 +90,8 @@ vnoremap <C-H> "_d
 noremap <SPACE> i
 vnoremap <SPACE> c
 "noremap <CR> :
+
+au InsertLeave * normal l
 
 noremap z u
 noremap Z <C-R>
@@ -127,14 +132,16 @@ nnoremap d :call SmoothScroll(0)<Enter>
 inoremap <C-e> <Esc>:call SmoothScroll(1)<Enter>i
 inoremap <C-d> <Esc>:call SmoothScroll(0)<Enter>i
 
-noremap E gg
-noremap D G
+" noremap E gg
+" noremap D G
 
 map w <C-W>
 
+noremap q @
+noremap @ q
+
 " set guicursor=v-c-sm:block,n:ver25,i-ci-ve:hor20,r-cr-o:hor20
 set guicursor=v-c-sm:block,n:ver50,i-ci-ve:ver25-blinkwait700-blinkon400-blinkoff250,r-cr-o:hor20
-au InsertLeave * normal l
 
 
 set whichwrap=b,s,h,l,<,>,[,]
@@ -156,11 +163,16 @@ set encoding=utf-8
 
 syntax on
 filetype plugin indent on
-set termguicolors
 
 set synmaxcol=250
+
+set notermguicolors
 set background=dark
-colorscheme mygroove
+colorscheme minim
+"colorscheme mygroove
+"colorscheme monokai_pro
+"colorscheme gruvbox
+"colorscheme noctu
 
 "match ExtraWhiteSpace /^\ \+/
 
@@ -171,7 +183,10 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 
 " Personal Stuff
 
-set cursorline
+set nocursorline
+"hi CursorLine   ctermfg=NONE ctermbg=NONE cterm=NONE
+"au InsertEnter * hi CursorLine ctermfg=NONE ctermbg=NONE cterm=underline
+"au InsertLeave * hi CursorLine ctermfg=NONE ctermbg=NONE cterm=NONE
 
 set laststatus=2
 set statusline=%f%(\ [%M%R%q]%)%=%4c,%4l
@@ -210,7 +225,7 @@ set nonumber
 set nohlsearch
 set gdefault
 
-"set inccommand="split"
+"set inccommand="nosplit"
 
 set list
 set listchars=tab:·\ ,trail:·
@@ -229,8 +244,8 @@ set smarttab
 set softtabstop=0
 set shiftwidth=0
 
-set nosplitbelow
-set splitright
+set nosplitright
+set splitbelow
 set helpheight=5
 
 
@@ -253,12 +268,21 @@ nmap <leader>w :wa<CR>
 
 " CtrlP
 
+let g:ctrlp_working_path_mode = 'r'
+"let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
 let g:ctrlp_by_filename = 1
 let g:ctrlp_map = 't'
 nmap b :CtrlPBuffer<CR>
 let g:ctrlp_reuse_window = 'netrw\|help'
-let g:ctrlp_match_window = 'bottom,order:btt,min:16,max:16'
+"let g:ctrlp_match_window = 'bottom,order:btt,min:16,max:16'
+let g:ctrlp_match_window = 'bottom,order:btt,min:5,max:5'
 let g:ctrlp_status_func = {'main': 'CtrlP_StatusLine'}
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v([\/]\.(git|hg|svn)$|target$)',
+  \ 'file': '\v(\.(exe|o|so|dll)$)',
+  \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+  \ }
 
 function! CtrlP_StatusLine(focus, byfname, regex, prev, item, next, marked)
 	let regex = a:regex ? ', regex' : ''
@@ -308,6 +332,19 @@ let g:NERDTreeMapOpenRecursively = ""
 let g:NERDTreeMapUpdirKeepOpen = ""
 " nmap <silent> t :NERDTreeFocus<CR>
 " au VimEnter * NERDTreeToggleVCS
+
+
+" Rust
+
+let g:rust_recommended_style = 1
+let g:rustfmt_autosave = 1
+
+"au FileType rust set makeprg=cargo\ build
+au FileType rust map <C-B> :make build<CR>
+au FileType rust map <C-R> :make run<CR>
+
+"autocmd QuickFixCmdPost [^l]* nested cwindow
+"autocmd QuickFixCmdPost    l* nested lwindow
 
 
 " Go

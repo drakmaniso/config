@@ -28,3 +28,21 @@
 [submodule "nvim/pack/plugins/start/ctrlp.vim"]
 	path = nvim/pack/plugins/start/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim
+[submodule "nvim/pack/plugins/start/vim-monokai-pro"]
+	path = nvim/pack/plugins/start/vim-monokai-pro
+	url = https://github.com/phanviet/vim-monokai-pro
+[submodule "nvim/pack/plugins/start/gruvbox"]
+	path = nvim/pack/plugins/start/gruvbox
+	url = https://github.com/morhetz/gruvbox
+[submodule "nvim/pack/plugins/start/vim-polyglot"]
+	path = nvim/pack/plugins/start/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot
+[submodule "nvim/pack/plugins/start/vim-noctu"]
+	path = nvim/pack/plugins/start/vim-noctu
+	url = https://github.com/noahfrederick/vim-noctu
+[submodule "nvim/pack/plugins/start/vim-dim"]
+	path = nvim/pack/plugins/start/vim-dim
+	url = https://github.com/jeffkreeftmeijer/vim-dim
+[submodule "nvim/pack/plugins/start/rust.vim"]
+	path = nvim/pack/plugins/start/rust.vim
+	url = https://github.com/rust-lang/rust.vim
