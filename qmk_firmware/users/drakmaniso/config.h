@@ -8,7 +8,7 @@
 #ifdef TAPPING_TOGGLE
 #undef TAPPING_TOGGLE
 #endif
-#define TAPPING_TOGGLE 2
+#define TAPPING_TOGGLE 1
 
 //#define NO_ACTION_ONESHOT
 //#define NO_ACTION_MACRO
