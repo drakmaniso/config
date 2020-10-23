@@ -235,6 +235,8 @@ set listchars=tab:\ \ ,trail:·
 "set listchars=tab:┆\ ,trail:·
 "let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
+"set fillchars=vert:\│
+
 set autoindent
 set nosmartindent
 set nocindent
