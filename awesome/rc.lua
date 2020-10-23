@@ -48,6 +48,7 @@ end
 -- }}}
 
 awful.spawn.with_shell("~/.screenlayout/default.sh")
+-- awful.spawn.with_shell("~/.xsessionrc")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
