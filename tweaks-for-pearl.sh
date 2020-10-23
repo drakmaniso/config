@@ -1,3 +1,7 @@
+#!/bin/sh
+
+xrdb ~/.Xresources
+
 # Mouse
 xset m 1/1 0
 xinput set-prop "Primax Kensington Eagle Trackball" "libinput Accel Profile Enabled" 0, 1
