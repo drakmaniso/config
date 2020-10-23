@@ -2,9 +2,10 @@
 function fish_prompt --description 'Prints left prompt'
 	set -l last_status  $status
     #set -l glyph        "❯"
-    #set -l glyph        "\u276f"
-    #set -l glyph        "\ue0b0"
-    set -l glyph        ""
+	#set -l glyph        "\u276f"
+	#set -l glyph        "\ue0b0"
+	set -l glyph        ""
+	#set -l glyph        "\u258c"
     set -l glyph_color  (set_color normal; set_color blue)
     set -l pwd          (prompt_pwd)
     set -l pwd_color    (set_color -b blue; set_color black)
@@ -28,5 +29,6 @@ function fish_prompt --description 'Prints left prompt'
         set glyph "#"
     end
 
-    printf "$pwd_color$pwd$glyph_color$glyph "
+	printf "$pwd_color$pwd$glyph_color$glyph "
+	#printf "$pwd_color$pwd $glyph_color "
 end
