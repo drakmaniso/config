@@ -9,6 +9,8 @@ syn keyword odoKeyword with forall require ensure do
 syn keyword odoKeyword if then else case of when
 syn keyword odoKeyword or and to
 syn keyword odoKeyword is as
+syn keyword odoKeyword own give
+syn keyword odoKeyword for in while loop
 
 syn keyword odoEnd end
 
