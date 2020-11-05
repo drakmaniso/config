@@ -3,7 +3,7 @@ if exists("b:current_syntax")
 endif
 
 syn keyword odoTopKeyword module using public private
-syn keyword odoKeyword type alias interface data pointer
+syn keyword odoKeyword type alias interface data pointer object
 syn keyword odoKeyword ref
 syn keyword odoKeyword with forall require ensure do
 syn keyword odoKeyword if then else case of when
