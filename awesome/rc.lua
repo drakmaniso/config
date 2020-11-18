@@ -74,6 +74,7 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
+    awful.layout.suit.max,
     awful.layout.suit.tile,
     --awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
@@ -81,14 +82,13 @@ awful.layout.layouts = {
     --awful.layout.suit.fair.horizontal,
     --awful.layout.suit.spiral,
     --awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.max,
     --awful.layout.suit.max.fullscreen,
     --awful.layout.suit.magnifier,
     --awful.layout.suit.corner.nw,
     --awful.layout.suit.corner.ne,
     --awful.layout.suit.corner.sw,
     --awful.layout.suit.corner.se,
-    awful.layout.suit.fair,
+    --awful.layout.suit.fair,
     awful.layout.suit.floating,
 }
 -- }}}
@@ -263,20 +263,20 @@ root.buttons(gears.table.join(
 globalkeys = gears.table.join(
     awful.key({ modkey            }, "h",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
-    awful.key({ modkey,           }, "j",   awful.tag.viewprev,
+    awful.key({ modkey,           }, "i",   awful.tag.viewprev,
               {description = "view previous", group = "tag"}),
-    awful.key({ modkey,           }, "l",  awful.tag.viewnext,
+    awful.key({ modkey,           }, "k",  awful.tag.viewnext,
               {description = "view next", group = "tag"}),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
 
-    awful.key({ modkey,           }, "k",
+    awful.key({ modkey,           }, "l",
         function ()
             awful.client.focus.byidx( 1)
         end,
         {description = "focus next by index", group = "client"}
     ),
-    awful.key({ modkey,           }, "i",
+    awful.key({ modkey,           }, "j",
         function ()
             awful.client.focus.byidx(-1)
         end,
@@ -304,9 +304,9 @@ globalkeys = gears.table.join(
     -- end),
 
     -- Layout manipulation
-    awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx(  1)    end,
+    awful.key({ modkey, "Shift"   }, "l", function () awful.client.swap.byidx(  1)    end,
               {description = "swap with next client by index", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "i", function () awful.client.swap.byidx( -1)    end,
+    awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx( -1)    end,
               {description = "swap with previous client by index", group = "client"}),
     awful.key({ modkey,           }, "u", function () awful.screen.focus_relative( 1) end,
               {description = "focus the next screen", group = "screen"}),
@@ -423,7 +423,7 @@ clientkeys = gears.table.join(
     --        c:raise()
     --    end ,
     --    {description = "(un)maximize horizontally", group = "client"})
-    awful.key({ modkey, "Shift" }, "j",
+    awful.key({ modkey, "Shift" }, "i",
         function ()
             -- get current tag
             local t = client.focus and client.focus.first_tag or nil
@@ -436,7 +436,7 @@ clientkeys = gears.table.join(
             awful.tag.viewprev()
         end,
             {description = "move client to previous tag and switch to it", group = "layout"}),
-    awful.key({ modkey, "Shift" }, "l",
+    awful.key({ modkey, "Shift" }, "k",
         function ()
             -- get current tag
             local t = client.focus and client.focus.first_tag or nil
