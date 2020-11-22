@@ -2,24 +2,16 @@
 
 noremap i k
 noremap I {
-noremap <c-w>i <c-w>k
-noremap <c-w>I <c-w>K
 
 noremap j h
 noremap J b
-noremap <C-W>j <C-W>h
-noremap <C-W>J <C-W>H
 
 noremap k j
 noremap K }
-noremap <C-W>k <C-W>j
-noremap <C-W>K <C-W>J
 
 noremap l l
 noremap L hel
 vnoremap L e
-noremap <C-W>l <C-W>l
-noremap <C-W>L <C-W>L
 
 noremap u b
 noremap U ^
@@ -29,10 +21,10 @@ vnoremap o e
 noremap O $l
 vnoremap O $h
 
-noremap y ^
-noremap Y 0
-noremap p $l
-vnoremap p $h
+noremap p ^
+noremap P 0
+noremap ; $l
+vnoremap ; $h
 
 noremap <A-j> zh
 noremap <A-l> zl
@@ -41,28 +33,12 @@ noremap <A-k> <C-E>
 noremap <A-u> <C-W>W
 noremap <A-o> <C-W>w
 
-" noremap r <ESC>
-" noremap r<SPACE> r
-" noremap rr V
-" vnoremap rr V
-" noremap <C-R> <C-V>
-" noremap rj hv
-" noremap rl v
-" noremap ri hvkl
-" noremap rk vjh
-" noremap ru hvlb
-" noremap ro vhe
-" noremap rh v^
-" noremap ry v0
-" noremap rp v$h
-" noremap rJ v^
-" noremap rU v0
-" noremap rL v$h
-" noremap rO v$
 
 noremap f <ESC>
 noremap F V
 noremap ff lbvhe
+noremap d ve
+noremap e lbvhe
 noremap <C-F> <C-V>
 noremap fj hv
 noremap fl v
@@ -73,8 +49,8 @@ noremap fJ hvlb
 noremap fo vhe
 noremap fL vhe
 noremap fh v^
-noremap fy v0
-noremap fp v$h
+noremap fp v0
+noremap f; v$h
 noremap fU v0
 noremap fO v$
 noremap fs vf
@@ -123,8 +99,8 @@ function SmoothScroll(up)
 		exec "normal " . scrollaction
 	endwhile
 endfunction
-noremap e <C-U>
-noremap d <C-D>
+noremap y <C-U>
+noremap h <C-D>
 noremap <PageUp> <C-U>
 noremap <PageDown> <C-D>
 "inoremap <PageUp> <Esc><C-U>i
@@ -138,12 +114,22 @@ noremap <PageDown> <C-D>
 " noremap D G
 
 map w <C-W>
+noremap <C-W>i <C-W>k
+noremap <C-W>I <C-W>K
+noremap <C-W>j <C-W>h
+noremap <C-W>J <C-W>H
+noremap <C-W>k <C-W>j
+noremap <C-W>K <C-W>J
+noremap <C-W>l <C-W>l
+noremap <C-W>L <C-W>L
+noremap <C-W>o <C-W>w
+noremap <C-W>u <C-W>W
 
 noremap q @
 noremap @ q
 
-" set guicursor=v-c-sm:block,n:ver25,i-ci-ve:hor20,r-cr-o:hor20
-set guicursor=v-c-sm:block,n:ver50,i-ci-ve:ver25-blinkwait700-blinkon400-blinkoff250,r-cr-o:hor20
+set guicursor=v-c-sm:block,n:ver25,i-ci-ve:hor20,r-cr-o:hor20
+" set guicursor=v-c-sm:block,n:ver50,i-ci-ve:ver25-blinkwait700-blinkon400-blinkoff250,r-cr-o:hor20
 
 
 set whichwrap=b,s,h,l,<,>,[,]
