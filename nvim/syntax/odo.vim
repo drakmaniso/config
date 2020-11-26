@@ -3,15 +3,16 @@ if exists("b:current_syntax")
 endif
 
 syn keyword odoTopKeyword module using public private
-syn keyword odoKeyword type alias interface concept trait data pointer object
+syn keyword odoKeyword type alias interface concept trait data pointer object variant
 syn keyword odoKeyword ref box from
 syn keyword odoKeyword with forall require ensure do
-syn keyword odoKeyword if then else case of when
+syn keyword odoKeyword if then else case of when match 
 syn keyword odoKeyword or and to
 syn keyword odoKeyword is as
 syn keyword odoKeyword own give
 syn keyword odoKeyword for in while loop
-syn keyword odoKeyword function func
+syn keyword odoKeyword function func fun def define let
+syn keyword odoKeyword owned shared boxed
 
 syn keyword odoEnd end
 
@@ -27,8 +28,12 @@ syn match odoOperator "\v\/"
 
 syn match odoArrow "\v\-\>"
 
-syn match odoComment "--.*$"
-syn match odoComment "#.*$"
+syn match odoComment "\v--.*$"
+
+syn region odoMultiComment start="\v--\(" end="\v\)--"
+syn region odoMultiComment start="\v--\{" end="\v\}--"
+syn region odoMultiComment start="\v--\[" end="\v\]--"
+syn region odoMultiComment start="\v--\<" end="\v\>--"
 
 syn match odoNumber "\v<\d+>"
 syn match odoNumber "\v<\d+\.\d+>"
@@ -45,11 +50,11 @@ syn match odoType       "\v<\u[a-z0-9_]*>\!?"
 "syn match odoFunctionCall "\v'<\l[a-z0-9_]*>:?"
 "syn match odoFunctionCall "\v<\l[a-z0-9_]*>:"
 
-syn region odoDefinition start="\v^\s*[A-Za-z]" end="\v(\s|[A-Za-z0-9_])\=(\s|\n|[A-Za-z0-9_])" 
-	\ oneline
-	\ contains=odoToPDefinitionName,odoDefinitionName,odoKeyword,odoIdentifier,odoType,odoDot,odoColon,odoComma,odoBracket,odoArrow,odoKeyword
-syn match odoDefinitionName "\v^\s+<[A-Za-z][a-z0-9_]*>" contained containedin=odoDefinition
-syn match odoTopDefinitionName "\v^<[A-Za-z][a-z0-9_]*>" contained containedin=odoDefinition
+"syn region odoDefinition start="\v^\s*[A-Za-z]" end="\v(\s|[A-Za-z0-9_])\=(\s|\n|[A-Za-z0-9_])" 
+"	\ oneline
+"	\ contains=odoToPDefinitionName,odoDefinitionName,odoKeyword,odoIdentifier,odoType,odoDot,odoColon,odoComma,odoBracket,odoArrow,odoKeyword
+"syn match odoDefinitionName "\v^\s+<[A-Za-z][a-z0-9_]*>" contained containedin=odoDefinition
+"syn match odoTopDefinitionName "\v^<[A-Za-z][a-z0-9_]*>" contained containedin=odoDefinition
 
 syn match odoBracket "[(){}\[\]]"
 syn match odoDot "\v\."
@@ -72,6 +77,7 @@ hi def link odoTopDefinitionName Function
 "hi def link odoFunctionCall Normal
 hi def link odoIdentifier Identifier
 hi def link odoComment Comment
+hi def link odoMultiComment Comment
 hi def link odoDelimiter Delimiter
 hi def link odoString String
 hi def link odoNumber Number
