@@ -7,13 +7,11 @@
 ! -----------------------------------------------------------------------------
 
 ! hard contrast: *background: #1d2021
-!*background: #282828
-*background: #000000
-! soft contrast: *background: #32302f
-*foreground: #c3b694
+*background: #141414
+*foreground: #cdbf9b
 ! Black + DarkGrey
-!*color0:  #282828
-*color0:  #000000
+*color0:  #141414
+!*color0:  #000000
 !*color8:  #928374
 *color8:  #49413A
 ! DarkRed + Red
@@ -36,7 +34,8 @@
 *color14: #8ec07c
 ! LightGrey + White
 *color7:  #a89984
-*color15: #c3b694
+!*color15: #c3b694
+*color15: #cdbf9b
 !*color15: #ebdbb2
 
 XTerm*utf8: 1
@@ -53,7 +52,7 @@ XTerm*utf8: 1
 *vt100.font4: -*-crispal-medium-*-*-*-20-*-*-*-*-*-*-*
 *vt100.font5: terminus-24
 *vt100.font6: -*-monozela-*-*-*-*-36-*-*-*-*-*-*-*
-!XTerm.scaleHeight: 1.5
+!XTerm.vt100.scaleHeight: 1.9
 
 XTerm.termName: xterm-256color
 
