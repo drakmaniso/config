@@ -87,16 +87,16 @@ if &background ==# 'dark'
 	hi Float	   ctermfg=12   ctermbg=NONE cterm=NONE
 
 	hi Identifier  ctermfg=NONE ctermbg=NONE cterm=NONE
-	hi Function	   ctermfg=NONE ctermbg=NONE cterm=NONE
+	hi Function	   ctermfg=10   ctermbg=NONE cterm=NONE
 
 	hi Type		   ctermfg=NONE ctermbg=NONE cterm=NONE
 	hi StorageClas ctermfg=NONE ctermbg=NONE cterm=NONE
 	hi Structure   ctermfg=NONE ctermbg=NONE cterm=NONE
 	hi Typedef	   ctermfg=NONE ctermbg=NONE cterm=NONE
 
-	hi PreProc	   ctermfg=14   ctermbg=NONE cterm=NONE
+	hi PreProc	   ctermfg=10   ctermbg=NONE cterm=NONE
 	hi Include	   ctermfg=10   ctermbg=NONE cterm=NONE
-	hi Define	   ctermfg=14   ctermbg=NONE cterm=NONE
+	hi Define	   ctermfg=10   ctermbg=NONE cterm=NONE
 	hi Macro	   ctermfg=14   ctermbg=NONE cterm=NONE
 	hi PreCondit   ctermfg=14   ctermbg=NONE cterm=NONE
 	hi Statement   ctermfg=14   ctermbg=NONE cterm=NONE
