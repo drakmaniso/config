@@ -1,0 +1,35 @@
+{
+	"name": "clar-syntax",
+	"version": "0.0.1",
+	"displayName": "Clar Syntax",
+	"description": "wip",
+	"publisher": "drakmaniso",
+	"keywords": [],
+	"repository": {
+		"type": "git",
+		"url": ""
+	},
+	"engines": {
+		"vscode": "^1.45.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "clar",
+				"extensions": [
+					".clar"
+				]
+			}
+		],
+		"grammars": [
+			{
+				"language": "clar",
+				"scopeName": "source.clar",
+				"path": "./syntaxes/clar.tmGrammar.json"
+			}
+		]
+	}
+}

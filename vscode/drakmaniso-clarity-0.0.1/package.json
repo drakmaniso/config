@@ -1,0 +1,37 @@
+{
+	"name": "clarity",
+	"version": "0.0.1",
+	"displayName": "Clarity Theme",
+	"description": "Almost monochromatic, light color theme with highlighted comments",
+	"publisher": "drakmaniso",
+	"keywords": [
+		"color-theme",
+		"theme",
+		"light",
+		"monochrome"
+	],
+	"repository": {
+		"type": "git",
+		"url": ""
+	},
+	"engines": {
+		"vscode": "^1.45.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Clarity Light Parchment",
+				"uiTheme": "vs",
+				"path": "./themes/clarity-light-color-theme.json"
+			},
+			{
+				"label": "Clarity Dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/clarity-dark-color-theme.json"
+			}
+		]
+	}
+}
