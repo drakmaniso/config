@@ -1,30 +1,39 @@
 " Experimental modernization
 
 noremap i k
-noremap I {
+noremap I hvkl
+vnoremap I k
 
 noremap j h
-noremap J b
+noremap J hv
+vnoremap J h
 
 noremap k j
-noremap K }
+noremap <expr> K col('.')>1 ? 'vjh' : 'V'
+vnoremap K j
 
 noremap l l
-noremap L hel
-vnoremap L e
+noremap L v
+vnoremap L l
 
-noremap u b
-noremap U ^
+noremap s b
+noremap S hvb
+vnoremap S b
 
-noremap o hel
-vnoremap o e
-noremap O $l
-vnoremap O $h
+noremap f hel
+vnoremap f e
+noremap F ve
+vnoremap F e
 
-noremap p ^
-noremap P 0
-noremap ; $l
-vnoremap ; $h
+noremap h ^
+noremap y 0
+noremap Y v0
+vnoremap Y 0
+
+noremap p $l
+vnoremap p $h
+noremap P v$h
+vnoremap P $h
 
 noremap <A-j> zh
 noremap <A-l> zl
@@ -34,29 +43,30 @@ noremap <A-u> <C-W>W
 noremap <A-o> <C-W>w
 
 
-noremap f <ESC>
-noremap F V
-noremap ff lbvhe
-noremap d ve
-noremap e lbvhe
-noremap <C-F> <C-V>
-noremap fj hv
-noremap fl v
-noremap fi hvkl
-noremap fk vjh
-noremap fu hvlb
-noremap fJ hvlb
-noremap fo vhe
-noremap fL vhe
-noremap fh v^
-noremap fp v0
-noremap f; v$h
-noremap fU v0
-noremap fO v$
-noremap fs vf
+noremap g v
+" noremap f <ESC>
+" noremap F V
+" noremap ff lbvhe
+" noremap d ve
+" noremap e lbvhe
+" noremap <C-F> <C-V>
+" noremap fj hv
+" noremap fl v
+" noremap fi hvkl
+" noremap fk vjh
+" noremap fu hvlb
+" noremap fJ hvlb
+" noremap fo vhe
+" noremap fL vhe
+" noremap fh v^
+" noremap fp v0
+" noremap f; v$h
+" noremap fU v0
+" noremap fO v$
+" noremap fs vf
 
-noremap s f
-noremap S F
+" noremap s f
+" noremap S F
 
 nnoremap <BS> dh
 vnoremap <BS> "_d
@@ -83,24 +93,8 @@ noremap X D
 cnoremap <Left> <Space><BS><Left>
 cnoremap <Right> <Space><BS><Right>
 
-function SmoothScroll(up)
-	if a:up
-		let scrollaction="\<C-y>"
-	else
-		let scrollaction="\<C-e>"
-	endif
-	exec "normal " . scrollaction
-	redraw
-	let counter=1
-	while counter<&scroll
-		let counter+=1
-		sleep 8m
-		redraw
-		exec "normal " . scrollaction
-	endwhile
-endfunction
-noremap y <C-U>
-noremap h <C-D>
+noremap e <C-U>
+noremap d <C-D>
 noremap <PageUp> <C-U>
 noremap <PageDown> <C-D>
 "inoremap <PageUp> <Esc><C-U>i
@@ -128,8 +122,8 @@ noremap <C-W>u <C-W>W
 noremap q @
 noremap @ q
 
-set guicursor=v-c-sm:block,n:ver25,i-ci-ve:hor20,r-cr-o:hor20
-" set guicursor=v-c-sm:block,n:ver50,i-ci-ve:ver25-blinkwait700-blinkon400-blinkoff250,r-cr-o:hor20
+" set guicursor=v-c-sm:block,n:ver25,i-ci-ve:hor20,r-cr-o:hor20
+set guicursor=v-c-sm:hor20,n:block,i-ci-ve:ver25-blinkwait700-blinkon400-blinkoff250,r-cr-o:hor20
 
 
 set whichwrap=b,s,h,l,<,>,[,]
