@@ -23,9 +23,19 @@
 	"contributes": {
 		"themes": [
 			{
-				"label": "Clarity Light Parchment",
+				"label": "Clarity Light Monochrome",
 				"uiTheme": "vs",
-				"path": "./themes/clarity-light-color-theme.json"
+				"path": "./themes/clarity-light-monochrome-color-theme.json"
+			},
+			{
+				"label": "Clarity Dark Rainbow",
+				"uiTheme": "vs-dark",
+				"path": "./themes/clarity-dark-rainbow-color-theme.json"
+			},
+			{
+				"label": "Clarity Dark Monochrome",
+				"uiTheme": "vs-dark",
+				"path": "./themes/clarity-dark-monochrome-color-theme.json"
 			},
 			{
 				"label": "Clarity Dark",
