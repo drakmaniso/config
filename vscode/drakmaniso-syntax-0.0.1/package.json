@@ -18,17 +18,17 @@
 	"contributes": {
 		"languages": [
 			{
-				"id": "clar",
+				"id": "Sona-Jo",
 				"extensions": [
-					".clar"
+					".snj"
 				]
 			}
 		],
 		"grammars": [
 			{
-				"language": "clar",
-				"scopeName": "source.clar",
-				"path": "./syntaxes/clar.tmGrammar.json"
+				"language": "Sona-Jo",
+				"scopeName": "source.sona-jo",
+				"path": "./syntaxes/sona-jo.tmGrammar.json"
 			}
 		]
 	}
