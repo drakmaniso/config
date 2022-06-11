@@ -15,6 +15,8 @@ enum custom_layers {
 #define CT_LEFT LCTL(KC_LEFT)
 #define CT_RGHT LCTL(KC_RGHT)
 
+#define CT_L LCTL(KC_L)
+
 /*
 Since our quirky block definitions are basically a list of comma separated
 arguments, we need a wrapper in order for these definitions to be
@@ -34,7 +36,7 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #define QWERTY_4     KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, SYMBOLS, KC_ENT,      KC_SPC,  KC_RSFT, FUNCS,   KC_RGUI, KC_RALT, KC_RCTL
 
 #define SYMBOLS_1    KC_BSLS, KC_LBRC, KC_EQL,  KC_RBRC, KC_GRV,  KC_INS,      KC_DEL,  KC_PGUP, CT_LEFT, KC_UP,   CT_RGHT, KC_HOME
-#define SYMBOLS_2    KC_DOT,  KC_LPRN, KC_MINS, KC_RPRN, KC_QUOT, KC_TAB,      KC_BSPC, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, KC_END
+#define SYMBOLS_2    CT_L,    KC_LPRN, KC_MINS, KC_RPRN, KC_QUOT, KC_TAB,      KC_BSPC, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, KC_END
 #define SYMBOLS_3    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    ADJUST,      ADJUST,  KC_6,    KC_7,    KC_8,    KC_9,    KC_0
 #define SYMBOLS_4    KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, XXXXXXX, KC_ENT,      KC_SPC,  KC_RSFT, FUNCS,   KC_RGUI, KC_RALT, KC_RCTL
 
