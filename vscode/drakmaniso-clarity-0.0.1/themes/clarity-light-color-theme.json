@@ -1,53 +1,62 @@
 {
-  "type": "dark",
-  "colors": {},
+  "type": "light",
+  "colors": {
+    "editor.foreground": "#050505",
+    "editor.background": "#e0e0e0",
+  },
   "tokenColors": [
     {
       "scope": "comment",
       "settings": {
-        "fontStyle": "italic"
+        "fontStyle": "italic",
+        "foreground": "#0967b4"
       }
     },
     {
       "scope": "comment punctuation",
       "settings": {
-        "fontStyle": "italic"
+        "fontStyle": "italic",
+        "foreground": "#0967b4"
       }
     },
     {
       "scope": "storage.modifier",
       "settings": {
-        "fontStyle": "bold italic"
+        "fontStyle": "italic"
       }
     },
     {
       "scope": "keyword",
       "settings": {
-        "fontStyle": "bold italic"
+        "fontStyle": "bold italic",
+        "foreground": "#b10b6c"
+      }
+    },
+    {
+      "scope": "keyword.operator",
+      "settings": {
+        "fontStyle": "",
+        "foreground": "#050505"
       }
     },
     {
       "scope": "meta.attribute",
       "settings": {
-        "fontStyle": "bold italic"
+        "fontStyle": "bold italic",
+        "foreground": "#b10b6c"
       }
     },
     {
       "scope": "keyword.definition",
       "settings": {
-        "fontStyle": "bold italic"
+        "fontStyle": "bold italic",
+        "foreground": "#b10b6c"
       }
     },
     {
       "scope": "variable.language",
       "settings": {
         "fontStyle": "italic"
-      }
-    },
-    {
-      "scope": "keyword.operator",
-      "settings": {
-        "fontStyle": ""
       }
     },
     {
@@ -95,7 +104,7 @@
       "settings": {}
     },
     {
-      "scope": "punctuation.separator.colon",
+      "scope": "punctuation.brackets",
       "settings": {}
     },
     {
@@ -111,19 +120,15 @@
     {
       "scope": "string",
       "settings": {
-        "fontStyle": "italic"
+        // "fontStyle": "italic",
+        "foreground": "#0b8300"
       }
     },
     {
       "scope": "string punctuation",
       "settings": {
-        "fontStyle": "italic"
-      }
-    },
-    {
-      "scope": "punctuation.terminator.semicolon",
-      "settings": {
-        "fontStyle": "italic"
+        // "fontStyle": "italic",
+        "foreground": "#0b8300"
       }
     },
     {
