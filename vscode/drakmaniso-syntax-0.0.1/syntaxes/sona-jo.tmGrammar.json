@@ -26,16 +26,28 @@
             "name": "keyword.control.import.sona-jo"
         },
         {
-            "match": "(?<!-)\\b(public|private|where)\\b(?!-)",
+            "match": "(?<!-)\\b(where|public|opaque|hide|publish|data|proxy|method|operator|private|local|expose)\\b(?!-)",
             "name": "keyword.control.sona-jo"
+        },
+        {
+            "match": "(?<!-)\\b(has|rw|ro)\\b(?!-)",
+            "name": "keyword.other.sona-jo"
         },
         {
             "match": "(?<!-)\\b(require|ensure)\\b(?!-)",
             "name": "keyword.control.sona-jo"
         },
         {
-            "match": "(?<!-)\\b(if|then|else|case|match|for|in|via|through|do|done|while|until|repeat|loop|return|break|continue|yield|lambda|fun|forall|implement|dispatch)\\b(?!-)",
+            "match": "(?<!-)\\b(if|then|else|case|match|noelse|for|in|via|through|do|done|while|until|repeat|loop|return|break|continue|yield|lambda|fun|member|var|Fun|forall|derive|implement|impl|interface|dispatch|is)\\b(?!-)",
             "name": "keyword.control.sona-jo"
+        },
+        {
+            "match": "(?<=\\s)(=>)(?=\\s)",
+            "name": "keyword.operator.sona-jo"
+        },
+        {
+            "match": "(?<=\\s)(->)(?=\\s)",
+            "name": "keyword.operator.sona-jo"
         },
         {
             "match": "(?<!-)\\b(end)\\b(?!-)",
@@ -51,410 +63,22 @@
         },
         {
             "match": "(?<!-)\\b(is|as|and|or|not)\\b(?!-)",
-            "name": "keyword.operator.sona-jo"
+            "name": "keyword.logic.sona-jo"
         },
         {
-            "match": "(?<!-)\\b(self)\\b(?!-)",
+            "match": "(?<!-)\\b(self|Self|Type)\\b(?!-)",
             "name": "variable.language.sona-jo"
         },
         {
-            "name": "meta.function.definition.sona-jo",
-            "match": "(?<!-)\\b(func|function|method)\\s+([[:lower:]][[:word:]-]*(\\!|\\b))",
-            "captures": {
-                "1": {
-                    "name": "keyword.control.definition.sona-jo"
-                },
-                "2": {
-                    "name": "entity.name.function.sona-jo"
-                }
-            }
-        },
-        {
-            "--name": "meta.function.definition.method.sona-jo",
-            "--match": "(?<!-)\\b(func|const|alias)\\s*([[:upper:]][[:word:]-]*(\\!|\\b))\\s*((\\[|\\])|([[:upper:]]+)|(\\#[[:word:]-]*)|(\\,)|\\s*)*\\s*(\\.)\\s*([[:lower:]][[:word:]-]*(\\!|\\b))",
-            "--captures": {
-                "1": {
-                    "name": "keyword.control.definition.sona-jo"
-                },
-                "2": {
-                    "name": "entity.name.type.sona-jo"
-                },
-                "4": {
-                    "name": "punctuation.brackets.square.sona-jo"
-                },
-                "5": {
-                    "name": "variable.type.sona-jo"
-                },
-                "6": {
-                    "name": "variable.type.sona-jo"
-                },
-                "7": {
-                    "name": "punctuation.separator.comma.sona-jo"
-                },
-                "9": {
-                    "name": "punctuation.accessor.dot.sona-jo"
-                },
-                "10": {
-                    "name": "entity.name.function.sona-jo"
-                }
-            }
-        },
-        {
-            "name": "meta.function.definition.method.sona-jo",
-            "begin": "(?<!-)\\b(func)\\s*(\\()",
-            "end": "(\\))\\s*(\\.)\\s*([[:lower:]][[:word:]-]*)|(\\))\\s*([[:graph:]][[:graph:]-]*)|$",
-            "beginCaptures": {
-                "1": {
-                    "name": "keyword.control.definition.sona-jo"
-                },
-                "2": {
-                    "name": "punctuation.brackets.round.sona-jo"
-                }
-            },
-            "endCaptures": {
-                "1": {
-                    "name": "punctuation.brackets.round.sona-jo"
-                },
-                "2": {
-                    "name": "punctuation.accessor.dot.sona-jo"
-                },
-                "3": {
-                    "name": "entity.name.function.sona-jo"
-                },
-                "4": {
-                    "name": "punctuation.brackets.round.sona-jo"
-                },
-                "5": {
-                    "name": "entity.name.function.sona-jo"
-                }
-            },
-            "patterns": [
-                {
-                    "include": "$self"
-                }
-            ]
-        },
-        {
-            "name": "meta.function.definition.method.sona-jo",
-            "begin": "(?<!-)\\b(func)\\s+",
-            "end": "(')\\s*([[:lower:]][[:word:]-]*)|$",
-            "beginCaptures": {
-                "1": {
-                    "name": "keyword.control.definition.sona-jo"
-                }
-            },
-            "endCaptures": {
-                "1": {
-                    "name": "punctuation.accessor.quote.sona-jo"
-                },
-                "2": {
-                    "name": "entity.name.function.sona-jo"
-                }
-            },
-            "patterns": [
-                {
-                    "include": "$self"
-                }
-            ]
-        },
-        {
-            "--name": "meta.function.definition.method.sona-jo",
-            "--match": "(?<!-)\\b(func)\\s*(\\()\\s*([[:upper:]][[:word:]-]*(\\!|\\b))\\s*((\\[|\\])|([[:upper:]]+)|(\\#[[:word:]-]*)|(\\,)|\\s*)*(\\))\\s*(\\.)\\s*([[:lower:]][[:word:]-]*(\\!|\\b))",
-            "--captures": {
-                "1": {
-                    "name": "keyword.control.definition.sona-jo"
-                },
-                "2": {
-                    "name": "punctuation.brackets.round.sona-jo"
-                },
-                "3": {
-                    "name": "variable.type.sona-jo"
-                },
-                "5": {
-                    "name": "punctuation.brackets.square.sona-jo"
-                },
-                "7": {
-                    "name": "variable.type.sona-jo"
-                },
-                "8": {
-                    "name": "variable.type.sona-jo"
-                },
-                "9": {
-                    "name": "punctuation.separator.comma.sona-jo"
-                },
-                "10": {
-                    "name": "punctuation.brackets.round.sona-jo"
-                },
-                "11": {
-                    "name": "punctuation.accessor.dot.sona-jo"
-                },
-                "12": {
-                    "name": "entity.name.function.sona-jo"
-                }
-            }
-        },
-        {
-            "--name": "meta.function.definition.operator.sona-jo",
-            "--match": "(?<!-)\\b(func)\\s*(\\()\\s*([[:upper:]][[:word:]-]*(\\!|\\b))\\s*((\\[|\\])|([[:upper:]]+)|(\\#[[:word:]-]*)|(\\,)|\\s*)*(\\))\\s+([[:graph:]-]+)\\s+",
-            "--captures": {
-                "1": {
-                    "name": "keyword.control.definition.sona-jo"
-                },
-                "2": {
-                    "name": "punctuation.brackets.round.sona-jo"
-                },
-                "3": {
-                    "name": "variable.type.sona-jo"
-                },
-                "5": {
-                    "name": "punctuation.brackets.square.sona-jo"
-                },
-                "6": {
-                    "name": "variable.type.sona-jo"
-                },
-                "7": {
-                    "name": "variable.type.sona-jo"
-                },
-                "8": {
-                    "name": "punctuation.separator.comma.sona-jo"
-                },
-                "10": {
-                    "name": "punctuation.brackets.round.sona-jo"
-                },
-                "11": {
-                    "name": "entity.name.function.sona-jo"
-                }
-            }
-        },
-        {
-            "name": "meta.function.definition.static-method.sona-jo",
-            "begin": "^\\s*(func)\\s+([[:upper:]][[:word:]-]*(\\!|\\b))",
-            "end": "(\\s*(\\.)\\s*([[:lower:]][[:word:]-]*(\\!|\\b))|$)",
-            "beginCaptures": {
-                "1": {
-                    "name": "keyword.control.definition.sona-jo"
-                },
-                "2": {
-                    "name": "variable.type.sona-jo"
-                }
-            },
-            "endCaptures": {
-                "2": {
-                    "name": "punctuation.accessor.dot.sona-jo"
-                },
-                "3": {
-                    "name": "entity.name.function.sona-jo"
-                }
-            },
-            "patterns": [
-                {
-                    "include": "$self"
-                }
-            ]
-        },
-        {
-            "match": "(?<!-)\\b(func)\\b(?!-)",
+            "match": "(?<!-)\\b(func|define)\\b(?!-)",
             "name": "keyword.control.definition.sona-jo"
         },
         {
-            "name": "meta.type.definition.sona-jo",
-            "match": "(?<!-)\\b(trait)\\p{blank}+[']?([#][[:word:]-]*(\\!|\\b))",
-            "captures": {
-                "1": {
-                    "name": "keyword.control.definition.sona-jo"
-                },
-                "2": {
-                    "name": "entity.name.type.sona-jo"
-                }
-            }
-        },
-        {
-            "--name": "meta.type.definition.method.sona-jo",
-            "--match": "(?<!-)\\b(alias)\\s*([[:upper:]][[:word:]-]*(\\!|\\b))\\s*((\\[|\\])|([[:upper:]]+)|(\\#[[:word:]-]*)|(\\,)|\\s*)*\\s*(\\.)\\s*([[:upper:]][[:word:]-]*(\\!|\\b))",
-            "--captures": {
-                "1": {
-                    "name": "keyword.control.definition.sona-jo"
-                },
-                "2": {
-                    "name": "variable.type.sona-jo"
-                },
-                "4": {
-                    "name": "punctuation.brackets.square.sona-jo"
-                },
-                "5": {
-                    "name": "variable.type.sona-jo"
-                },
-                "6": {
-                    "name": "variable.type.sona-jo"
-                },
-                "7": {
-                    "name": "punctuation.separator.comma.sona-jo"
-                },
-                "9": {
-                    "name": "punctuation.accessor.dot.sona-jo"
-                },
-                "10": {
-                    "name": "entity.name.type.sona-jo"
-                }
-            }
-        },
-        {
-            "name": "meta.type.definition.sona-jo",
-            "match": "(?<!-)\\b(struct|union|unique)\\s*([[:upper:]][[:word:]-]*(\\!|\\b))",
-            "captures": {
-                "1": {
-                    "name": "keyword.control.definition.sona-jo"
-                },
-                "2": {
-                    "name": "entity.name.type.sona-jo"
-                }
-            }
-        },
-        {
-            "name": "meta.type.definition.static-method.sona-jo",
-            "begin": "(?<!-)\\b(alias)\\s+",
-            "end": "(')\\s*([[:upper:]][[:word:]-]*)|$",
-            "beginCaptures": {
-                "1": {
-                    "name": "keyword.control.definition.sona-jo"
-                }
-            },
-            "endCaptures": {
-                "1": {
-                    "name": "punctuation.accessor.quote.sona-jo"
-                },
-                "2": {
-                    "name": "entity.name.type.sona-jo"
-                }
-            },
-            "patterns": [
-                {
-                    "include": "$self"
-                }
-            ]
-        },
-        {
-            "name": "meta.constant.definition.sona-jo",
-            "match": "(?<!-)\\b(const)\\s*([[:lower:]][[:word:]-]*(\\!|\\b))",
-            "captures": {
-                "1": {
-                    "name": "keyword.control.definition.sona-jo"
-                },
-                "2": {
-                    "name": "constant.other.sona-jo entity.name.function.sona-jo"
-                }
-            }
-        },
-        {
-            "name": "meta.constant.definition.static-method.sona-jo",
-            "begin": "(?<!-)\\b(const)\\s+",
-            "end": "(')\\s*([[:lower:]][[:word:]-]*)|$",
-            "beginCaptures": {
-                "1": {
-                    "name": "keyword.control.definition.sona-jo"
-                }
-            },
-            "endCaptures": {
-                "1": {
-                    "name": "punctuation.accessor.quote.sona-jo"
-                },
-                "2": {
-                    "name": "constant.other.sona-jo entity.name.function.sona-jo"
-                }
-            },
-            "patterns": [
-                {
-                    "include": "$self"
-                }
-            ]
-        },
-        {
-            "name": "meta.variable.definition.sona-jo meta.variable.local.sona-jo",
-            "match": "\\b(\\p{lower}[[:word:]-]*(\\!|\\b))((,)\\s*(\\p{lower}[[:word:]-]*(\\!|\\b)))*\\s*(=|:=)(\\s+|$)",
-            "captures": {
-                "1": {
-                    "name": "variable.other.sona-jo"
-                },
-                "2": {
-                    "name": "punctuation.comma.sona-jo"
-                },
-                "3": {
-                    "name": "variable.other.sona-jo"
-                },
-                "4": {
-                    "name": "operator.assignment.sona-jo"
-                }
-            }
-        },
-        {
-            "name": "meta.variable.definition.sona-jo",
-            "match": "\\b(\\p{lower}[[:word:]-]*(\\!|\\b))\\p{blank}*(:)\\s+",
-            "captures": {
-                "1": {
-                    "name": "variable.parameter.sona-jo"
-                },
-                "3": {
-                    "name": "punctuation.separator.sona-jo"
-                }
-            }
-        },
-        {
-            "name": "meta.function-call.sona-jo",
-            "begin": "\\b(\\p{lower}[[:word:]-]*\\!?)\\p{blank}*(\\()",
-            "end": "(\\))",
-            "beginCaptures": {
-                "1": {
-                    "name": "variable.function.sona-jo"
-                },
-                "2": {
-                    "name": "punctuation.brackets.round.sona-jo"
-                }
-            },
-            "endCaptures": {
-                "1": {
-                    "name": "punctuation.brackets.round.sona-jo"
-                }
-            },
-            "patterns": [
-                {
-                    "include": "$self"
-                }
-            ]
-        },
-        {
-            "name": "meta.function-call.sona-jo variable.function.sona-jo",
-            "match": "\\b(\\p{lower}[[:word:]-]*\\!)"
-        },
-        {
-            "name": "meta.field-access.sona-jo",
-            "match": "(\\.)(\\p{lower}[[:word:]-]*\\!?)\\b",
-            "captures": {
-                "1": {
-                    "name": "punctuation.accessor.dot.sona-jo"
-                },
-                "2": {
-                    "name": "variable.other.member.sona-jo"
-                }
-            }
-        },
-        {
-            "name": "meta.field-access.sona-jo",
-            "match": "\\b(\\p{lower}[[:word:]-]*)(:)",
-            "captures": {
-                "1": {
-                    "name": "variable.other.member.sona-jo"
-                },
-                "2": {
-                    "name": "punctuation.accessor.dot.sona-jo"
-                }
-            }
-        },
-        {
-            "match": "(?<!-)\\b(struct|alias|union|trait|type|const|val|func|method|feature|extend)\\b(?!-)",
+            "match": "(?<!-)\\b(begin|struct|record|alias|union|union|enum|trait|type|newtype|const|val|func|define|declare|public|pub|method|function|feature|extend|ext|using|given|implicit)\\b(?!-)",
             "name": "keyword.control.sona-jo"
         },
         {
-            "match": "(?<!-)\\b(def|let|set|alias|has|infer|inferred|hidden|obvious|partial|static|inout)\\b(?!-)",
+            "match": "(?<!-)\\b(def|let|alias|has|infer|inferred|hidden|obvious|partial|static|inout)\\b(?!-)",
             "name": "keyword.control.definition.sona-jo"
         },
         {
@@ -498,8 +122,8 @@
             "name": "punctuation.separator.comma.sona-jo"
         },
         {
-            "match": "(')",
-            "name": "punctuation.separator.singlequote.sona-jo"
+            "--match": "(')",
+            "--name": "punctuation.separator.singlequote.sona-jo"
         },
         {
             "match": "(:)",
@@ -526,6 +150,10 @@
             "name": "punctuation.accessor.dot.sona-jo"
         },
         {
+            "match": "\\b[[:lower:]'][[:word:]'-]*\\b",
+            "name": "entity.name.identifier"
+        },
+        {
             "match": "\\b([0-9]+\\.[0-9]+([eE][+-]?[0-9]+)?|[0-9]+[eE][+-]?[0-9]+)\\b",
             "name": "constant.numeric.float.sona-jo"
         },
@@ -539,6 +167,29 @@
         }
     ],
     "repository": {
+        "keyword": {
+            "patterns": [
+                {
+                    "match": "(?<!-)\\b(struct|alias|enum|trait|const|func)\\b(?!-)",
+                    "name": "keyword.control.definition.sona-jo"
+                },
+                {
+                    "match": "(?<!-)\\b(if|then|else|match|case|noelse|do|let|where|forall|is|and|or|not)\\b(?!-)",
+                    "name": "keyword.control.definition.sona-jo"
+                }
+            ]
+        },
+        "value-identifier": {
+            "match": "(?<!#|-)\\b[[:lower:]][[:word:]'-]*\\b"
+        },
+        "function-name": {
+            "match": "(?<!#|-)\\b[[:lower:]][[:word:]'-]*",
+            "name": "entity.name.function.sona-jo"
+        },
+        "operator-name": {
+            "match": "(?<!#|-)'[[:word:]'-]*",
+            "name": "entity.name.function.operator.sona-jo"
+        },
         "generic_type": {
             "patterns": [
                 {
@@ -579,7 +230,7 @@
             "patterns": [
                 {
                     "name": "variable.type.sona-jo",
-                    "match": "\\b\\p{upper}\\p{word}+(\\!|\\b)"
+                    "match": "\\b\\p{upper}[[:word:]-]+(\\!|\\b)"
                 }
             ]
         },
