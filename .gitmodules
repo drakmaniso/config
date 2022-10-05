@@ -1,6 +1,3 @@
-[submodule "nvim/pack/plugins/start/elm-vim"]
-	path = nvim/pack/plugins/start/elm-vim
-	url = https://github.com/ElmCast/elm-vim
 [submodule "nvim/pack/plugins/start/lightline.vim"]
 	path = nvim/pack/plugins/start/lightline.vim
 	url = https://github.com/itchyny/lightline.vim
@@ -10,39 +7,9 @@
 [submodule "nvim/pack/plugins/start/vim-gruvbox8"]
 	path = nvim/pack/plugins/start/vim-gruvbox8
 	url = https://github.com/lifepillar/vim-gruvbox8
-[submodule "nvim/pack/plugins/start/vim-commentary"]
-	path = nvim/pack/plugins/start/vim-commentary
-	url = https://github.com/tpope/vim-commentary
 [submodule "nvim/pack/plugins/start/vim-vinegar"]
 	path = nvim/pack/plugins/start/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar
-[submodule "nvim/pack/plugins/start/vim-flog"]
-	path = nvim/pack/plugins/start/vim-flog
-	url = https://github.com/rbong/vim-flog
 [submodule "nvim/pack/plugins/start/vim-fugitive"]
 	path = nvim/pack/plugins/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
-[submodule "nvim/pack/plugins/start/vim-go"]
-	path = nvim/pack/plugins/start/vim-go
-	url = https://github.com/fatih/vim-go
-[submodule "nvim/pack/plugins/start/ctrlp.vim"]
-	path = nvim/pack/plugins/start/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim
-[submodule "nvim/pack/plugins/start/vim-monokai-pro"]
-	path = nvim/pack/plugins/start/vim-monokai-pro
-	url = https://github.com/phanviet/vim-monokai-pro
-[submodule "nvim/pack/plugins/start/gruvbox"]
-	path = nvim/pack/plugins/start/gruvbox
-	url = https://github.com/morhetz/gruvbox
-[submodule "nvim/pack/plugins/start/vim-polyglot"]
-	path = nvim/pack/plugins/start/vim-polyglot
-	url = https://github.com/sheerun/vim-polyglot
-[submodule "nvim/pack/plugins/start/vim-noctu"]
-	path = nvim/pack/plugins/start/vim-noctu
-	url = https://github.com/noahfrederick/vim-noctu
-[submodule "nvim/pack/plugins/start/vim-dim"]
-	path = nvim/pack/plugins/start/vim-dim
-	url = https://github.com/jeffkreeftmeijer/vim-dim
-[submodule "nvim/pack/plugins/start/rust.vim"]
-	path = nvim/pack/plugins/start/rust.vim
-	url = https://github.com/rust-lang/rust.vim
