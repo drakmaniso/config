@@ -21,7 +21,8 @@
 				"id": "Sona-Jo",
 				"extensions": [
 					".snj"
-				]
+				],
+				"configuration": "./language-configuration.json"
 			}
 		],
 		"grammars": [
