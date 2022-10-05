@@ -30,7 +30,7 @@
             "name": "keyword.other.sona-jo"
         },
         {
-            "match": "(?<!-)\\b(fun|extend|ext|var|for|feature|extend|ext|impl|implement|forall|derive|implement|impl|dispatch)\\b(?!-)",
+            "match": "(?<!-)\\b(fun|extend|ext|var|for|as|feature|extend|ext|impl|implement|forall|where|derive|implement|impl|dispatch)\\b(?!-)",
             "name": "keyword.other.sona-jo"
         },
         {
@@ -38,8 +38,44 @@
             "name": "keyword.other.sona-jo"
         },
         {
-            "match": "(?<!-)\\b(if|then|else|case|match|do)\\b(?!-)",
+            "match": "(?<!-)\\b(if|then|else|case|match|do|end)\\b(?!-)",
             "name": "keyword.control.sona-jo"
+        },
+        {
+            "match": "(?<!-)\\b(def|let|has)\\s*(#[[:lower:]][[:word:]'-]*)",
+            "captures": {
+                "1": {
+                    "name": "meta.type.definition keyword.control.definition.sona-jo"
+                },
+                "2": {
+                    "name": "meta.type.definition entity.name.type.trait.sona-jo"
+                }
+            }
+        },
+        {
+            "match": "(?<!-)\\b(def|let|has)\\s*(::)([[:upper:]][[:word:]'-]*)",
+            "captures": {
+                "1": {
+                    "name": "meta.type.definition keyword.control.definition.sona-jo"
+                },
+                "2": {
+                    "name": "meta.type.definition keyword.operator.namespace.sona-jo"
+                },
+                "3": {
+                    "name": "meta.type.definition entity.name.type.sona-jo"
+                }
+            }
+        },
+        {
+            "match": "(?<!-)\\b(def|let|has)\\s+([[:upper:]][[:word:]'-]*)",
+            "captures": {
+                "1": {
+                    "name": "meta.type.definition keyword.control.definition.sona-jo"
+                },
+                "2": {
+                    "name": "meta.type.definition entity.name.type.sona-jo"
+                }
+            }
         },
         {
             "match": "(?<!-)\\b(def|let|has)\\s*(::)([[:lower:]][[:word:]'-]*)",
@@ -79,6 +115,10 @@
                     "name": "meta.function.definition entity.name.function.sona-jo"
                 }
             }
+        },
+        {
+            "match": "(?<!-)\\b(let\\?)(?!-)",
+            "name": "keyword.control.definition.sona-jo"
         },
         {
             "match": "(?<=\\s)(\\|)(?=\\s)",
