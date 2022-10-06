@@ -28,19 +28,29 @@
 				"path": "./themes/clarity-light-color-theme.json"
 			},
 			{
-				"label": "Clarity Light Monochrome",
+				"label": "Clarity Mono Light",
 				"uiTheme": "vs",
-				"path": "./themes/clarity-light-monochrome-color-theme.json"
+				"path": "./themes/clarity-mono-light-color-theme.json"
 			},
 			{
-				"label": "Clarity Dark Monochrome",
+				"label": "Clarity Mono Dark",
 				"uiTheme": "vs-dark",
-				"path": "./themes/clarity-dark-monochrome-color-theme.json"
+				"path": "./themes/clarity-mono-dark-color-theme.json"
 			},
 			{
-				"label": "Clarity Dark",
+				"label": "Clarity Subtle Dark",
 				"uiTheme": "vs-dark",
-				"path": "./themes/clarity-dark-color-theme.json"
+				"path": "./themes/clarity-subtle-dark-color-theme.json"
+			},
+			{
+				"label": "Clarity Vibrant Dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/clarity-vibrant-dark-color-theme.json"
+			},
+			{
+				"label": "Clarity Retro Blue",
+				"uiTheme": "vs-dark",
+				"path": "./themes/clarity-retro-blue-color-theme.json"
 			}
 		]
 	}

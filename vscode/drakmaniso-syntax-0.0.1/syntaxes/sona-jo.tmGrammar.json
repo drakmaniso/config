@@ -42,7 +42,7 @@
             "name": "keyword.control.sona-jo"
         },
         {
-            "match": "(?<!-)\\b(def|let|has)\\s*(#[[:lower:]][[:word:]'-]*)",
+            "match": "(?<!-)\\b(def|let)\\s*(#[[:lower:]][[:word:]'-]*)",
             "captures": {
                 "1": {
                     "name": "meta.type.definition keyword.control.definition.sona-jo"
@@ -53,7 +53,7 @@
             }
         },
         {
-            "match": "(?<!-)\\b(def|let|has)\\s*(::)([[:upper:]][[:word:]'-]*)",
+            "match": "(?<!-)\\b(def|let)\\s*(::)([[:upper:]][[:word:]'-]*)",
             "captures": {
                 "1": {
                     "name": "meta.type.definition keyword.control.definition.sona-jo"
@@ -67,7 +67,7 @@
             }
         },
         {
-            "match": "(?<!-)\\b(def|let|has)\\s+([[:upper:]][[:word:]'-]*)",
+            "match": "(?<!-)\\b(def|let)\\s+([[:upper:]][[:word:]'-]*)",
             "captures": {
                 "1": {
                     "name": "meta.type.definition keyword.control.definition.sona-jo"
@@ -78,7 +78,7 @@
             }
         },
         {
-            "match": "(?<!-)\\b(def|let|has)\\s*(::)([[:lower:]][[:word:]'-]*)",
+            "match": "(?<!-)\\b(def|let)\\s*(::)([[:lower:]][[:word:]'-]*)",
             "captures": {
                 "1": {
                     "name": "meta.function.definition keyword.control.definition.sona-jo"
@@ -92,7 +92,7 @@
             }
         },
         {
-            "match": "(?<!-)\\b(def|let|has)\\s*(\\.)([[:lower:]][[:word:]'-]*)",
+            "match": "(?<!-)\\b(def|let)\\s*(\\.)([[:lower:]][[:word:]'-]*)",
             "captures": {
                 "1": {
                     "name": "meta.function.definition keyword.control.definition.sona-jo"
@@ -106,7 +106,7 @@
             }
         },
         {
-            "match": "(?<!-)\\b(def|let|has)\\s+([[:lower:]][[:word:]'-]*)(?=\\s*\\()",
+            "match": "(?<!-)\\b(def|let)\\s+([[:lower:]][[:word:]'-]*)(?=\\s*\\()",
             "captures": {
                 "1": {
                     "name": "meta.function.definition keyword.control.definition.sona-jo"
