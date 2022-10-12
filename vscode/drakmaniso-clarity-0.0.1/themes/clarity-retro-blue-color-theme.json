@@ -2,7 +2,7 @@
   "type": "dark",
   "colors": {
     "editor.background": "#113f64",
-    "editor.foreground": "#ccc",
+    "editor.foreground": "#ddd",
     //
     "editorWidget.background": "#0e2d47",
     "input.background": "#051829",
@@ -29,17 +29,13 @@
   },
   "tokenColors": [
     {
-      "scope": "comment",
+      "scope": [
+        "comment",
+        "comment punctuation"
+      ],
       "settings": {
-        "foreground": "#dfca55",
-        // "fontStyle": "italic"
-      }
-    },
-    {
-      "scope": "comment punctuation",
-      "settings": {
-        "foreground": "#dfca55",
-        // "fontStyle": "italic"
+        "foreground": "#95b2ca",
+        "fontStyle": "italic"
       }
     },
     {
@@ -93,39 +89,26 @@
       "settings": {}
     },
     {
-      "scope": "meta.constant.definition entity.name.constant",
+      "scope": [
+        "meta.constant.definition entity.name.constant",
+        "meta.function.definition entity.name.function",
+        "meta.type.definition entity.name.type",
+        "meta.type.definition entity.name.type.trait",
+      ],
       "settings": {
         "fontStyle": "underline"
       }
     },
     {
-      "scope": "meta.function.definition entity.name.function",
+      "scope": [
+        "punctuation.separator",
+        "punctuation.terminator",
+        "punctuation.brackets",
+        "punctuation",
+      ],
       "settings": {
-        "fontStyle": "underline"
-      }
-    },
-    {
-      "scope": "meta.type.definition entity.name.type",
-      "settings": {
-        "fontStyle": "underline"
-      }
-    },
-    {
-      "scope": "meta.type.definition entity.name.type.trait",
-      "settings": {
-        "fontStyle": "underline"
-      }
-    },
-    {
-      "scope": "punctuation",
-      "settings": {
-        "foreground": "#9ab1c2",
-      }
-    },
-    {
-      "scope": "punctuation.brackets.round",
-      "settings": {
-        "foreground": "#ccc",
+        // "foreground": "#a1b0bd",
+        "foreground": "#8b9aa7",
       }
     },
     {
@@ -137,8 +120,13 @@
     {
       "scope": "string",
       "settings": {
-        "foreground": "#9ab1c2",
-        "fontStyle": "italic"
+        "foreground": "#95b2ca",
+      }
+    },
+    {
+      "scope": "source.json string",
+      "settings": {
+        "foreground": "#ddd",
       }
     },
     {
