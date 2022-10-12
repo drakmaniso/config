@@ -7,11 +7,18 @@
     "editorWidget.background": "#0e2d47",
     "input.background": "#051829",
     "dropdown.background": "#051829",
+    // Tabs
+    "editorGroupHeader.noTabsBackground": "#092338",
+    "editorGroupHeader.border": "#051829",
+    "editorGroup.border": "#051829",
+    "editorGroup.emptyBackground": "#092338",
+    "editorPane.background": "#092338",
     // Sidebar
-    "sideBar.background": "#092338",
+    "sideBar.background": "#051829",
+    "sideBarSectionHeader.background": "#092338",
     "list.activeSelectionBackground": "#0b3557",
     "list.inactiveSelectionBackground": "#0b3557",
-    "list.hoverBackground": "#051829",
+    "list.hoverBackground": "#092338",
     "sideBar.foreground": "#98b5ca",
     "gitDecoration.addedResourceForeground": "#a6ce85",
     "gitDecoration.modifiedResourceForeground": "#a6ce85",
@@ -21,11 +28,11 @@
     // Panel
     "panel.background": "#0e2d47",
     // Activity Bar
-    "activityBar.background": "#051829",
-    "statusBar.background": "#051829",
-    "statusBar.noFolderBackground": "#051829",
-    "statusBar.debuggingBackground": "#051829",
-    "statusBarItem.remoteBackground": "#051829",
+    "activityBar.background": "#092338",
+    "statusBar.background": "#092338",
+    "statusBar.noFolderBackground": "#092338",
+    "statusBar.debuggingBackground": "#092338",
+    "statusBarItem.remoteBackground": "#092338",
   },
   "tokenColors": [
     {
