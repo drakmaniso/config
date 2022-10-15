@@ -41,7 +41,8 @@
         "comment punctuation"
       ],
       "settings": {
-        "foreground": "#95b2ca",
+        // "foreground": "#9ad1fd",
+        "foreground": "#f5db69",
         "fontStyle": "italic"
       }
     },
@@ -103,7 +104,7 @@
         "meta.type.definition entity.name.type.trait",
       ],
       "settings": {
-        "fontStyle": "underline"
+        // "fontStyle": "underline"
       }
     },
     {
@@ -112,22 +113,27 @@
         "punctuation.terminator",
         "punctuation.brackets",
         "punctuation",
+        "keyword.operator",
       ],
       "settings": {
-        // "foreground": "#a1b0bd",
-        "foreground": "#8b9aa7",
+        // "foreground": "#8b9aa7",
+        // "foreground": "#6eaadb",
       }
     },
     {
       "scope": "constant",
       "settings": {
-        "fontStyle": ""
+        // "foreground": "#76d1ae",
       }
     },
     {
-      "scope": "string",
+      "scope": [
+        "string",
+        "string punctuation",
+      ],
       "settings": {
-        "foreground": "#95b2ca",
+        "fontStyle": "italic",
+        // "foreground": "#76d1ae",
       }
     },
     {

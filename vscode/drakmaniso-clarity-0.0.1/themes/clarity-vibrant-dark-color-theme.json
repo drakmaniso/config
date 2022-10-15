@@ -1,8 +1,8 @@
 {
   "type": "dark",
   "colors": {
-    "editor.background": "#181818",
-    "editor.foreground": "#d3d3d3",
+    "editor.background": "#272727",
+    "editor.foreground": "#e7e7e7",
     "gitDecoration.addedResourceForeground": "#5fdaf0",
     "gitDecoration.modifiedResourceForeground": "#5fdaf0",
     "gitDecoration.untrackedResourceForeground": "#5fdaf0",
@@ -49,9 +49,26 @@
       }
     },
     {
-      "scope": "keyword.operator",
+      "scope": [
+        "identifier",
+        "entity.name"
+      ],
+      "settings": {
+        "foreground": "#f39c4a",
+      }
+    },
+    {
+      "scope": [
+        "entity.name.function"
+      ],
       "settings": {
         "foreground": "#f0ee5f",
+      }
+    },
+    {
+      "scope": "keyword.operator",
+      "settings": {
+        // "foreground": "#f39c4a",
       }
     },
     {
@@ -75,39 +92,9 @@
       "settings": {}
     },
     {
-      "scope": "meta.constant.definition entity.name.constant",
-      "settings": {
-        "foreground": "#eeaa52",
-      }
-    },
-    {
-      "scope": "meta.function.definition entity.name.function",
-      "settings": {
-        "foreground": "#eeaa52",
-      }
-    },
-    {
-      "scope": "meta.type.definition entity.name.type",
-      "settings": {
-        "foreground": "#eeaa52",
-      }
-    },
-    {
-      "scope": "meta.type.definition entity.name.type.trait",
-      "settings": {
-        "foreground": "#eeaa52",
-      }
-    },
-    {
       "scope": "punctuation",
       "settings": {
-        "foreground": "#777",
-      }
-    },
-    {
-      "scope": "punctuation.brackets.round",
-      "settings": {
-        "foreground": "#999",
+        // "foreground": "#777",
       }
     },
     {
@@ -117,13 +104,10 @@
       }
     },
     {
-      "scope": "string",
-      "settings": {
-        "foreground": "#91e77f",
-      }
-    },
-    {
-      "scope": "string punctuation",
+      "scope": [
+        "string",
+        "string punctuation"
+      ],
       "settings": {
         "foreground": "#91e77f",
       }
