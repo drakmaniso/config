@@ -109,6 +109,14 @@
     },
     {
       "scope": [
+        "punctuation.brackets.curly",
+      ],
+      "settings": {
+        "foreground": "#899dad",
+      }
+    },
+    {
+      "scope": [
         "punctuation.separator",
         "punctuation.terminator",
         "punctuation.brackets",

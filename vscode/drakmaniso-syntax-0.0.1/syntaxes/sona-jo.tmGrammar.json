@@ -34,7 +34,7 @@
             "name": "keyword.other.sona-jo"
         },
         {
-            "match": "(?<!-)\\b(fun|func|lambda|extend|ext|var|for|feature|extend|ext|impl|implement|forall|where|derive|implement|impl|dispatch)\\b(?!-)",
+            "match": "(?<!-)\\b(pub|type|trait|fun|func|const|lambda|extend|ext|var|for|feature|extend|ext|impl|implement|forall|where|derive|implement|impl|dispatch)\\b(?!-)",
             "name": "keyword.other.sona-jo"
         },
         {

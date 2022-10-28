@@ -50,9 +50,7 @@
     },
     {
       "scope": "keyword.operator",
-      "settings": {
-        "foreground": "#d8ba7b",
-      }
+      "settings": {}
     },
     {
       "scope": "entity.name.type",
@@ -64,7 +62,9 @@
     },
     {
       "scope": "entity.name.function",
-      "settings": {}
+      "settings": {
+        "foreground": "#dfc376",
+      }
     },
     {
       "scope": "variable.parameter",
@@ -72,27 +72,19 @@
     },
     {
       "scope": "meta.constant.definition entity.name.constant",
-      "settings": {
-        "foreground": "#b8d482",
-      }
+      "settings": {}
     },
     {
       "scope": "meta.function.definition entity.name.function",
-      "settings": {
-        "foreground": "#b8d482",
-      }
+      "settings": {}
     },
     {
       "scope": "meta.type.definition entity.name.type",
-      "settings": {
-        "foreground": "#b8d482",
-      }
+      "settings": {}
     },
     {
       "scope": "meta.type.definition entity.name.type.trait",
-      "settings": {
-        "foreground": "#b8d482",
-      }
+      "settings": {}
     },
     {
       "scope": "punctuation",
