@@ -1,19 +1,5 @@
 #pragma once
 
-//#define TAPPING_FORCE_HOLD
-//#define NO_ACTION_TAPPING
-
-#define TAPPING_TERM 175
-
-#ifdef TAPPING_TOGGLE
-#undef TAPPING_TOGGLE
-#endif
-#define TAPPING_TOGGLE 1
-
-//#define NO_ACTION_ONESHOT
-//#define NO_ACTION_MACRO
-//#define NO_ACTION_FUNCTION
-
 #define MOUSEKEY_DELAY 0
 #define MOUSEKEY_INTERVAL 8
 #define MOUSEKEY_MAX_SPEED 1
