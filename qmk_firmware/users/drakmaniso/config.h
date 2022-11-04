@@ -8,6 +8,8 @@
 #define MOUSEKEY_WHEEL_MAX_SPEED 1
 #define MOUSEKEY_WHEEL_TIME_TO_MAX 0
 
+#define ONESHOT_TIMEOUT 500
+
 //#define MK_3_SPEED
 //#define MK_MOMENTARY_ACCEL // comment this out for tap-to-select acceleration
 // cursor speeds:
