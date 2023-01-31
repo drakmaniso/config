@@ -21,14 +21,14 @@
     {
       "scope": "comment",
       "settings": {
-        "foreground": "#555",
+        // "foreground": "#555",
         "fontStyle": "italic"
       }
     },
     {
       "scope": "comment punctuation",
       "settings": {
-        "foreground": "#555",
+        // "foreground": "#555",
         "fontStyle": "italic"
       }
     },
@@ -41,13 +41,13 @@
     {
       "scope": "keyword",
       "settings": {
-        "fontStyle": "italic"
+        "fontStyle": "bold"
       }
     },
     {
       "scope": "meta.attribute",
       "settings": {
-        "fontStyle": "italic"
+        "fontStyle": "bold"
       }
     },
     {
@@ -85,31 +85,31 @@
     {
       "scope": "meta.constant.definition entity.name.constant",
       "settings": {
-        "fontStyle": "underline"
+        // "fontStyle": "underline"
       }
     },
     {
       "scope": "meta.function.definition entity.name.function",
       "settings": {
-        "fontStyle": "underline"
+        // "fontStyle": "underline"
       }
     },
     {
       "scope": "meta.type.definition entity.name.type",
       "settings": {
-        "fontStyle": "underline"
+        // "fontStyle": "underline"
       }
     },
     {
       "scope": "meta.type.definition entity.name.type.trait",
       "settings": {
-        "fontStyle": "underline"
+        // "fontStyle": "underline"
       }
     },
     {
       "scope": "punctuation",
       "settings": {
-        "foreground": "#888",
+        // "foreground": "#888",
       }
     },
     {

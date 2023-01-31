@@ -10,6 +10,9 @@
             "include": "#comments"
         },
         {
+            "include": "#comments3"
+        },
+        {
             "include": "#string-triple"
         },
         {
@@ -26,7 +29,7 @@
             "name": "keyword.other.import.sona-jo"
         },
         {
-            "match": "(?<!-)\\b(operator|public|func|struct|union|alias)\\b(?!-)",
+            "match": "(?<!-)\\b(operator|public|func|struct|Struct|union|alias)\\b(?!-)",
             "name": "keyword.other.sona-jo"
         },
         {
@@ -34,7 +37,7 @@
             "name": "keyword.other.sona-jo"
         },
         {
-            "match": "(?<!-)\\b(pub|type|trait|fun|func|const|lambda|extend|ext|var|for|feature|extend|ext|impl|implement|forall|where|derive|implement|impl|dispatch)\\b(?!-)",
+            "match": "(?<!-)\\b(in|ref|publish|tag|pub|type|trait|fun|Fun|fn|static|func|const|lambda|extend|ext|data|prop|var|val|for|feature|extend|ext|impl|implement|forall|where|derive|implement|impl|dispatch)\\b(?!-)",
             "name": "keyword.other.sona-jo"
         },
         {
@@ -46,7 +49,7 @@
             "name": "keyword.control.sona-jo"
         },
         {
-            "match": "(?<!-)\\b(public|local|def|let)\\s*(#[[:lower:]][[:word:]'-]*)",
+            "match": "(?<!-)\\b(public|local|def|define|let)\\s*(#[[:lower:]][[:word:]'-]*)",
             "captures": {
                 "1": {
                     "name": "meta.type.definition keyword.control.definition.sona-jo"
@@ -57,7 +60,7 @@
             }
         },
         {
-            "match": "(?<!-)\\b(public|local|def|let)\\s*(::)([[:upper:]][[:word:]'-]*)",
+            "match": "(?<!-)\\b(public|local|def|define|let)\\s*(::)([[:upper:]][[:word:]'-]*)",
             "captures": {
                 "1": {
                     "name": "meta.type.definition keyword.control.definition.sona-jo"
@@ -71,7 +74,7 @@
             }
         },
         {
-            "match": "(?<!-)\\b(public|local|def|let)\\s+([[:upper:]][[:word:]'-]*)",
+            "match": "(?<!-)\\b(public|local|def|define|let)\\s+([[:upper:]][[:word:]'-]*)",
             "captures": {
                 "1": {
                     "name": "meta.type.definition keyword.control.definition.sona-jo"
@@ -82,7 +85,7 @@
             }
         },
         {
-            "match": "(?<!-)\\b(public|local|def|let)\\s+([[:lower:]][[:word:]'-]*)\\s+(->)",
+            "match": "(?<!-)\\b(public|local|def|define|let)\\s+([[:lower:]][[:word:]'-]*)\\s+(->)",
             "captures": {
                 "1": {
                     "name": "meta.function.definition keyword.control.definition.sona-jo"
@@ -96,7 +99,7 @@
             }
         },
         {
-            "match": "(?<!-)\\b(public|local|def|let)\\s*(::)([[:lower:]][[:word:]'-]*)",
+            "match": "(?<!-)\\b(public|local|def|define|let)\\s*(::)([[:lower:]][[:word:]'-]*)",
             "captures": {
                 "1": {
                     "name": "meta.function.definition keyword.control.definition.sona-jo"
@@ -110,7 +113,7 @@
             }
         },
         {
-            "match": "(?<!-)\\b(public|local|def|let)\\s*(\\.)([[:lower:]][[:word:]'-]*)",
+            "match": "(?<!-)\\b(public|local|def|define|let)\\s*(\\.)([[:lower:]][[:word:]'-]*)",
             "captures": {
                 "1": {
                     "name": "meta.function.definition keyword.control.definition.sona-jo"
@@ -124,7 +127,7 @@
             }
         },
         {
-            "match": "(?<!-)\\b(public|local|def|let)\\s+([[:lower:]][[:word:]'-]*)(?=\\s*\\()",
+            "match": "(?<!-)\\b(public|local|def|define|let)\\s+([[:lower:]][[:word:]'-]*)(?=\\s*\\()",
             "captures": {
                 "1": {
                     "name": "meta.function.definition keyword.control.definition.sona-jo"
@@ -163,11 +166,11 @@
             "name": "keyword.operator.logic.sona-jo"
         },
         {
-            "match": "(?<!-)\\b(self|Self)\\b(?!-)",
+            "match": "(?<!-)\\b(self|Self|any|Any|result)\\b(?!-)",
             "name": "variable.language.sona-jo"
         },
         {
-            "match": "(?<!-)\\b(public|local|def|let|var|has)\\b(?!-)",
+            "match": "(?<!-)\\b(public|local|def|define|let|data|var|has)\\b(?!-)",
             "name": "keyword.control.definition.sona-jo"
         },
         {
@@ -182,6 +185,10 @@
         {
             "match": "\\b[[:upper:]]\\b",
             "name": "entity.name.type.sona-jo"
+        },
+        {
+            "match": "(?<=\\.)[[:lower:]][[:word:]'-]*",
+            "name": "entity.name.function.sona-jo"
         },
         {
             "match": "(?<!#|-)\\b[[:lower:]][[:word:]'-]*\\s*(?=\\()",
@@ -310,7 +317,7 @@
         "keyword": {
             "patterns": [
                 {
-                    "match": "(?<!-)\\b(struct|alias|enum|trait|const|func)\\b(?!-)",
+                    "match": "(?<!-)\\b(struct|Struct|alias|enum|trait|const|func)\\b(?!-)",
                     "name": "keyword.control.definition.sona-jo"
                 },
                 {
@@ -420,6 +427,34 @@
                     "include": "#block_comment"
                 }
             ]
+        },
+        "comments3": {
+            "patterns": [
+                {
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.comment.sona-jo"
+                        }
+                    },
+                    "begin": "--|##",
+                    "end": "$",
+                    "name": "comment.line.double-dash.sona-jo"
+                },
+                {
+                    "include": "#block_comment3"
+                }
+            ]
+        },
+        "block_comment3": {
+            "applyEndPatternLast": 1,
+            "begin": "<<",
+            "captures": {
+                "0": {
+                    "name": "punctuation.definition.comment.sona-jo"
+                }
+            },
+            "end": ">>",
+            "name": "comment.block.sona-jo"
         },
         "string-triple": {
             "name": "string.quoted.triple.elm",

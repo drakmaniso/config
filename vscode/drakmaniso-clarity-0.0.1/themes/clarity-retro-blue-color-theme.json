@@ -19,12 +19,12 @@
     "list.activeSelectionBackground": "#0b3557",
     "list.inactiveSelectionBackground": "#0b3557",
     "list.hoverBackground": "#092338",
-    "sideBar.foreground": "#98b5ca",
-    "gitDecoration.addedResourceForeground": "#a6ce85",
-    "gitDecoration.modifiedResourceForeground": "#a6ce85",
-    "gitDecoration.untrackedResourceForeground": "#a6ce85",
-    "gitDecoration.deletedResourceForeground": "#a6ce85",
-    "gitDecoration.renamedResourceForeground": "#a6ce85",
+    "sideBar.foreground": "#aecadf",
+    "gitDecoration.addedResourceForeground": "#cfc492",
+    "gitDecoration.modifiedResourceForeground": "#cfc492",
+    "gitDecoration.untrackedResourceForeground": "#cfc492",
+    "gitDecoration.deletedResourceForeground": "#cfc492",
+    "gitDecoration.renamedResourceForeground": "#cfc492",
     // Panel
     "panel.background": "#0e2d47",
     // Activity Bar
@@ -55,7 +55,7 @@
     {
       "scope": "keyword",
       "settings": {
-        "fontStyle": "italic"
+        "fontStyle": "bold"
       }
     },
     {

@@ -1,9 +1,9 @@
 {
     "comments": {
-        "lineComment": "//",
+        "lineComment": "--",
         "blockComment": [
-            "/*",
-            "*/"
+            "<<",
+            ">>"
         ]
     },
     "brackets": [
@@ -43,6 +43,13 @@
         {
             "open": "`",
             "close": "`",
+            "notIn": [
+                "string"
+            ]
+        },
+        {
+            "open": "<<",
+            "close": ">>",
             "notIn": [
                 "string"
             ]
@@ -93,6 +100,14 @@
         {
             "beforeText": "/\\*",
             "afterText": "\\*/",
+            "action": {
+                "indent": "none",
+                "appendText": "\n"
+            }
+        },
+        {
+            "beforeText": "<<",
+            "afterText": ">>",
             "action": {
                 "indent": "none",
                 "appendText": "\n"
