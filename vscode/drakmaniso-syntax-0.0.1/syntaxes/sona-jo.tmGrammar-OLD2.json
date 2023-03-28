@@ -25,69 +25,136 @@
             "include": "#attribute"
         },
         {
-            "match": "(?<!-)\\b(use|import)\\s+(/)?(([[:lower:]][[:word:]-]*)(/))*([[:lower:]][[:word:]-]*)\\b(?!:)",
-            "captures": {
-                "1": {
-                    "name": "keyword.control.import.sona-jo"
-                },
-                "4": {
-                    "name": "entity.name.namespace.sona-jo"
-                },
-                "6": {
-                    "name": "entity.name.namespace.sona-jo"
-                }
-            }
-        },
-        {
-            "match": "(?<!-)\\b(use|import)\\s*(([[:lower:]][[:word:]-]*)\\:\\:)*([[:lower:]][[:word:]-]*)\\b",
-            "captures": {
-                "1": {
-                    "name": "keyword.control.import.sona-jo"
-                }
-            }
-        },
-        {
-            "match": "(?<!-)\\b(module|use|import)\\b(?!-|')",
+            "match": "(?<!-)\\b(module|use)\\b(?!-)",
             "name": "keyword.control.import.sona-jo"
         },
         {
-            "match": "(?<!-)(\\*operator|\\*fun|\\*val|\\*struct|\\*type|\\*trait)\\b(?!-|')",
-            "name": "storage.modifier.sona-jo"
-        },
-        {
-            "match": "(?<!-)\\b(val\\?\\?|val\\?|val\\!|let\\?\\?|let\\?|let\\!|else\\?|else\\!|shadow)(?!-|')",
-            "name": "storage.modifier.sona-jo"
-        },
-        {
-            "match": "(?<!-)\\b(operator|fun|fn|val|struct|type|trait)\\b(?!-|')",
-            "name": "storage.modifier.sona-jo"
-        },
-        {
-            "match": "(?<!-)\\b(in)\\b(?!-|')",
-            "name": "storage.modifier.sona-jo"
-        },
-        {
-            "match": "(?<!-)\\b(as)\\b(?!-|')",
+            "match": "(?<!-)\\b(operator|func|struct|union|alias)\\b(?!-)",
             "name": "keyword.control.sona-jo"
         },
         {
-            "match": "(?<!-)\\b(ref|publish|tag|static|func|const|lambda|extend|ext|on|is|matches|for|feature|extend|ext|impl|implement|where|derive|implement|impl|auto|dispatch)\\b(?!-|')",
-            "name": "keyword.control.sona-jo"
-        },
-        {
-            "match": "(?<!-)\\b(public|data|opaque|pub|local|private|define|expose)\\b(?!-|')",
+            "match": "(?<!-)\\b(op)\\b(?!-)",
             "name": "storage.modifier.sona-jo"
         },
         {
-            "match": "(?<!-)\\b(function|method|constant|return)\\b(?!-|')",
+            "match": "(?<!-)\\b(as)\\b(?!-)",
             "name": "keyword.control.sona-jo"
         },
         {
-            "match": "(?<!-)\\b(require|ensure|invariant|assert|forall)\\b(?!-|')",
+            "match": "(?<!-)\\b(in)\\b(?!-)",
             "name": "keyword.control.sona-jo"
         },
         {
-            "match": "(?<!-)\\b(if|then|else|case|of|case-of|caseof|try|elsif|lastly|default|atlast|when|match|do|end)\\b(?!-|')",
+            "match": "(?<!-)\\b(ref|publish|tag|type|trait|fn|fun|static|func|const|lambda|extend|ext|prop|var|val|on|is|for|feature|extend|ext|impl|implement|where|derive|implement|impl|auto|dispatch)\\b(?!-)",
+            "name": "keyword.control.sona-jo"
+        },
+        {
+            "match": "(?<!-)\\b(public|data|opaque|pub|local|private|define|expose)\\b(?!-)",
+            "name": "storage.modifier.sona-jo"
+        },
+        {
+            "match": "(?<!-)\\b(function|method|constant)\\b(?!-)",
+            "name": "keyword.control.sona-jo"
+        },
+        {
+            "match": "(?<!-)\\b(require|ensure|invariant|assert|forall)\\b(?!-)",
+            "name": "keyword.control.sona-jo"
+        },
+        {
+            "match": "(?<!-)\\b(if|then|else|case|when|match|do|end)\\b(?!-)",
+            "name": "keyword.control.sona-jo"
+        },
+        {
+            "match": "(?<!-)\\b(def|let)\\s*(#[[:lower:]][[:word:]-]*'*)",
+            "captures": {
+                "1": {
+                    "name": "meta.type.definition keyword.control.sona-jo"
+                },
+                "2": {
+                    "name": "meta.type.definition entity.name.type.trait.sona-jo"
+                }
+            }
+        },
+        {
+            "match": "(?<!-)\\b(def|let)\\s*(::)([[:upper:]][[:word:]-]*'*)",
+            "captures": {
+                "1": {
+                    "name": "meta.type.definition keyword.control.sona-jo"
+                },
+                "2": {
+                    "name": "meta.type.definition keyword.operator.namespace.sona-jo"
+                },
+                "3": {
+                    "name": "meta.type.definition entity.name.type.sona-jo"
+                }
+            }
+        },
+        {
+            "match": "(?<!-)\\b(def|let)\\s+([[:upper:]][[:word:]-]*'*)",
+            "captures": {
+                "1": {
+                    "name": "meta.type.definition keyword.control.sona-jo"
+                },
+                "2": {
+                    "name": "meta.type.definition entity.name.type.sona-jo"
+                }
+            }
+        },
+        {
+            "match": "(?<!-)\\b(def|let)\\s+([[:lower:]][[:word:]-]*'*)\\s+(->)",
+            "captures": {
+                "1": {
+                    "name": "meta.function.definition keyword.control.sona-jo"
+                },
+                "2": {
+                    "name": "meta.function.definition entity.name.function.sona-jo"
+                },
+                "3": {
+                    "name": "meta.function.definition keyword.operator.arrow.sona-jo"
+                }
+            }
+        },
+        {
+            "match": "(?<!-)\\b(def|let)\\s*(::)([[:lower:]][[:word:]-]*'*)",
+            "captures": {
+                "1": {
+                    "name": "meta.function.definition keyword.control.sona-jo"
+                },
+                "2": {
+                    "name": "meta.function.definition keyword.operator.namespace.sona-jo"
+                },
+                "3": {
+                    "name": "meta.function.definition entity.name.function.sona-jo"
+                }
+            }
+        },
+        {
+            "match": "(?<!-)\\b(def|let)\\s*(\\.)([[:lower:]][[:word:]-]*'*)",
+            "captures": {
+                "1": {
+                    "name": "meta.function.definition keyword.control.sona-jo"
+                },
+                "2": {
+                    "name": "meta.function.definition keyword.operator.dot-access.sona-jo"
+                },
+                "3": {
+                    "name": "meta.function.definition entity.name.function.sona-jo"
+                }
+            }
+        },
+        {
+            "match": "(?<!-)\\b(def|let)\\s+([[:lower:]][[:word:]-]*'*)(?=\\s*\\()",
+            "captures": {
+                "1": {
+                    "name": "meta.function.definition keyword.control.sona-jo"
+                },
+                "2": {
+                    "name": "meta.function.definition entity.name.function.sona-jo"
+                }
+            }
+        },
+        {
+            "match": "(?<!-)\\b(let\\?)(?!-)",
             "name": "keyword.control.sona-jo"
         },
         {
@@ -111,19 +178,15 @@
             "name": "keyword.operator.sona-jo"
         },
         {
-            "match": "(?<!-)\\b(is|and|or|not)\\b(?!-|')",
+            "match": "(?<!-)\\b(is|and|or|not)\\b(?!-)",
             "name": "keyword.control.logic.sona-jo"
         },
         {
-            "match": "(?<!-)\\b(self|Self|any|result|___)\\b(?!-|')",
+            "match": "(?<!-)\\b(self|Self|any|Any|result|it)\\b(?!-)",
             "name": "variable.language.sona-jo"
         },
         {
-            "match": "(?<!-)\\b(def|let)\\b(?!-|')",
-            "name": "storage.modifier.sona-jo"
-        },
-        {
-            "match": "(?<!-)\\b(var|has)\\b(?!-|')",
+            "match": "(?<!-)\\b(def|let|var|has)\\b(?!-)",
             "name": "keyword.control.sona-jo"
         },
         {
@@ -149,6 +212,14 @@
         },
         {
             "match": "(?<!#|-)\\b[[:lower:]][[:word:]-]*'*\\s*(?=\\()",
+            "name": "entity.name.function.sona-jo"
+        },
+        {
+            "match": "(?<!#|-)\\b[[:lower:]][[:word:]-]*'*\\s*(?=\\\\)",
+            "name": "entity.name.function.sona-jo"
+        },
+        {
+            "match": "(?<!#|-)\\b[[:lower:]][[:word:]-]*'*\\s*(?=fun\\b)",
             "name": "entity.name.function.sona-jo"
         },
         {
@@ -278,6 +349,18 @@
         }
     ],
     "repository": {
+        "keyword": {
+            "patterns": [
+                {
+                    "match": "(?<!-)\\b(struct|alias|enum|trait|const|func)\\b(?!-)",
+                    "name": "keyword.control.definition.sona-jo"
+                },
+                {
+                    "match": "(?<!-)\\b(if|then|else|match|when|case|noelse|do|let|where|is|and|or|not)\\b(?!-)",
+                    "name": "keyword.control.sona-jo"
+                }
+            ]
+        },
         "value-identifier": {
             "match": "(?<!#|-)\\b[[:lower:]][[:word:]-]*\\b'*"
         },

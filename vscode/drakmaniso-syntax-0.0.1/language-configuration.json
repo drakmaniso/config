@@ -91,10 +91,15 @@
             "end": "^\\s*//\\s*#?endregion\\b"
         }
     },
-    "wordPattern": "(-?\\d*\\.\\d\\w*)|([^\\`\\~\\!\\@\\#\\%\\^\\&\\*\\(\\)\\-\\=\\+\\[\\{\\]\\}\\\\\\|\\;\\:\\'\\\"\\,\\.\\<\\>\\/\\?\\s]+)",
-    "indentationRules": {
+    "wordPattern": "(-?\\d*\\.\\d\\w*)|([^\\`\\~\\!\\@\\#\\%\\^\\&\\*\\(\\)\\=\\+\\[\\{\\]\\}\\\\\\|\\;\\:\\'\\\"\\,\\.\\<\\>\\/\\?\\s]+\\'*)",
+    "--indentationRules": {
         "increaseIndentPattern": "^((?!.*?\\/\\*).*\\*\/)?\\s*[\\}\\]].*$",
-        "decreaseIndentPattern": "^((?!\\/\\/).)*(\\{[^}\"'`]*|\\([^)\"'`]*|\\[[^\\]\"'`]*)$"
+        "--decreaseIndentPattern": "(^((?!\\/\\/).)*(\\{[^}\"'`]*|\\([^)\"'`]*|\\[[^\\]\"'`]*)$)|(^\\s*end\\s*$)",
+        "decreaseIndentPattern": "^\\s*end\\s*$"
+    },
+    "indentationRules": {
+        "increaseIndentPattern": "^\\s*((do|forall|require|ensure|invariant|if|elseif|else|match|case)|(.*\\sdo\\b))\\b[^\\{;]*$",
+        "--decreaseIndentPattern": "^\\s*((end|else|elseif)|[}\\]]\b)"
     },
     "onEnterRules": [
         {
@@ -111,6 +116,24 @@
             "action": {
                 "indent": "none",
                 "appendText": "\n"
+            }
+        },
+        {
+            "beforeText": "\\s=\\s*$",
+            "action": {
+                "indent": "indent"
+            }
+        },
+        {
+            "beforeText": "do",
+            "action": {
+                "indent": "indent"
+            }
+        },
+        {
+            "beforeText": "end",
+            "action": {
+                "indent": "outdent"
             }
         }
     ]
