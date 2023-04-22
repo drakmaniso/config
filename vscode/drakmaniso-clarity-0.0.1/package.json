@@ -1,57 +1,72 @@
 {
-	"name": "clarity",
-	"version": "0.0.1",
-	"displayName": "Clarity Theme",
-	"description": "Almost monochromatic, light color theme with highlighted comments",
-	"publisher": "drakmaniso",
-	"keywords": [
-		"color-theme",
-		"theme",
-		"light",
-		"monochrome"
-	],
-	"repository": {
-		"type": "git",
-		"url": ""
-	},
-	"engines": {
-		"vscode": "^1.45.0"
-	},
-	"categories": [
-		"Themes"
-	],
-	"contributes": {
-		"themes": [
-			{
-				"label": "Clarity Light",
-				"uiTheme": "vs",
-				"path": "./themes/clarity-light-color-theme.json"
-			},
-			{
-				"label": "Clarity Mono Light",
-				"uiTheme": "vs",
-				"path": "./themes/clarity-mono-light-color-theme.json"
-			},
-			{
-				"label": "Clarity Mono Dark",
-				"uiTheme": "vs-dark",
-				"path": "./themes/clarity-mono-dark-color-theme.json"
-			},
-			{
-				"label": "Clarity Subtle Dark",
-				"uiTheme": "vs-dark",
-				"path": "./themes/clarity-subtle-dark-color-theme.json"
-			},
-			{
-				"label": "Clarity Vibrant Dark",
-				"uiTheme": "vs-dark",
-				"path": "./themes/clarity-vibrant-dark-color-theme.json"
-			},
-			{
-				"label": "Clarity Retro Blue",
-				"uiTheme": "vs-dark",
-				"path": "./themes/clarity-retro-blue-color-theme.json"
-			}
-		]
-	}
+    "name": "clarity",
+    "version": "0.0.1",
+    "displayName": "Clarity Theme",
+    "description": "Almost monochromatic, light color theme with highlighted comments",
+    "publisher": "drakmaniso",
+    "keywords": [
+        "color-theme",
+        "theme",
+        "light",
+        "monochrome"
+    ],
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "engines": {
+        "vscode": "^1.45.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "Clarity White",
+                "uiTheme": "vs",
+                "path": "./themes/clarity-white-color-theme.json"
+            },
+            {
+                "label": "Clarity Light",
+                "uiTheme": "vs",
+                "path": "./themes/clarity-light-color-theme.json"
+            },
+            {
+                "label": "Clarity Parchment",
+                "uiTheme": "vs",
+                "path": "./themes/clarity-parchment-color-theme.json"
+            },
+            {
+                "label": "Clarity Vibrant",
+                "uiTheme": "vs-dark",
+                "path": "./themes/clarity-vibrant-color-theme.json"
+            },
+            {
+                "label": "Clarity Minimal",
+                "uiTheme": "vs-dark",
+                "path": "./themes/clarity-minimal-color-theme.json"
+            },
+            {
+                "label": "Clarity Retro Blue",
+                "uiTheme": "vs-dark",
+                "path": "./themes/clarity-retro-blue-color-theme.json"
+            },
+            {
+                "label": "Clarity Pink",
+                "uiTheme": "vs-dark",
+                "path": "./themes/clarity-pink-color-theme.json"
+            },
+            {
+                "label": "Clarity Grey",
+                "uiTheme": "vs-dark",
+                "path": "./themes/clarity-grey-color-theme.json"
+            },
+            {
+                "label": "Clarity Dark",
+                "uiTheme": "vs-dark",
+                "path": "./themes/clarity-dark-color-theme.json"
+            }
+        ]
+    }
 }

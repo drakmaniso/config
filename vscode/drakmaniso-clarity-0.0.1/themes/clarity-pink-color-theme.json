@@ -1,38 +1,38 @@
 {
     "type": "dark",
     "colors": {
-        "editor.background": "#113f64",
-        "editor.foreground": "#ccbbaa",
+        "editor.background": "#f3bab0",
+        "editor.foreground": "#391b16",
         //
         "editorWidget.background": "#0e2d47",
-        "input.background": "#051829",
-        "dropdown.background": "#051829",
+        "input.background": "#b37468",
+        "dropdown.background": "#b37468",
         // Tabs
-        "editorGroupHeader.noTabsBackground": "#092338",
-        "editorGroupHeader.border": "#051829",
-        "editorGroup.border": "#051829",
-        "editorGroup.emptyBackground": "#092338",
-        "editorPane.background": "#092338",
+        "editorGroupHeader.noTabsBackground": "#d49388",
+        "editorGroupHeader.border": "#b37468",
+        "editorGroup.border": "#b37468",
+        "editorGroup.emptyBackground": "#d49388",
+        "editorPane.background": "#d49388",
         // Sidebar
-        "sideBar.background": "#051829",
-        "sideBarSectionHeader.background": "#092338",
-        "list.activeSelectionBackground": "#0b3557",
-        "list.inactiveSelectionBackground": "#0b3557",
-        "list.hoverBackground": "#092338",
-        "sideBar.foreground": "#84a0b5",
-        "gitDecoration.addedResourceForeground": "#84a0b5", //"#cfc492",
-        "gitDecoration.modifiedResourceForeground": "#84a0b5",
-        "gitDecoration.untrackedResourceForeground": "#84a0b5",
-        "gitDecoration.deletedResourceForeground": "#84a0b5",
-        "gitDecoration.renamedResourceForeground": "#84a0b5",
+        "sideBar.background": "#d49388",
+        "sideBarSectionHeader.background": "#d49388",
+        "list.activeSelectionBackground": "#c5857a",
+        "list.inactiveSelectionBackground": "#c5857a",
+        "list.hoverBackground": "#d49388",
+        "sideBar.foreground": "#683f37",
+        "gitDecoration.addedResourceForeground": "#683f37",
+        "gitDecoration.modifiedResourceForeground": "#683f37",
+        "gitDecoration.untrackedResourceForeground": "#683f37",
+        "gitDecoration.deletedResourceForeground": "#683f37",
+        "gitDecoration.renamedResourceForeground": "#683f37",
         // Panel
         "panel.background": "#0e2d47",
         // Activity Bar
-        "activityBar.background": "#092338",
-        "statusBar.background": "#092338",
-        "statusBar.noFolderBackground": "#092338",
-        "statusBar.debuggingBackground": "#092338",
-        "statusBarItem.remoteBackground": "#092338",
+        "activityBar.background": "#d49388",
+        "statusBar.background": "#d49388",
+        "statusBar.noFolderBackground": "#d49388",
+        "statusBar.debuggingBackground": "#d49388",
+        "statusBarItem.remoteBackground": "#d49388",
     },
     "tokenColors": [
         {
@@ -42,7 +42,7 @@
             ],
             "settings": {
                 // "foreground": "#9ad1fd",
-                // "foreground": "#f5db69",
+                // "foreground": "#5b160d",
                 "fontStyle": "italic"
             }
         },

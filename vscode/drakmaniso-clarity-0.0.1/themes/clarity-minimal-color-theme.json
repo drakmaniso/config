@@ -1,40 +1,13 @@
 {
-    "type": "light",
+    "type": "dark",
     "colors": {
-        "editor.background": "#ccc",
-        "editor.foreground": "#000000",
-        // Widgets
-        "editorWidget.background": "#aaa",
-        "input.background": "#bbb",
-        "dropdown.background": "#bbb",
-        // Tabs
-        "editorGroupHeader.noTabsBackground": "#aaa",
-        "editorGroupHeader.border": "#999",
-        "editorGroup.border": "#999",
-        "editorGroup.emptyBackground": "#aaa",
-        "editorPane.background": "#bbb",
-        // Sidebar
-        "sideBar.background": "#bbb",
-        "sideBar.foreground": "#000",
-        "sideBar.border": "#999",
-        "sideBarSectionHeader.background": "#aaa",
-        "list.activeSelectionBackground": "#fff",
-        "list.activeSelectionForeground": "#000",
-        "list.inactiveSelectionBackground": "#ccc",
-        "list.hoverBackground": "#aaa",
-        "gitDecoration.addedResourceForeground": "#683f37",
-        "gitDecoration.modifiedResourceForeground": "#683f37",
-        "gitDecoration.untrackedResourceForeground": "#683f37",
-        "gitDecoration.deletedResourceForeground": "#683f37",
-        "gitDecoration.renamedResourceForeground": "#683f37",
-        // Panel
-        "panel.background": "#bbb",
-        // Activity Bar
-        "activityBar.background": "#aaa",
-        "statusBar.background": "#aaa",
-        "statusBar.noFolderBackground": "#aaa",
-        "statusBar.debuggingBackground": "#aaa",
-        "statusBarItem.remoteBackground": "#aaa",
+        "editor.background": "#373737",
+        "editor.foreground": "#e7e7b7",
+        "gitDecoration.addedResourceForeground": "#5fdaf0",
+        "gitDecoration.modifiedResourceForeground": "#5fdaf0",
+        "gitDecoration.untrackedResourceForeground": "#5fdaf0",
+        "gitDecoration.deletedResourceForeground": "#5fdaf0",
+        "gitDecoration.renamedResourceForeground": "#5fdaf0",
     },
     "tokenColors": [
         {
@@ -43,6 +16,10 @@
                 "comment punctuation"
             ],
             "settings": {
+                // "foreground": "#f3c46d",
+                // "foreground": "#96e785",
+                "foreground": "#81e3f5",
+                // "foreground": "#ff84c2",
                 "fontStyle": "italic"
             }
         },
@@ -50,10 +27,15 @@
             "scope": [
                 "storage",
                 "keyword",
-                "meta.attribute"
+                "meta.attribute",
+                "meta.annotation",
+                "storage.modifier"
             ],
             "settings": {
-                "fontStyle": "bold"
+                // "foreground": "#81e3f5",
+                // "foreground": "#ffb950",
+                // "foreground": "#ff84c2",
+                "foreground": "#e7c767"
             }
         },
         {
@@ -61,16 +43,11 @@
                 "variable.language"
             ],
             "settings": {
+                // "foreground": "#e9e062",
+                // "foreground": "#d9b0ff",
+                // "foreground": "#e7e797",
+                "foreground": "#e7e7b7",
                 "fontStyle": "italic"
-            }
-        },
-        {
-            "scope": [
-                "meta.annotation",
-                "storage.modifier"
-            ],
-            "settings": {
-                "fontStyle": "bold"
             }
         },
         {
@@ -78,13 +55,20 @@
                 "identifier",
                 "entity.name"
             ],
-            "settings": {}
+            "settings": {
+                // "foreground": "#f39c4a",
+                // "foreground": "#e7e797",
+                "foreground": "#e7e7b7",
+            }
         },
         {
             "scope": [
                 "entity.name.function"
             ],
-            "settings": {}
+            "settings": {
+                // "foreground": "#e7e797",
+                "foreground": "#e7e7b7",
+            }
         },
         {
             "scope": [
@@ -92,6 +76,9 @@
                 "keyword.operator punctuation"
             ],
             "settings": {
+                // "foreground": "#ffb950",
+                // "foreground": "#e7e787",
+                "foreground": "#e7e7b7",
                 "fontStyle": ""
             }
         },
@@ -100,7 +87,19 @@
                 "entity.name.type",
                 "entity.name.class"
             ],
-            "settings": {}
+            "settings": {
+                // "foreground": "#e7e797",
+                "foreground": "#e7e7b7",
+            }
+        },
+        {
+            "scope": [
+                "entity.name.module",
+                "support.module"
+            ],
+            "settings": {
+                "foreground": "#b0b0b0",
+            }
         },
         {
             "scope": "entity.name.function",
@@ -111,17 +110,39 @@
             "settings": {}
         },
         {
+            "scope": "punctuation.brackets.curly",
+            "settings": {
+                // "foreground": "#8a8a8a",
+            }
+        },
+        {
             "scope": "punctuation",
-            "settings": {}
+            "settings": {
+                // "foreground": "#d1d1d1",
+            }
         },
         {
             "scope": [
-                // "constant",
+                "constant",
+            ],
+            "settings": {
+                // "foreground": "#e9e062",
+                // "foreground": "#81e3f5",
+                // "foreground": "#96e785",
+                "foreground": "#e7e7b7",
+            }
+        },
+        {
+            "scope": [
                 "string",
                 "string punctuation"
             ],
             "settings": {
-                "fontStyle": "italic"
+                // "foreground": "#e9e062",
+                // "foreground": "#81e3f5",
+                "foreground": "#96e785",
+                // "foreground": "#e7d787",
+                // "foreground": "#e7e797",
             }
         },
         {
@@ -133,12 +154,14 @@
         {
             "scope": "punctuation.support.type.property-name.begin.json",
             "settings": {
+                "foreground": "#777",
                 "fontStyle": "italic"
             }
         },
         {
             "scope": "punctuation.support.type.property-name.end.json",
             "settings": {
+                "foreground": "#777",
                 "fontStyle": "italic"
             }
         },

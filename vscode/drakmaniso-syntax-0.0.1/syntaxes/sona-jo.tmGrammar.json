@@ -25,7 +25,7 @@
             "include": "#attribute"
         },
         {
-            "match": "(?<!-)\\b(use|import)\\s+(/)?(([[:lower:]][[:word:]-]*)(/))*([[:lower:]][[:word:]-]*)\\b(?!:)",
+            "--match": "(?<!-)\\b(use|import)\\s+(/)?(([[:lower:]][[:word:]-]*)(/))*([[:lower:]][[:word:]-]*)\\b(?!:)",
             "captures": {
                 "1": {
                     "name": "keyword.control.import.sona-jo"
@@ -39,7 +39,7 @@
             }
         },
         {
-            "match": "(?<!-)\\b(use|import)\\s*(([[:lower:]][[:word:]-]*)\\:\\:)*([[:lower:]][[:word:]-]*)\\b",
+            "--match": "(?<!-)\\b(use|import)\\s*(([[:lower:]][[:word:]-]*)\\:\\:)*([[:lower:]][[:word:]-]*)\\b",
             "captures": {
                 "1": {
                     "name": "keyword.control.import.sona-jo"
@@ -47,27 +47,27 @@
             }
         },
         {
-            "match": "(?<!-)\\b(module|use|import)\\b(?!-|')",
+            "match": "(?<!-)\\b(module|use|import|from)\\b(?!-|')",
             "name": "keyword.control.import.sona-jo"
         },
         {
-            "match": "(?<!-)(\\*operator|\\*fun|\\*val|\\*struct|\\*type|\\*trait)\\b(?!-|')",
-            "name": "storage.modifier.sona-jo"
+            "match": "(?<!-)(\\*operator|\\*fun|\\*val|\\*newtype|\\*struct|\\*union|\\*enum|\\*type|\\*trait)\\b(?!-|')",
+            "name": "keyword.other.definition.sona-jo"
         },
         {
             "match": "(?<!-)\\b(val\\?\\?|val\\?|val\\!|let\\?\\?|let\\?|let\\!|else\\?|else\\!|shadow)(?!-|')",
-            "name": "storage.modifier.sona-jo"
+            "name": "keyword.other.definition.sona-jo"
         },
         {
-            "match": "(?<!-)\\b(operator|fun|fn|val|struct|type|trait)\\b(?!-|')",
-            "name": "storage.modifier.sona-jo"
+            "match": "(?<!-)\\b(operator|fun|fn|val|const|newtype|struct|union|enum|type|trait|declare|define)\\b(?!-|')",
+            "name": "keyword.other.definition.sona-jo"
         },
         {
             "match": "(?<!-)\\b(in)\\b(?!-|')",
-            "name": "storage.modifier.sona-jo"
+            "name": "keyword.other.definition.sona-jo"
         },
         {
-            "match": "(?<!-)\\b(as)\\b(?!-|')",
+            "match": "(?<!-)\\b(as|to|alias)\\b(?!-|')",
             "name": "keyword.control.sona-jo"
         },
         {
@@ -75,11 +75,11 @@
             "name": "keyword.control.sona-jo"
         },
         {
-            "match": "(?<!-)\\b(public|data|opaque|pub|local|private|define|expose)\\b(?!-|')",
+            "match": "(?<!-)\\b(public|data|opaque|pub|local|private)\\b(?!-|')",
             "name": "storage.modifier.sona-jo"
         },
         {
-            "match": "(?<!-)\\b(function|method|constant|return)\\b(?!-|')",
+            "match": "(?<!-)\\b(func|method|constant|return)\\b(?!-|')",
             "name": "keyword.control.sona-jo"
         },
         {
@@ -87,7 +87,7 @@
             "name": "keyword.control.sona-jo"
         },
         {
-            "match": "(?<!-)\\b(if|then|else|case|of|case-of|caseof|try|elsif|lastly|default|atlast|when|match|do|end)\\b(?!-|')",
+            "match": "(?<!-)\\b(if|then|else|case|of|with|case-of|caseof|try|elsif|lastly|default|atlast|when|match|do|end|done|off|ok)\\b(?!-|')",
             "name": "keyword.control.sona-jo"
         },
         {
@@ -95,8 +95,8 @@
             "name": "keyword.operator.sona-jo"
         },
         {
-            "match": "(?<=\\s)(\\|)(?=\\s)",
-            "name": "keyword.operator.sona-jo"
+            "match": "(?<=\\s)(\\|)(?=[\\s|;])",
+            "name": "keyword.operator.pipe.sona-jo"
         },
         {
             "match": "(?<=\\s)(=>)(?=\\s)",
@@ -115,12 +115,16 @@
             "name": "keyword.control.logic.sona-jo"
         },
         {
-            "match": "(?<!-)\\b(self|Self|any|result|___)\\b(?!-|')",
+            "match": "(?<!-)\\b(self|any|result|___)\\b(?!-|')",
             "name": "variable.language.sona-jo"
         },
         {
+            "match": "(?<!-)\\b(Self)\\b(?!-|')",
+            "name": "entity.name.type.language.sona-jo"
+        },
+        {
             "match": "(?<!-)\\b(def|let)\\b(?!-|')",
-            "name": "storage.modifier.sona-jo"
+            "name": "keyword.other.definition.sona-jo"
         },
         {
             "match": "(?<!-)\\b(var|has)\\b(?!-|')",
@@ -136,20 +140,20 @@
             "include": "#trait"
         },
         {
-            "match": "&[[:lower:]][[:word:]-]*\\b'*",
-            "name": "entity.name.type.effect.sona-jo"
-        },
-        {
-            "match": "\\b[[:upper:]]\\b",
-            "name": "entity.name.type.sona-jo"
-        },
-        {
             "match": "(?<!\\.\\.)(?<=\\.)[[:lower:]][[:word:]-]*'*",
             "name": "entity.name.function.sona-jo"
         },
         {
             "match": "(?<!#|-)\\b[[:lower:]][[:word:]-]*'*\\s*(?=\\()",
             "name": "entity.name.function.sona-jo"
+        },
+        {
+            "match": "&[[:lower:]][[:word:]-]*\\b'*",
+            "name": "entity.name.type.effect.sona-jo"
+        },
+        {
+            "match": "\\b[[:upper:]]\\b",
+            "name": "entity.name.type.sona-jo"
         },
         {
             "match": "(?<!#|-)(?<=\\.)\\b[[:lower:]][[:word:]-]*'*\\s*",
@@ -248,6 +252,10 @@
         {
             "match": "(;)",
             "name": "punctuation.terminator.semicolon.sona-jo"
+        },
+        {
+            "match": "(!)",
+            "name": "keyword.operator.bang.sona-jo"
         },
         {
             "match": "\\b([[:lower:]][[:word:]-]*\\b'*)(::)",
@@ -399,13 +407,13 @@
         },
         "block_comment3": {
             "applyEndPatternLast": 1,
-            "begin": "<<",
+            "begin": "\\*\\*\\*",
             "captures": {
                 "0": {
                     "name": "punctuation.definition.comment.sona-jo"
                 }
             },
-            "end": ">>",
+            "end": "\\*\\*\\*",
             "name": "comment.block.sona-jo"
         },
         "string-triple": {

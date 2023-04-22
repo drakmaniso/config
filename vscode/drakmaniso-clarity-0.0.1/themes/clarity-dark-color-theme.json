@@ -1,13 +1,14 @@
 {
     "type": "dark",
-    "colors": {
-        "editor.background": "#272727",
-        "editor.foreground": "#e7e7e7",
-        "gitDecoration.addedResourceForeground": "#5fdaf0",
-        "gitDecoration.modifiedResourceForeground": "#5fdaf0",
-        "gitDecoration.untrackedResourceForeground": "#5fdaf0",
-        "gitDecoration.deletedResourceForeground": "#5fdaf0",
-        "gitDecoration.renamedResourceForeground": "#5fdaf0",
+    "---colors": {
+        "editor.background": "#444444",
+        "editor.foreground": "#ffffff",
+        "sideBar.foreground": "#999999",
+        "gitDecoration.addedResourceForeground": "#999999", //"#5fdaf0",
+        "gitDecoration.modifiedResourceForeground": "#999999",
+        "gitDecoration.untrackedResourceForeground": "#999999",
+        "gitDecoration.deletedResourceForeground": "#999999",
+        "gitDecoration.renamedResourceForeground": "#999999",
     },
     "tokenColors": [
         {
@@ -16,9 +17,6 @@
                 "comment punctuation"
             ],
             "settings": {
-                // "foreground": "#f1bd6e",
-                // "foreground": "#f3c46d",
-                "foreground": "#ffb950",
                 "fontStyle": "italic"
             }
         },
@@ -29,7 +27,7 @@
                 "meta.attribute"
             ],
             "settings": {
-                "foreground": "#ff84c2",
+                "fontStyle": "bold"
             }
         },
         {
@@ -37,9 +35,6 @@
                 "variable.language"
             ],
             "settings": {
-                // "foreground": "#e9e062",
-                // "foreground": "#d9b0ff",
-                "foreground": "#e7e797",
                 "fontStyle": "italic"
             }
         },
@@ -49,11 +44,7 @@
                 "storage.modifier"
             ],
             "settings": {
-                // "foreground": "#e9e062",
-                // "foreground": "#bbbbbb",
-                // "foreground": "#d9b0ff",
-                "foreground": "#ff84c2",
-                // "fontStyle": "italic"
+                "fontStyle": "bold"
             }
         },
         {
@@ -61,18 +52,13 @@
                 "identifier",
                 "entity.name"
             ],
-            "settings": {
-                // "foreground": "#f39c4a",
-                "foreground": "#e7e797",
-            }
+            "settings": {}
         },
         {
             "scope": [
                 "entity.name.function"
             ],
-            "settings": {
-                "foreground": "#96e785",
-            }
+            "settings": {}
         },
         {
             "scope": [
@@ -80,11 +66,7 @@
                 "keyword.operator punctuation"
             ],
             "settings": {
-                // "foreground": "#ff84c2",
-                // "foreground": "#e7e07f",
-                // "foreground": "#d9b0ff",
-                "foreground": "#e7e7e7",
-                // "foreground": "#e7e797",
+                // "foreground": "#e7e7e7",
                 "fontStyle": ""
             }
         },
@@ -93,17 +75,7 @@
                 "entity.name.type",
                 "entity.name.class"
             ],
-            "settings": {
-                "foreground": "#81e3f5",
-            }
-        },
-        {
-            "scope": [
-                "entity.name.type.trait"
-            ],
-            "settings": {
-                "fontStyle": "italic"
-            }
+            "settings": {}
         },
         {
             "scope": "entity.name.function",
@@ -115,25 +87,20 @@
         },
         {
             "scope": "punctuation.brackets.curly",
-            "settings": {
-                // "foreground": "#8a8a8a",
-            }
+            "settings": {}
         },
         {
             "scope": "punctuation",
-            "settings": {
-                // "foreground": "#d1d1d1",
-            }
+            "settings": {}
         },
         {
             "scope": [
-                "constant",
+                // "constant",
                 "string",
                 "string punctuation"
             ],
             "settings": {
-                // "foreground": "#e9e062",
-                "foreground": "#c98fff",
+                "fontStyle": "italic"
             }
         },
         {

@@ -1,48 +1,52 @@
 {
-    "type": "dark",
+    "type": "light",
     "colors": {
-        "editor.background": "#113f64",
-        "editor.foreground": "#ccbbaa",
-        //
-        "editorWidget.background": "#0e2d47",
-        "input.background": "#051829",
-        "dropdown.background": "#051829",
+        "editor.background": "#eddbbf",
+        "editor.foreground": "#000000",
+        // Widgets
+        "editorWidget.background": "#bbb",
+        "input.background": "#ccc",
+        "dropdown.background": "#ccc",
         // Tabs
-        "editorGroupHeader.noTabsBackground": "#092338",
-        "editorGroupHeader.border": "#051829",
-        "editorGroup.border": "#051829",
-        "editorGroup.emptyBackground": "#092338",
-        "editorPane.background": "#092338",
+        "editorGroupHeader.noTabsBackground": "#bbb",
+        "editorGroupHeader.border": "#aaa",
+        "editorGroup.border": "#aaa",
+        "editorGroup.emptyBackground": "#bbb",
+        "editorPane.background": "#ccc",
         // Sidebar
-        "sideBar.background": "#051829",
-        "sideBarSectionHeader.background": "#092338",
-        "list.activeSelectionBackground": "#0b3557",
-        "list.inactiveSelectionBackground": "#0b3557",
-        "list.hoverBackground": "#092338",
-        "sideBar.foreground": "#84a0b5",
-        "gitDecoration.addedResourceForeground": "#84a0b5", //"#cfc492",
-        "gitDecoration.modifiedResourceForeground": "#84a0b5",
-        "gitDecoration.untrackedResourceForeground": "#84a0b5",
-        "gitDecoration.deletedResourceForeground": "#84a0b5",
-        "gitDecoration.renamedResourceForeground": "#84a0b5",
+        "sideBar.background": "#ccc",
+        "sideBar.foreground": "#000",
+        "sideBarSectionHeader.background": "#bbb",
+        "list.activeSelectionBackground": "#fff",
+        "list.activeSelectionForeground": "#000",
+        "list.inactiveSelectionBackground": "#ddd",
+        "list.hoverBackground": "#bbb",
+        "gitDecoration.addedResourceForeground": "#683f37",
+        "gitDecoration.modifiedResourceForeground": "#683f37",
+        "gitDecoration.untrackedResourceForeground": "#683f37",
+        "gitDecoration.deletedResourceForeground": "#683f37",
+        "gitDecoration.renamedResourceForeground": "#683f37",
         // Panel
-        "panel.background": "#0e2d47",
+        "panel.background": "#ccc",
         // Activity Bar
-        "activityBar.background": "#092338",
-        "statusBar.background": "#092338",
-        "statusBar.noFolderBackground": "#092338",
-        "statusBar.debuggingBackground": "#092338",
-        "statusBarItem.remoteBackground": "#092338",
+        "activityBar.background": "#bbb",
+        "statusBar.background": "#bbb",
+        "statusBar.noFolderBackground": "#bbb",
+        "statusBar.debuggingBackground": "#bbb",
+        "statusBarItem.remoteBackground": "#bbb",
     },
     "tokenColors": [
         {
-            "scope": [
-                "comment",
-                "comment punctuation"
-            ],
+            "scope": "comment",
             "settings": {
-                // "foreground": "#9ad1fd",
-                // "foreground": "#f5db69",
+                // "foreground": "#555",
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": "comment punctuation",
+            "settings": {
+                // "foreground": "#555",
                 "fontStyle": "italic"
             }
         },
@@ -61,7 +65,7 @@
         {
             "scope": "meta.attribute",
             "settings": {
-                "fontStyle": "italic"
+                "fontStyle": "bold"
             }
         },
         {
@@ -97,57 +101,51 @@
             "settings": {}
         },
         {
-            "scope": [
-                "meta.constant.definition entity.name.constant",
-                "meta.function.definition entity.name.function",
-                "meta.type.definition entity.name.type",
-                "meta.type.definition entity.name.type.trait",
-            ],
+            "scope": "meta.constant.definition entity.name.constant",
             "settings": {
                 // "fontStyle": "underline"
             }
         },
-        // {
-        //   "scope": [
-        //     "punctuation.brackets.curly",
-        //   ],
-        //   "settings": {
-        //     "foreground": "#899dad",
-        //   }
-        // },
         {
-            "scope": [
-                "punctuation.separator",
-                "punctuation.terminator",
-                "punctuation.brackets",
-                "punctuation",
-                "keyword.operator",
-            ],
+            "scope": "meta.function.definition entity.name.function",
             "settings": {
-                // "foreground": "#8b9aa7",
-                // "foreground": "#6eaadb",
+                // "fontStyle": "underline"
+            }
+        },
+        {
+            "scope": "meta.type.definition entity.name.type",
+            "settings": {
+                // "fontStyle": "underline"
+            }
+        },
+        {
+            "scope": "meta.type.definition entity.name.type.trait",
+            "settings": {
+                // "fontStyle": "underline"
+            }
+        },
+        {
+            "scope": "punctuation",
+            "settings": {
+                // "foreground": "#888",
+            }
+        },
+        {
+            "scope": "punctuation.brackets.round",
+            "settings": {
+                "foreground": "#555",
             }
         },
         {
             "scope": "constant",
             "settings": {
-                // "foreground": "#76d1ae",
+                "fontStyle": ""
             }
         },
         {
-            "scope": [
-                "string",
-                "string punctuation",
-            ],
+            "scope": "string",
             "settings": {
-                "fontStyle": "italic",
-                // "foreground": "#76d1ae",
-            }
-        },
-        {
-            "scope": "source.json string",
-            "settings": {
-                "foreground": "#ddd",
+                "fontStyle": "italic"
             }
         },
         {

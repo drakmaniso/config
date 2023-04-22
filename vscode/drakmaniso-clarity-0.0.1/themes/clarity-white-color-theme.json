@@ -1,0 +1,159 @@
+{
+    "type": "light",
+    "tokenColors": [
+        {
+            "scope": "comment",
+            "settings": {
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": "comment punctuation",
+            "settings": {
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": "storage",
+            "settings": {
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": "keyword",
+            "settings": {
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": "meta.attribute",
+            "settings": {
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": "variable.language",
+            "settings": {
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": "keyword.operator",
+            "settings": {
+                "fontStyle": ""
+            }
+        },
+        {
+            "scope": "entity.name.type",
+            "settings": {}
+        },
+        {
+            "scope": "entity.name.type.trait",
+            "settings": {}
+        },
+        {
+            "scope": "entity.name.class",
+            "settings": {}
+        },
+        {
+            "scope": "entity.name.function",
+            "settings": {}
+        },
+        {
+            "scope": "variable.parameter",
+            "settings": {}
+        },
+        {
+            "scope": "meta.constant.definition entity.name.constant",
+            "settings": {
+                // "fontStyle": "underline"
+            }
+        },
+        {
+            "scope": "meta.function.definition entity.name.function",
+            "settings": {
+                // "fontStyle": "underline"
+            }
+        },
+        {
+            "scope": "meta.type.definition entity.name.type",
+            "settings": {
+                // "fontStyle": "underline"
+            }
+        },
+        {
+            "scope": "meta.type.definition entity.name.type.trait",
+            "settings": {
+                // "fontStyle": "underline"
+            }
+        },
+        {
+            "scope": "punctuation",
+            "settings": {}
+        },
+        {
+            "scope": "constant",
+            "settings": {
+                "fontStyle": ""
+            }
+        },
+        {
+            "scope": "string",
+            "settings": {
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": "source.json string",
+            "settings": {
+                "fontStyle": ""
+            }
+        },
+        {
+            "scope": "support.type.property-name.json",
+            "settings": {
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": "markup.heading",
+            "settings": {
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": "markup.inline",
+            "settings": {}
+        },
+        {
+            "scope": "markup.italic",
+            "settings": {
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": "markup.bold",
+            "settings": {
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": "markup.quote",
+            "settings": {
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": "markup.raw.block",
+            "settings": {}
+        },
+        {
+            "scope": "markup.fenced_code",
+            "settings": {}
+        },
+        {
+            "scope": "fenced_code.block.language",
+            "settings": {}
+        }
+    ]
+}

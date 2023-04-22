@@ -2,8 +2,8 @@
     "comments": {
         "lineComment": "--",
         "blockComment": [
-            "<<",
-            ">>"
+            "/*",
+            "*/"
         ]
     },
     "brackets": [
@@ -18,7 +18,11 @@
         [
             "(",
             ")"
-        ]
+        ],
+        // [
+        //     "match",
+        //     ";"
+        // ]
     ],
     "autoClosingPairs": [
         {
@@ -47,13 +51,13 @@
                 "string"
             ]
         },
-        {
-            "open": "<<",
-            "close": ">>",
-            "notIn": [
-                "string"
-            ]
-        },
+        // {
+        //     "open": "match",
+        //     "close": "done",
+        //     "notIn": [
+        //         "string"
+        //     ]
+        // },
         {
             "open": "/*",
             "close": "*/",
@@ -92,15 +96,6 @@
         }
     },
     "wordPattern": "(-?\\d*\\.\\d\\w*)|([^\\`\\~\\!\\@\\#\\%\\^\\&\\*\\(\\)\\=\\+\\[\\{\\]\\}\\\\\\|\\;\\:\\'\\\"\\,\\.\\<\\>\\/\\?\\s]+\\'*)",
-    "--indentationRules": {
-        "increaseIndentPattern": "^((?!.*?\\/\\*).*\\*\/)?\\s*[\\}\\]].*$",
-        "--decreaseIndentPattern": "(^((?!\\/\\/).)*(\\{[^}\"'`]*|\\([^)\"'`]*|\\[[^\\]\"'`]*)$)|(^\\s*end\\s*$)",
-        "decreaseIndentPattern": "^\\s*end\\s*$"
-    },
-    "indentationRules": {
-        "increaseIndentPattern": "^\\s*((do|forall|require|ensure|invariant|if|elseif|else|match|case)|(.*\\sdo\\b))\\b[^\\{;]*$",
-        "--decreaseIndentPattern": "^\\s*((end|else|elseif)|[}\\]]\b)"
-    },
     "onEnterRules": [
         {
             "beforeText": "/\\*",
@@ -119,19 +114,25 @@
             }
         },
         {
-            "beforeText": "\\s=\\s*$",
+            "beforeText": "\\s(=|=>)\\s*$",
             "action": {
                 "indent": "indent"
             }
         },
         {
-            "beforeText": "do",
+            "beforeText": "(?<!-)\\b(do|if|then|else|of)\\s*$",
             "action": {
                 "indent": "indent"
             }
         },
         {
-            "beforeText": "end",
+            "beforeText": "(?<!-)\\b(match)\\b.*$",
+            "action": {
+                "indent": "indent"
+            }
+        },
+        {
+            "beforeText": "(?<!-);\\s*$",
             "action": {
                 "indent": "outdent"
             }
