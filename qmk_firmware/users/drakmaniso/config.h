@@ -11,7 +11,7 @@
 #ifdef ONESHOT_TAP_TOGGLE
     #undef ONESHOT_TAP_TOGGLE
 #endif
-#define ONESHOT_TIMEOUT 250
+#define ONESHOT_TIMEOUT 400
 
 #define TAPPING_TOGGLE 3
 
