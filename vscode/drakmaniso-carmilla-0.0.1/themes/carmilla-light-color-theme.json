@@ -1,0 +1,133 @@
+{
+    "type": "light",
+    "colors": {
+        "editor.background": "#fff",
+        "editor.foreground": "#555",
+        // Activity Bar
+        "activityBar.background": "#8568a0",
+        "statusBar.background": "#5b367c",
+        "statusBar.noFolderBackground": "#5b367c",
+        "statusBar.debuggingBackground": "#5b367c",
+        "statusBarItem.remoteBackground": "#5b367c",
+    },
+    "tokenColors": [
+        {
+            "scope": [
+                "comment",
+                "comment punctuation"
+            ],
+            "settings": {
+                "foreground": "#9452cb",
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": [
+                "storage",
+                "keyword",
+                "meta.attribute",
+                "meta.annotation"
+            ],
+            "settings": {
+                "foreground": "#d2008a"
+            }
+        },
+        {
+            "scope": [
+                "entity.name.function"
+            ],
+            "settings": {
+                "foreground": "#61a453"
+            }
+        },
+        {
+            "scope": [
+                "keyword.operator",
+                "keyword.operator punctuation"
+            ],
+            "settings": {
+                "foreground": "#555",
+                "fontStyle": ""
+            }
+        },
+        {
+            "scope": [
+                "entity.name.type",
+                "entity.name.class",
+                "entity.name.module",
+                "entity.name.namespace",
+                "support.module"
+            ],
+            "settings": {
+                "foreground": "#30a1b3"
+            }
+        },
+        {
+            "scope": "entity.name.function",
+            "settings": {}
+        },
+        {
+            "scope": "variable.parameter",
+            "settings": {}
+        },
+        {
+            "scope": [
+                "constant",
+                "string",
+                "string punctuation"
+            ],
+            "settings": {
+                "foreground": "#c75e3e"
+            }
+        },
+        {
+            "scope": [
+                "support.type.property-name.json",
+                "support.type.property-name.json punctuation"
+            ],
+            "settings": {
+                "foreground": "#555"
+            }
+        },
+        {
+            "scope": "markup.heading",
+            "settings": {
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": "markup.inline",
+            "settings": {}
+        },
+        {
+            "scope": "markup.italic",
+            "settings": {
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": "markup.bold",
+            "settings": {
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": "markup.quote",
+            "settings": {
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": "markup.raw.block",
+            "settings": {}
+        },
+        {
+            "scope": "markup.fenced_code",
+            "settings": {}
+        },
+        {
+            "scope": "fenced_code.block.language",
+            "settings": {}
+        }
+    ]
+}

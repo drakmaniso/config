@@ -1,0 +1,35 @@
+{
+    "name": "carmilla",
+    "version": "0.0.1",
+    "displayName": "Carmilla Theme",
+    "description": "Simple color theme inspired from Dracula",
+    "publisher": "drakmaniso",
+    "keywords": [
+        "color-theme",
+        "theme"
+    ],
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "engines": {
+        "vscode": "^1.45.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "Carmilla Dark",
+                "uiTheme": "vs-dark",
+                "path": "./themes/carmilla-dark-color-theme.json"
+            },
+            {
+                "label": "Carmilla Light",
+                "uiTheme": "vs",
+                "path": "./themes/carmilla-light-color-theme.json"
+            }
+        ]
+    }
+}
